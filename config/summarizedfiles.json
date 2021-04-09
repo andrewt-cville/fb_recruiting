@@ -1,0 +1,31 @@
+{
+    "sports247" : 
+        [
+            "sports247data.json"
+        ], 
+    "rivals" : 
+        [
+            "rivalsdata.json"
+        ],
+    "cfbRef" : 
+        [
+            "cfbRefdata.json"
+        ],
+    "allConf" :
+        [
+            "allConf.json"
+        ],
+    "allAmerican" :
+        [
+            "allAmericanData.json"
+        ],
+    "nflData" :
+        [
+            "nfldata.json"
+        ],
+    "ncaa" :
+        [
+            "ncaa.json"
+        ]
+    
+}

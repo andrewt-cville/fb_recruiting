@@ -1,0 +1,71 @@
+{
+    "nfl" : 
+        [
+            "year", 
+            "draft_round", 
+            "draft_pick", 
+            "team", 
+            "pos",
+            "all_pros_first_team",
+            "pro_bowls",
+            "years_as_primary_starter",
+            "g"
+        ], 
+    "aa" : 
+        [
+            "year",
+            "afca",
+            "ap", 
+            "fwaa", 
+            "tsn", 
+            "wcff"
+        ], 
+    "ac" : 
+        [
+            "year", 
+            "coaches", 
+            "media"
+        ], 
+    "rivals" : 
+        [
+            "playerName", 
+            "city", 
+            "state", 
+            "highSchool", 
+            "position", 
+            "height", 
+            "weight", 
+            "stars", 
+            "nationalRank", 
+            "positionRank", 
+            "stateRank"
+        ], 
+    "247" : 
+        [
+            "playerName", 
+            "highSchool", 
+            "city", 
+            "state", 
+            "position", 
+            "height", 
+            "weight",
+            "nationalRank", 
+            "positionRank", 
+            "stateRank"
+        ], 
+    "cr" : 
+        [
+            "playerName", 
+            "position", 
+            "school", 
+            "gamesPlayed"
+        ],
+    "ncaa" :
+        [
+            "name",
+            "team",
+            "gamesPlayed",
+            "gamesStarted",
+            "year"
+        ]
+}

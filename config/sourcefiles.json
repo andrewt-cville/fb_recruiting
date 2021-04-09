@@ -1,0 +1,40 @@
+{
+    "sports247" : 
+        [
+            "247_bigten.json",
+            "247_bigtwelve.json",
+            "247_sec.json",
+            "247_acc.json"
+        ], 
+    "rivals" : 
+        [
+            "rivals_bigten.json",
+            "rivals_bigtwelve.json",
+            "rivals_sec.json",
+            "rivals_acc.json"
+        ],
+    "cfbRef" : 
+        [
+            "cfb_ref_bigten.json",
+            "cfb_ref_bigtwelve.json",
+            "cfb_ref_sec.json"
+        ],
+    "allConf" :
+        [
+            "SECAllConf.json", 
+            "Ten12AllConf.json"
+        ],
+    "allAmerican" :
+        [
+            "aaSelections.json"
+        ],
+    "nflData" :
+        [
+            "nfldraft.json"
+        ],
+    "ncaa" :
+        [
+            "ncaa.json"
+        ]
+    
+}

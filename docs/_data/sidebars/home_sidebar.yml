@@ -24,6 +24,12 @@ entries:
     - output: web,pdf
       title: Get & Process All American data from Wikipedia
       url: Get_WikiAllAmerican.html
+    - output: web,pdf
+      title: Process 247Sports Recruits & Prospects
+      url: Process_247.html
+    - output: web,pdf
+      title: Process Rivals Recruits
+      url: Process_Rivals.html
     output: web
     title: fb_recruiting
   output: web
