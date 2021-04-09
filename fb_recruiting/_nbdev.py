@@ -2,8 +2,8 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"headers": "Get_WikiAllAmerican.ipynb",
-         "years": "Get_WikiAllAmerican.ipynb"}
+index = {"headers": "Get-WikiAllAmerican.ipynb",
+         "years": "Get-WikiAllAmerican.ipynb"}
 
 modules = ["core.py"]
 

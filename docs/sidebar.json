@@ -2,11 +2,11 @@
   "fb_recruiting": {
     "Overview": "/",
     "Title": "core_constants.html",
-    "Get the Recruit/Player Profile from 247Sports": "Get_247-Recruit.html",
-    "Get 247Sports Team Commitments": "Get_247-Team.html",
-    "Get Rivals Team Commitments": "Get_Rivals.html",
-    "Get & Process All American data from Wikipedia": "Get_WikiAllAmerican.html",
-    "Process 247Sports Recruits & Prospects": "Process_247.html",
-    "Process Rivals Recruits": "Process_Rivals.html"
+    "Get the Recruit/Player Profile from 247Sports": "Get-247-Recruit.html",
+    "Get 247Sports Team Commitments": "Get-247-Team.html",
+    "Get Rivals Team Commitments": "Get-Rivals.html",
+    "Get & Process All American data from Wikipedia": "Get-WikiAllAmerican.html",
+    "Process 247Sports Recruits & Prospects": "Process-247.html",
+    "Process Rivals Recruits": "Process-Rivals.html"
   }
 }

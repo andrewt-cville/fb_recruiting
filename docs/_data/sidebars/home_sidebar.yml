@@ -14,22 +14,22 @@ entries:
       url: core_constants.html
     - output: web,pdf
       title: Get the Recruit/Player Profile from 247Sports
-      url: Get_247-Recruit.html
+      url: Get-247-Recruit.html
     - output: web,pdf
       title: Get 247Sports Team Commitments
-      url: Get_247-Team.html
+      url: Get-247-Team.html
     - output: web,pdf
       title: Get Rivals Team Commitments
-      url: Get_Rivals.html
+      url: Get-Rivals.html
     - output: web,pdf
       title: Get & Process All American data from Wikipedia
-      url: Get_WikiAllAmerican.html
+      url: Get-WikiAllAmerican.html
     - output: web,pdf
       title: Process 247Sports Recruits & Prospects
-      url: Process_247.html
+      url: Process-247.html
     - output: web,pdf
       title: Process Rivals Recruits
-      url: Process_Rivals.html
+      url: Process-Rivals.html
     output: web
     title: fb_recruiting
   output: web
