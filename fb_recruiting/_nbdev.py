@@ -2,9 +2,10 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {}
+index = {"headers": "Get_WikiAllAmerican.ipynb",
+         "years": "Get_WikiAllAmerican.ipynb"}
 
-modules = []
+modules = ["core.py"]
 
 doc_url = "https://andrewt-cville.github.io/fb_recruiting/"
 

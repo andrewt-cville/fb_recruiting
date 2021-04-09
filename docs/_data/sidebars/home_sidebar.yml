@@ -10,8 +10,20 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: module name here
-      url: core.html
+      title: Title
+      url: core_constants.html
+    - output: web,pdf
+      title: Get the Recruit/Player Profile from 247Sports
+      url: Get_247-Recruit.html
+    - output: web,pdf
+      title: Get 247Sports Team Commitments
+      url: Get_247-Team.html
+    - output: web,pdf
+      title: Get Rivals Team Commitments
+      url: Get_Rivals.html
+    - output: web,pdf
+      title: Get & Process All American data from Wikipedia
+      url: Get_WikiAllAmerican.html
     output: web
     title: fb_recruiting
   output: web

@@ -1,6 +1,10 @@
 {
   "fb_recruiting": {
     "Overview": "/",
-    "module name here": "core.html"
+    "Title": "core_constants.html",
+    "Get the Recruit/Player Profile from 247Sports": "Get_247-Recruit.html",
+    "Get 247Sports Team Commitments": "Get_247-Team.html",
+    "Get Rivals Team Commitments": "Get_Rivals.html",
+    "Get & Process All American data from Wikipedia": "Get_WikiAllAmerican.html"
   }
 }
