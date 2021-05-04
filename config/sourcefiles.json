@@ -22,7 +22,8 @@
     "allConf" :
         [
             "SECAllConf.json", 
-            "Ten12AllConf.json"
+            "Ten12AllConf.json",
+            "csv_acc.json"
         ],
     "allAmerican" :
         [
