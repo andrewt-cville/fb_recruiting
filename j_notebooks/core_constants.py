@@ -26,6 +26,10 @@ def save_files(filePath, filePersist):
     with open(filePath, "w") as write_file:
         json.dump(filePersist, write_file)
 
+def save_html(filePath, reqText):
+    with open(filePath, "w") as write_file:
+        write_file.write(reqText)
+
 def save_records(folder, filename, listPersist):
     with open("..//{}//{}.json".format(folder, filename), "w") as write_file:
         json.dump(listPersist, write_file)
