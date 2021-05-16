@@ -3,9 +3,46 @@ import requests
 import lxml
 import time
 import os
+import io
+import json
 import core_constants as cc
 
-#247 Functions
+#Common Functions
+
+## If there are multiple files for any given dataset, then this function will combine all of those
+## records into a single dicti
+def mergeSourceFiles (source, outputDir, sourceFiles):
+    recordList = []
+    for file in sourceFiles[source]:  
+        file = json.loads(open(outputDir + file, "r", encoding="utf-8").read())
+        for record in file:
+            recordList.append(record)
+    return recordList
+
+## Clean up dirty names
+def mungeID(playerString):
+    return ''.join(e for e in playerString if e.isalnum()).lower().replace("jr.", "").replace("st.", "state") 
+
+#Unique ID generator
+def createNewID (fieldList, thisDict, fieldAgg):
+    finalID= ''
+    for i in thisDict:
+        i['displayName'] = i['playerName']
+        for idx, val in enumerate(fieldList):
+            if (type(i[val]) is list):
+                i[val]= mungeID(i[val][0])
+                if (len(fieldList) -1 == idx):
+                    finalID += str(i[val]).strip('[]').strip("''")
+            elif (type(val) is not list):
+                i[val] = mungeID(i[val])
+                if (len(fieldList) - 1 == idx):
+                    finalID += i[val]
+                else:
+                    finalID = i[val] + fieldAgg
+        i['ID'] = finalID
+        finalID=''
+
+#247Sports Specific Functions
 
 def get_247Teams (conference, schoolsJSON, years, headers, sleepyTime=4):
     for y in years:
@@ -47,23 +84,24 @@ def get_247PlayerProfiles (conference, teamDirectory, headers, sleepyTime=4):
                         time.sleep(sleepyTime)  
 
 def get_247ProspectProfiles (conference, playerDirectory, headers, sleepyTime=3):
+    count = 1
     for file in os.listdir(playerDirectory):
-        print(file)
         gameSoup = BeautifulSoup(open(playerDirectory + file, "r", encoding='utf-8').read(), 'lxml')
         fileName = file.split('_')
         playerName = fileName[0]
         team = fileName[1]
         year = fileName[3].split('.')[0]
         filenameString = cc.get_htmlDir('247', conference, 'prospects') + playerName + "_" + team + "_secondhop_" + year + ".html"
-        if (os.path.isfile(filenameString)):
-            print("file exists")
-        else:
+        if not (os.path.isfile(filenameString)):
             if (gameSoup.find("a", class_="view-profile-link") is not None):
                 prospectLink = gameSoup.find("a", class_="view-profile-link")['href']
                 req = requests.get(prospectLink, headers=headers)
                 filePath = "..//html//247//" + conference + "//prospects//" + playerName + "_" + team + "_secondhop_" + year + ".html"
                 cc.save_html(filePath, req.text)
                 time.sleep(sleepyTime)
+        if (count % 100 == 0):
+            print('Ive processed ' + count + ' files.')
+        count = count + 1
 
 def process_247Sports(prospectDirectory, teamDirectory):
     all_recruits = []
@@ -174,3 +212,127 @@ def process_247Sports(prospectDirectory, teamDirectory):
                         count += 1
             if player:
                 all_recruits.append(player)  
+    return all_recruits
+
+def summarize_247Sports():
+    inputDirectory = '..//scrapedData//'
+    dataset = 'sports247'
+
+    ## Load the id config
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
+
+    ## Load the source file dict
+    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
+    
+    sports247Data = mergeSourceFiles(dataset, inputDirectory, sourceFiles)
+    createNewID(idConfig[dataset], sports247Data, '_')
+    final247 = []
+    for record in sports247Data:
+        finalRecord = {}
+        finalRecord['ID'] = record['ID']
+        finalRecord['playerName'] = record['displayName']
+        finalRecord['year'] = record['year']
+        finalRecord['college'] = record['school']
+        finalRecord['highSchool'] = record['highSchool']
+        finalRecord['homeCity'] = record['city']
+        finalRecord['homeState'] = record['state']
+        finalRecord['position'] = record['position']
+        finalRecord['height'] = record['height']
+        finalRecord['weight'] = record['weight']
+        finalRecord['comp_stars'] = record['compStars']
+        finalRecord['comp_rating'] = record['compRating']
+        finalRecord['comp_natlRank'] = record['nationalRank']
+        finalRecord['comp_posRank'] = record['positionRank']
+        finalRecord['comp_stateRank'] = record['stateRank']
+        if ('247Rating' in record.keys()):
+            finalRecord['247_rating'] = record['247Rating']
+            finalRecord['247_stars'] = record['247Stars']
+        if ('247positionRank' in record.keys()):
+            finalRecord['247_positionRank'] = record['247positionRank'] 
+        if ('247stateRank' in record.keys()):
+            finalRecord['247_stateRank'] = record['247stateRank']
+        final247.append(finalRecord)
+
+    return final247
+
+# Rivals Specific Functions
+def get_Rivals(conference, schoolsJSON, years, headers, sleepyTime=4):
+    all_recruits = []
+    for y in years:
+        for school in schoolsJSON:
+            teamFile = "..//html//rivals//" + conference + "//teams//" + school['rivals'] + "_" + y + ".html"
+            # TO-DO - problem here is that if you have the team file, but not all of the player files - it won't fetch those.  so need to rethink this a bit. 
+            if not (os.path.isfile(teamFile)):
+                if (school['conference'][0] == conference):
+                    url = 'https://{}.rivals.com/commitments/football/{}'.format(school['rivals'],y)
+                    r = requests.get(url, headers=headers)
+                    gameSoup = BeautifulSoup(r.text, 'lxml')
+                    with open(teamFile, "w") as write_file:
+                        write_file.write(r.text)
+                    print(school['rivals'] + ": " + str(y))
+                    print('------------------------------')
+                    commitments = gameSoup.find("rv-commitments")['prospects']
+                    x = json.loads(commitments)
+
+                for commit in x:
+                    if not (path.exists("..//html//rivals//" + conference + "//recruits//" + str(commit['id']) + "_" + school['rivals'] + "_" + y + ".html")):
+                        #go to player page
+                        recruitRequest = requests.get(commit['url'], headers=headers)
+                        recruitSoup = BeautifulSoup(recruitRequest.text, 'lxml')
+                        with open("..//html//rivals//" + conference + "//recruits//" + str(commit['id']) + "_" + school['rivals'] + "_" + y + ".html", "w") as write_file:
+                            write_file.write(recruitRequest.text)
+                        print(commit['id'])
+                        time.sleep(sleepyTime)
+
+#Rivals specific schools check due to their naming philosophy
+def checkSchools(recruitSchool, conference):
+    
+    #clean recruitSchool
+    recruitSchoolCleaned = recruitSchool.lower().replace(" ", "").replace("&","")
+    #print (recruitSchoolCleaned)
+    for school in schools:
+        if (conference in school['conference']):
+            #print('rivals: ' + school['rivals']))
+            #print('recruit: ' + recruitSchoolCleaned)
+            if ('rivalsDisplay' in school.keys() and recruitSchool == school['rivalsDisplay']):
+                return school['id']
+
+def process_Rivals(recruitDir):
+    all_recruits = []
+    #error_files = [] 
+    for file in os.listdir(recruitDir):
+
+        player = {}
+        #get file contents and soup it
+        recruitSoup = BeautifulSoup(io.open(recruitDir + file, "r", encoding='utf-8').read(), 'lxml')
+
+        #find the magical html attr
+        if (recruitSoup.find("div", class_="profile-block") is not None):
+            recruitInfoJson = recruitSoup.find("div", class_="profile-block")['ng-init']
+            #this is harsh - but i'm removing an init() and a trailing id which always seems to be x characters long
+            recruitInfo = json.loads(recruitInfoJson[5:-57])
+
+            #player info
+            #change the rivals school to the proper id
+            #for school in schools:
+            #    print(school['rivals'] + " and " + recruitInfo['school_name'] )
+            #    if (recruitInfo['school_name'] == school['rivals']):
+            #        player['school'] = school['id']
+            player['school'] = checkSchools(recruitInfo['school_name'],conference)
+            player['year'] = str(recruitInfo['recruit_year'])
+            player['playerName'] = recruitInfo['full_name']
+            player['city'] = recruitInfo['city']
+            player['state'] = recruitInfo['state_abbreviation']
+            player['highSchool'] = recruitInfo['highschool_name']        
+            player['position'] = recruitInfo['position_group_abbreviation']
+            player['height'] = recruitInfo['height']
+            player['weight'] = recruitInfo['weight']
+            player['stars'] = recruitInfo['stars']
+            player['nationalRank'] = recruitInfo['national_rank']
+            player['positionRank'] = recruitInfo['position_rank']
+            player['stateRank'] = recruitInfo['state_rank']
+
+            all_recruits.append(player)
+        #else:
+            #error_files.append(file)
+    return all_recruits
