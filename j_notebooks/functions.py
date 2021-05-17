@@ -275,29 +275,28 @@ def get_Rivals(conference, schoolsJSON, years, headers, sleepyTime=4):
                     x = json.loads(commitments)
 
                 for commit in x:
-                    if not (path.exists("..//html//rivals//" + conference + "//recruits//" + str(commit['id']) + "_" + school['rivals'] + "_" + y + ".html")):
+                    if not (os.path.exists("..//html//rivals//" + conference + "//recruits//" + str(commit['id']) + "_" + school['rivals'] + "_" + y + ".html")):
                         #go to player page
                         recruitRequest = requests.get(commit['url'], headers=headers)
-                        recruitSoup = BeautifulSoup(recruitRequest.text, 'lxml')
                         with open("..//html//rivals//" + conference + "//recruits//" + str(commit['id']) + "_" + school['rivals'] + "_" + y + ".html", "w") as write_file:
                             write_file.write(recruitRequest.text)
                         print(commit['id'])
                         time.sleep(sleepyTime)
 
 #Rivals specific schools check due to their naming philosophy
-def checkSchools(recruitSchool, conference):
+def checkSchools(recruitSchool, conference, schoolsJSON):
     
     #clean recruitSchool
-    recruitSchoolCleaned = recruitSchool.lower().replace(" ", "").replace("&","")
+    #recruitSchoolCleaned = recruitSchool.lower().replace(" ", "").replace("&","")
     #print (recruitSchoolCleaned)
-    for school in schools:
+    for school in schoolsJSON:
         if (conference in school['conference']):
             #print('rivals: ' + school['rivals']))
             #print('recruit: ' + recruitSchoolCleaned)
             if ('rivalsDisplay' in school.keys() and recruitSchool == school['rivalsDisplay']):
                 return school['id']
 
-def process_Rivals(recruitDir):
+def process_Rivals(recruitDir, conference, schoolsJSON):
     all_recruits = []
     #error_files = [] 
     for file in os.listdir(recruitDir):
@@ -318,7 +317,7 @@ def process_Rivals(recruitDir):
             #    print(school['rivals'] + " and " + recruitInfo['school_name'] )
             #    if (recruitInfo['school_name'] == school['rivals']):
             #        player['school'] = school['id']
-            player['school'] = checkSchools(recruitInfo['school_name'],conference)
+            player['school'] = checkSchools(recruitInfo['school_name'],conference, schoolsJSON)
             player['year'] = str(recruitInfo['recruit_year'])
             player['playerName'] = recruitInfo['full_name']
             player['city'] = recruitInfo['city']
