@@ -21,7 +21,8 @@ def mergeSourceFiles (source, outputDir, sourceFiles):
 
 ## Clean up dirty names
 def mungeID(playerString):
-    return ''.join(e for e in playerString if e.isalnum()).lower().replace("jr.", "").replace("st.", "state") 
+    if (playerString is not None):
+        return ''.join(e for e in playerString if e.isalnum()).lower().replace("jr.", "").replace("st.", "state") 
 
 #Unique ID generator
 def createNewID (fieldList, thisDict, fieldAgg):
@@ -30,11 +31,17 @@ def createNewID (fieldList, thisDict, fieldAgg):
         i['displayName'] = i['playerName']
         for idx, val in enumerate(fieldList):
             if (type(i[val]) is list):
-                i[val]= mungeID(i[val][0])
+                try:
+                    i[val]= mungeID(i[val][0])
+                except:
+                    print(i)
                 if (len(fieldList) -1 == idx):
                     finalID += str(i[val]).strip('[]').strip("''")
             elif (type(val) is not list):
-                i[val] = mungeID(i[val])
+                try:
+                    i[val] = mungeID(i[val])
+                except:
+                    print(i)
                 if (len(fieldList) - 1 == idx):
                     finalID += i[val]
                 else:
@@ -335,3 +342,31 @@ def process_Rivals(recruitDir, conference, schoolsJSON):
         #else:
             #error_files.append(file)
     return all_recruits
+
+def summarize_Rivals():
+    inputDir = '..//scrapedData//'
+    dataset = 'rivals'
+
+    ## Load the id config
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
+
+    ## Load the source file dict
+    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
+
+    rivalsData = mergeSourceFiles(dataset, inputDir, sourceFiles)
+    
+    #troubleshooting
+    for i in rivalsData:
+        if (i['school'] is None):
+            print(i)
+
+    createNewID(idConfig[dataset], rivalsData, '_')
+    finalRivals = []
+    for record in rivalsData:
+        finalRecord = {}
+        finalRecord['ID'] = record['ID']
+        finalRecord['rivals_stars'] = record['stars']
+        finalRecord['rivals_natlRank'] = record['nationalRank']
+        finalRecord['rivals_posRank'] = record['positionRank']
+        finalRecord['rivals_stateRank'] = record['stateRank']
+        finalRivals.append(finalRecord)
