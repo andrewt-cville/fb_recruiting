@@ -21,8 +21,7 @@ def mergeSourceFiles (source, outputDir, sourceFiles):
 
 ## Clean up dirty names
 def mungeID(playerString):
-    if (playerString is not None):
-        return ''.join(e for e in playerString if e.isalnum()).lower().replace("jr.", "").replace("st.", "state") 
+    return ''.join(e for e in playerString if e.isalnum()).lower().replace("jr.", "").replace("st.", "state") 
 
 #Unique ID generator
 def createNewID (fieldList, thisDict, fieldAgg):
@@ -295,11 +294,9 @@ def checkSchools(recruitSchool, conference, schoolsJSON):
     
     #clean recruitSchool
     #recruitSchoolCleaned = recruitSchool.lower().replace(" ", "").replace("&","")
-    #print (recruitSchoolCleaned)
+
     for school in schoolsJSON:
         if (conference in school['conference']):
-            #print('rivals: ' + school['rivals']))
-            #print('recruit: ' + recruitSchoolCleaned)
             if ('rivalsDisplay' in school.keys() and recruitSchool == school['rivalsDisplay']):
                 return school['id']
 
@@ -354,11 +351,6 @@ def summarize_Rivals():
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
 
     rivalsData = mergeSourceFiles(dataset, inputDir, sourceFiles)
-    
-    #troubleshooting
-    for i in rivalsData:
-        if (i['school'] is None):
-            print(i)
 
     createNewID(idConfig[dataset], rivalsData, '_')
     finalRivals = []
@@ -370,3 +362,5 @@ def summarize_Rivals():
         finalRecord['rivals_posRank'] = record['positionRank']
         finalRecord['rivals_stateRank'] = record['stateRank']
         finalRivals.append(finalRecord)
+    
+    return finalRivals
