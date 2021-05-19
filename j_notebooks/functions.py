@@ -6,6 +6,7 @@ import os
 import io
 import json
 import core_constants as cc
+import string
 
 #Common Functions
 
@@ -24,10 +25,11 @@ def mungeID(playerString):
     return ''.join(e for e in playerString if e.isalnum()).lower().replace("jr.", "").replace("st.", "state") 
 
 #Unique ID generator
-def createNewID (fieldList, thisDict, fieldAgg):
+def createNewID (fieldList, thisDict, fieldAgg, ifNCAA = False):
     finalID= ''
     for i in thisDict:
-        i['displayName'] = i['playerName']
+        if not (ifNCAA):
+            i['displayName'] = i['playerName']
         for idx, val in enumerate(fieldList):
             if (type(i[val]) is list):
                 try:
@@ -48,7 +50,19 @@ def createNewID (fieldList, thisDict, fieldAgg):
         i['ID'] = finalID
         finalID=''
 
-#247Sports Specific Functions
+#this is used by NCAA but really should be leveraged everywhere
+def requestPage (url):
+    headers={'user-agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36'}
+    r = requests.get(url, headers=headers)
+    request = {}
+    request['status_code'] = r.status_code
+    request['reason'] = r.reason
+    request['text'] = r.text
+    return request
+
+# ---------------------------------------------------------------------------------------------------------------------------------------
+# 247Sports Specific Functions
+# ---------------------------------------------------------------------------------------------------------------------------------------
 
 def get_247Teams (conference, schoolsJSON, years, headers, sleepyTime=4):
     for y in years:
@@ -261,9 +275,11 @@ def summarize_247Sports():
 
     return final247
 
+# ---------------------------------------------------------------------------------------------------------------------------------------
 # Rivals Specific Functions
+# ---------------------------------------------------------------------------------------------------------------------------------------
+
 def get_Rivals(conference, schoolsJSON, years, headers, sleepyTime=4):
-    all_recruits = []
     for y in years:
         for school in schoolsJSON:
             teamFile = "..//html//rivals//" + conference + "//teams//" + school['rivals'] + "_" + y + ".html"
@@ -364,3 +380,104 @@ def summarize_Rivals():
         finalRivals.append(finalRecord)
     
     return finalRivals
+
+# ---------------------------------------------------------------------------------------------------------------------------------------
+# NCAA Specific Functions
+# ---------------------------------------------------------------------------------------------------------------------------------------
+
+def get_NCAA(schoolsList, ncaaDates, sleepyTime=6):
+    urlDict = []
+    for x in schoolsList:
+        if ('ncaa' in x.keys()):
+            thisUrl = {}
+            thisUrl['team'] = x['id']
+            thisUrl['conference'] = x['conference'][0]
+            thisUrl['ncaa'] = 'http://stats.ncaa.org/team/' + x['ncaa'] + '/roster/'
+            urlDict.append(thisUrl)
+
+    for x in urlDict:
+        for year in ncaaDates:
+            filename = "..//html//ncaa//" + x['conference'] + "//rosters//" + x['team'] + "_" + year['year'] + ".html"
+            if not(os.path.isfile(filename)):
+                request = requestPage(x['ncaa'] + year['id'])
+                if (request['status_code'] == 200):
+                    with open(filename, "w", encoding="utf-8") as write_file:
+                        write_file.write(request['text'])
+                time.sleep(sleepyTime)
+
+def process_NCAA(conferences):
+    for conf in conferences:
+        rosterDir= "..//html//ncaa//" + conf + "//rosters//"
+        playerData = []
+        for file in os.listdir(rosterDir):
+            gameSoup = BeautifulSoup(open(rosterDir + file, "r", encoding='utf-8').read(), 'lxml')
+            for x in gameSoup.find_all("tr", class_=""): 
+                count = 0
+                player={}
+                player['team'] = file.split("_")[0]
+                player['year'] = file.split("_")[1].split(".")[0]
+                for z in x.find_all("td"):
+                    if (count == 1):
+                        player['name'] = z.text.strip()
+                    elif (count == 2):
+                        player['position'] = z.text.strip()
+                    elif (count == 4):
+                        player['gamesPlayed'] = z.text.strip()
+                    elif (count == 5):
+                        player['gamesStarted'] = z.text.strip()
+                    count = count + 1
+                playerData.append(player)
+    
+    for player in playerData:
+        newName = player['name'].split(',')
+        player['name'] = newName[1].strip() + ' ' + newName[0].strip()
+    
+    return playerData
+
+def searchID(identifier, dataList):
+    return [element for element in dataList if (element['ID'] == identifier)]
+
+def search(name, team, dataList):
+    return [element for element in dataList if (element['name'] == name and element['team'] == team)]
+
+def summarize_NCAA():
+    inputDir = '..//scrapedData//'
+    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
+    ncaaData = json.loads(open(inputDir + sourceFiles['ncaa'][0], "r", encoding="utf-8").read())
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
+
+    createNewID(idConfig['ncaa'], ncaaData, '_', True)
+
+    finalOutput = []
+    for x in ncaaData:
+        if (len(searchID(x['ID'], finalOutput)) == 0):
+            playerList = search(x['name'], x['team'], ncaaData)
+            finalPlayer = {}
+            finalPlayer['ID'] = x['ID']
+            finalPlayer['name'] = x['name']
+            finalPlayer['team'] = x['team']
+            gamesPlayed = 0
+            gamesStarted = 0
+            year = 2021
+            for y in playerList:
+                gamesPlayed = gamesPlayed + int(y['gamesPlayed'])
+                gamesStarted = gamesStarted + int(y['gamesStarted'])
+                if (int(y['year']) < int(year)):
+                    year = y['year']
+            finalPlayer['gamesPlayed'] = gamesPlayed
+            finalPlayer['gamesStarted'] = gamesStarted
+            finalPlayer['year'] = year
+            finalOutput.append(finalPlayer)
+    
+    for record in finalOutput:
+        record['ncaa_gamesPlayed'] = record['gamesPlayed']
+        record['ncaa_gamesStarted'] = record['gamesStarted']
+        del record['gamesPlayed']
+        del record['gamesStarted']
+        del record['year']
+        del record['name']
+        del record['team']
+        if ('position' in record.keys()):
+            del record['position']
+    
+    return(finalOutput)
