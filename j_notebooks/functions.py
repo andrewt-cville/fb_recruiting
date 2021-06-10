@@ -294,16 +294,15 @@ def get_Rivals(conference, schoolsJSON, years, headers, sleepyTime=4):
                     print(school['rivals'] + ": " + str(y))
                     print('------------------------------')
                     commitments = gameSoup.find("rv-commitments")['prospects']
-                    x = json.loads(commitments)
 
-                for commit in x:
-                    if not (os.path.exists("..//html//rivals//" + conference + "//recruits//" + str(commit['id']) + "_" + school['rivals'] + "_" + y + ".html")):
-                        #go to player page
-                        recruitRequest = requests.get(commit['url'], headers=headers)
-                        with open("..//html//rivals//" + conference + "//recruits//" + str(commit['id']) + "_" + school['rivals'] + "_" + y + ".html", "w") as write_file:
-                            write_file.write(recruitRequest.text)
-                        print(commit['id'])
-                        time.sleep(sleepyTime)
+                    for commit in json.loads(commitments):
+                        if not (os.path.exists("..//html//rivals//" + conference + "//recruits//" + str(commit['id']) + "_" + school['rivals'] + "_" + y + ".html")):
+                            #go to player page
+                            recruitRequest = requests.get(commit['url'], headers=headers)
+                            with open("..//html//rivals//" + conference + "//recruits//" + str(commit['id']) + "_" + school['rivals'] + "_" + y + ".html", "w") as write_file:
+                                write_file.write(recruitRequest.text)
+                            print(commit['id'])
+                            time.sleep(sleepyTime)
 
 #Rivals specific schools check due to their naming philosophy
 def checkSchools(recruitSchool, conference, schoolsJSON):
@@ -332,11 +331,8 @@ def process_Rivals(recruitDir, conference, schoolsJSON):
             recruitInfo = json.loads(recruitInfoJson[5:-57])
 
             #player info
-            #change the rivals school to the proper id
-            #for school in schools:
-            #    print(school['rivals'] + " and " + recruitInfo['school_name'] )
-            #    if (recruitInfo['school_name'] == school['rivals']):
-            #        player['school'] = school['id']
+            #rawSchool is helpful for troubleshooting rivals school names
+            player['rawSchool'] = recruitInfo['school_name']
             player['school'] = checkSchools(recruitInfo['school_name'],conference, schoolsJSON)
             player['year'] = str(recruitInfo['recruit_year'])
             player['playerName'] = recruitInfo['full_name']

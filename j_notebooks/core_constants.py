@@ -20,7 +20,7 @@ def get_htmlDir(source, conference, level):
     return "..//html//{}//{}//{}//".format(source, conference, level)
 
 def get_availableConferences():
-    print('Available conferences are: bigten, bigtwelve, acc, sec')
+    return ['bigten', 'bigtwelve', 'acc', 'sec', 'pactwelve', 'american']
 
 def save_files(filePath, filePersist):
     with open(filePath, "w") as write_file:
