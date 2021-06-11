@@ -477,3 +477,17 @@ def summarize_NCAA():
             del record['position']
     
     return(finalOutput)
+
+# ---------------------------------------------------------------------------------------------------------------------------------------
+# All Conference Specific Functions
+# ---------------------------------------------------------------------------------------------------------------------------------------
+
+def get_WikipediaAllConf(pageTitles, headers, years, sleepyTime = 5):
+
+    for page in pageTitles:
+        for y in years:
+            url = 'https://en.wikipedia.org/wiki/{}_{}'.format(y,page[1])
+            r = requests.get(url, headers=headers)
+            with open("..//html//wikipedia//allconference//" + page[0] + "//" + y + ".html", "w", encoding="utf-8") as write_file:
+                write_file.write(r.text)
+            time.sleep(sleepyTime)
