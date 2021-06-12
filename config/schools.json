@@ -971,5 +971,97 @@
         "cfb-ref":"ucf",
         "cfb-db":"",
         "ncaa":"128"
+    },
+    {
+        "id":"army",
+        "displayname":"Army",
+        "nickname" : "Black Knights",
+        "conference": ["independents"],
+        "247":"army",
+        "rivals":"army",
+        "rivalsDisplay":"Army",
+        "wikipedia":"",
+        "cfb-ref":"ucf",
+        "cfb-db":"",
+        "ncaa":"725"
+    },
+    {
+        "id":"byu",
+        "displayname":"BYU",
+        "nickname" : "Cougars",
+        "conference": ["independents"],
+        "247":"byu",
+        "rivals":"byu",
+        "rivalsDisplay":"Brigham Young",
+        "wikipedia":"",
+        "cfb-ref":"byu",
+        "cfb-db":"",
+        "ncaa":"77"
+    },
+    {
+        "id":"uconn",
+        "displayname":"Connecticut",
+        "nickname" : "Huskies",
+        "conference": ["independents"],
+        "247":"uconn",
+        "rivals":"connecticut",
+        "rivalsDisplay":"Connecticut",
+        "wikipedia":"",
+        "cfb-ref":"uconn",
+        "cfb-db":"",
+        "ncaa":"164"
+    },
+    {
+        "id":"liberty",
+        "displayname":"Liberty",
+        "nickname" : "Flames",
+        "conference": ["independents"],
+        "247":"liberty",
+        "rivals":"",
+        "rivalsDisplay":"",
+        "wikipedia":"",
+        "cfb-ref":"liberty",
+        "cfb-db":"",
+        "ncaa":"355"
+    },
+    {
+        "id":"new-mexico-state",
+        "displayname":"New Mexico State",
+        "nickname" : "Aggies",
+        "conference": ["independents"],
+        "247":"new-mexico-state",
+        "rivals":"newmexicostate",
+        "rivalsDisplay":"New Mexico State",
+        "wikipedia":"",
+        "cfb-ref":"new mexico state",
+        "cfb-db":"",
+        "ncaa":"472"
+    },
+    {
+        "id":"notre-dame",
+        "displayname":"Notre Dame",
+        "nickname" : "Irish",
+        "conference": ["independents"],
+        "247":"notre-dame",
+        "rivals":"notredame",
+        "rivalsDisplay":"Notre Dame",
+        "wikipedia":"",
+        "cfb-ref":"notre dame",
+        "cfb-db":"",
+        "ncaa":"513"
+    },
+    {
+        "id":"massachusetts",
+        "displayname":"Massachusetts",
+        "nickname" : "Minutemen",
+        "conference": ["independents"],
+        "247":"massachusetts",
+        "rivals":"",
+        "rivalsDisplay":"",
+        "wikipedia":"",
+        "cfb-ref":"massachusetts",
+        "cfb-db":"",
+        "ncaa":"400"
     }
+    
 ]
