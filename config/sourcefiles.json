@@ -4,14 +4,18 @@
             "247_bigten.json",
             "247_bigtwelve.json",
             "247_sec.json",
-            "247_acc.json"
+            "247_acc.json",
+            "247_pactwelve.json",
+            "247_american.json"
         ], 
     "rivals" : 
         [
             "rivals_bigten.json",
             "rivals_bigtwelve.json",
             "rivals_sec.json",
-            "rivals_acc.json"
+            "rivals_acc.json",
+            "rivals_pactwelve.json",
+            "rivals_american.json"
         ],
     "cfbRef" : 
         [
@@ -23,7 +27,7 @@
         [
             "SECAllConf.json", 
             "Ten12AllConf.json",
-            "csv_all.json"
+            "allConf.json"
         ],
     "allAmerican" :
         [

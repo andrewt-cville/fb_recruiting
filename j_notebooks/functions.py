@@ -7,8 +7,11 @@ import io
 import json
 import core_constants as cc
 import string
+import csv
 
-#Common Functions
+# ---------------------------------------------------------------------------------------------------------------------------------------
+# Common Functions
+# ---------------------------------------------------------------------------------------------------------------------------------------
 
 ## If there are multiple files for any given dataset, then this function will combine all of those
 ## records into a single dicti
@@ -59,6 +62,16 @@ def requestPage (url):
     request['reason'] = r.reason
     request['text'] = r.text
     return request
+
+def searchID(identifier, dataList):
+    return [element for element in dataList if (element['ID'] == identifier)]
+
+# TO DO!!!!!! CLEAN THESE PLEASE
+def search(name, team, dataList):
+    return [element for element in dataList if (element['name'] == name and element['team'] == team)]
+
+def searchAllConf(name, team, dataList):
+    return [element for element in dataList if (element['playerName'] == name and element['school'] == team)]
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # 247Sports Specific Functions
@@ -120,7 +133,7 @@ def get_247ProspectProfiles (conference, playerDirectory, headers, sleepyTime=3)
                 cc.save_html(filePath, req.text)
                 time.sleep(sleepyTime)
         if (count % 100 == 0):
-            print('Ive processed ' + count + ' files.')
+            print('Ive processed ' + str(count) + ' files.')
         count = count + 1
 
 def process_247Sports(prospectDirectory, teamDirectory):
@@ -322,7 +335,7 @@ def process_Rivals(recruitDir, conference, schoolsJSON):
 
         player = {}
         #get file contents and soup it
-        recruitSoup = BeautifulSoup(io.open(recruitDir + file, "r", encoding='utf-8').read(), 'lxml')
+        recruitSoup = BeautifulSoup(io.open(recruitDir + file, "r", encoding='windows-1252').read(), 'lxml')
 
         #find the magical html attr
         if (recruitSoup.find("div", class_="profile-block") is not None):
@@ -430,12 +443,6 @@ def process_NCAA(conferences):
     
     return playerData
 
-def searchID(identifier, dataList):
-    return [element for element in dataList if (element['ID'] == identifier)]
-
-def search(name, team, dataList):
-    return [element for element in dataList if (element['name'] == name and element['team'] == team)]
-
 def summarize_NCAA():
     inputDir = '..//scrapedData//'
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
@@ -491,3 +498,176 @@ def get_WikipediaAllConf(pageTitles, headers, years, sleepyTime = 5):
             with open("..//html//wikipedia//allconference//" + page[0] + "//" + y + ".html", "w", encoding="utf-8") as write_file:
                 write_file.write(r.text)
             time.sleep(sleepyTime)
+
+def process_WikipediaBigTenBigTwelve(teamDir):
+    all_players = []
+    for folder in teamDir:
+        for file in os.listdir(folder):
+            wikiSoup = BeautifulSoup(open(folder + file, "r", encoding="utf-8").read(), 'lxml')
+            y = file.split('.')[0]
+            
+            for x in wikiSoup.find_all("li", class_=""):
+                if ((",") in x.text and ("(") in x.text and (")") in x.text and ("{") not in x.text \
+                    and ("Archived") not in x.text and ("Gridiron") not in x.text and ("edited") not in x.text \
+                    and ("all-purpose") not in x.text and ("Football") not in x.text and ("Coaches")):
+                    player = {}
+                    playerInfo = x.text.split(",", 1)
+                    #year
+                    player['year'] = y
+                    #name
+                    player['playerName'] = playerInfo[0]
+                    #schoolAndAwardsFX
+                    playerSAF = playerInfo[1].split("(", 1)
+                    if(len(playerSAF) > 1):
+                        #school
+                        player['school'] = playerSAF[0].strip()
+                        #AwardsFX
+                        playerAwards = playerSAF[1].split(";")
+                        if ("Coaches" in playerAwards[0] and len(playerAwards)> 1):
+                            playerCoaches = playerAwards[0].split("-", 1)
+                            player['coaches'] = playerCoaches[1][:1]           
+                        elif ("Coaches" in playerAwards[0] and len(playerAwards) == 1):
+                            playerCoaches = playerAwards[0].split("-", 1)
+                            player['coaches'] = playerCoaches[1][:-1]
+                            player['media'] = "0"
+                        elif ("Media" in playerAwards[0]):
+                            playerMedia = playerAwards[0].split("-", 1)
+                            player['coaches'] = "0"
+                            player['media'] = playerMedia[1][:1]
+                        if (len(playerAwards) > 1 and ("Media" in playerAwards[1])):
+                            playerMedia = playerAwards[1].split("-", 1)
+                            player['media'] = playerMedia[1][:1]
+                        else:
+                            player['media'] = "0"
+                        all_players.append(player)
+    
+    for player in all_players:
+        if (len(player['coaches']) == 3):
+            player['coaches'] == player['coaches'][0]
+        if (len(player['media']) == 3):
+            player['media'] == player['media'][0]
+        
+        player['team'] = max(player['coaches'], player['media'])
+
+    for player in all_players:
+        del player['coaches']
+        del player['media']
+    
+    return all_players
+
+def process_WikipediaSEC(teamDir):
+    all_players = []
+    for file in os.listdir(teamDir):
+        wikiSoup = BeautifulSoup(open(teamDir + file, "r", encoding="utf-8").read(), 'lxml')
+        y = file.split('.')[0]
+        for x in wikiSoup.find_all("li", class_=""):
+            if ((",") in x.text and ("(") in x.text and (")") in x.text and ("{") not in x.text \
+                and ("Archived") not in x.text and ("^") not in x.text and ("Gridiron") not in x.text \
+                and ("edited") not in x.text \
+                and ("all-purpose") not in x.text and ("Football") not in x.text and ("Coaches")):
+                player = {}
+                playerInfo = x.text.split(",", 1)
+                #year
+                player['year'] = y
+                #name
+                player['playerName'] = playerInfo[0]
+                #schoolAndAwardsFX
+                playerSAF = playerInfo[1].split("(", 1)
+                if(len(playerSAF) > 1):
+                    #school
+                    player['school'] = playerSAF[0].strip()
+                    #AwardsFX
+                    if ("," in playerSAF[1]):
+                        playerAwards = playerSAF[1].split(",")
+                    if (";" in playerSAF[1]):
+                        playerAwards = playerSAF[1].split(",")
+                    if ("AP" in playerAwards[0] and len(playerAwards)> 1):
+                        playerCoaches = playerAwards[0].split("-", 1)
+                        player['coaches'] = playerCoaches[1][:1]              
+                    elif ("AP" in playerAwards[0] and len(playerAwards) == 1):
+                        playerCoaches = playerAwards[0].split("-", 1)
+                        player['coaches'] = playerCoaches[1][:-1] 
+                        player['media'] = "0"
+                    elif ("Coaches" in playerAwards[0]):
+                        playerMedia = playerAwards[0].split("-", 1)
+                        player['coaches'] = "0"
+                        player['media'] = playerMedia[1][:1]
+                    if (len(playerAwards) > 1 and ("Coaches" in playerAwards[1])):
+                        playerMedia = playerAwards[1].split("-", 1)
+                        player['media'] = playerMedia[1][:1]
+                    else:
+                        player['media'] = "0"
+                    all_players.append(player)   
+
+    for player in all_players:
+        if (len(player['coaches']) == 3):
+            player['coaches'] == player['coaches'][0]
+        if (len(player['media']) == 3):
+            player['media'] == player['media'][0]
+    
+        player['team'] = max(player['coaches'], player['media'])
+
+    for player in all_players:
+        del player['coaches']
+        del player['media']
+    
+    return all_players
+
+def get_csvAllConf(filename):
+    csvFile = csv.DictReader(open(filename))
+    finalList = []
+    for record in csvFile:
+        finalList.append(record)
+    
+    return finalList
+
+def process_csvAllConf(records):
+    for record in records:
+        try:
+            record['playerName'] = record['First Name'] + ' ' + record['Last Name']
+            record['school'] = record['School']
+            record['position'] = record['POSITION']
+            record['year'] = record['Year']
+            record['team'] = record['Team']
+            if (len(record['team']) > 1 ):
+                record['team'] = record['team'][0]
+        except:
+            print (record)
+
+    for record in records:
+        del record['School']
+        del record['POSITION']
+        del record['First Name']
+        del record['Last Name']
+        del record['Year']
+        del record['Team']
+    
+    return records
+
+def summarize_allConf():
+    inputDirectory = '..//scrapedData//'
+    dataset = 'allConf'
+
+    ## Load the id config
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
+
+    ## Load the source file dict
+    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
+    
+    allConfData = mergeSourceFiles(dataset, inputDirectory, sourceFiles)
+    createNewID(idConfig[dataset], allConfData, '_')
+    finalOutput = []
+    for x in allConfData:
+        if (len(searchID(x['ID'], finalOutput)) == 0):
+            try:
+                playerList = searchAllConf(x['playerName'], x['school'], allConfData)
+                finalPlayer = {}
+                finalPlayer['ID'] = x['ID']
+                finalPlayer['team'] = x['team']
+            
+            except:
+                print (x)
+            
+            finalOutput.append(finalPlayer)
+    
+    return finalOutput
