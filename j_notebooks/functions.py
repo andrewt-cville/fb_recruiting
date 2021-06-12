@@ -73,6 +73,9 @@ def search(name, team, dataList):
 def searchAllConf(name, team, dataList):
     return [element for element in dataList if (element['playerName'] == name and element['school'] == team)]
 
+def searchAllAmerican(name, team, dataList):
+    return [element for element in dataList if (element['player'] == name and element['school'] == team)]
+
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # 247Sports Specific Functions
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -669,5 +672,179 @@ def summarize_allConf():
                 print (x)
             
             finalOutput.append(finalPlayer)
+    
+    return finalOutput
+
+# ---------------------------------------------------------------------------------------------------------------------------------------
+# Sports Reference - NFL Draft Specific Functions
+# NOTE: we don't keep the html files locally for this dataset, so get/process are one step
+# ---------------------------------------------------------------------------------------------------------------------------------------
+
+def handle_nflData(years, headers, sleepyTime=10):
+    all_picks = []
+    for y in years:
+        url = 'https://www.pro-football-reference.com/years/{}/draft.htm'.format(y)
+        r = requests.get(url, headers=headers)
+        draftSoup = BeautifulSoup(r.text, 'lxml')
+        draftTableSoup = draftSoup.find("table", class_="stats_table")
+        tableBodySoup = draftTableSoup.find("tbody")
+        for x in tableBodySoup.find_all("tr"):
+            if (x.find("td", attrs={"data-stat":"draft_pick"}) is not None):
+                draftPick = []
+                draftPick.append(y)
+                draftPick.append(x.find("th", attrs={"data-stat":"draft_round"}).text)
+                draftPick.append(x.find("td", attrs={"data-stat":"draft_pick"}).text)
+                draftPick.append(x.find("td", attrs={"data-stat":"team"}).text)       
+                draftPick.append(x.find("td", attrs={"data-stat":"player"}).text)
+                draftPick.append(x.find("td", attrs={"data-stat":"pos"}).text)
+                draftPick.append(x.find("td", attrs={"data-stat":"all_pros_first_team"}).text)
+                draftPick.append(x.find("td", attrs={"data-stat":"pro_bowls"}).text)
+                draftPick.append(x.find("td", attrs={"data-stat":"years_as_primary_starter"}).text)
+                draftPick.append(x.find("td", attrs={"data-stat":"g"}).text)
+                draftPick.append(x.find("td", attrs={"data-stat":"college_id"}).text)
+                all_picks.append(draftPick)
+        time.sleep(sleepyTime)
+    
+    final_nflDraft = []
+    nfl_keys = ['year', 'draft_round', 'draft_pick', 'team', 'player', 'pos', 'all_pros_first_team', 'pro_bowls', 'years_as_primary_starter', 'g', 'college_id']
+
+    for list in all_picks:
+        newdict = {nfl_keys[i]: list[i] for i in range(len(nfl_keys))}
+        final_nflDraft.append(newdict)
+        newdict = {}
+    
+    return final_nflDraft
+
+def summarize_nflDraft ():
+    inputDir = '..//scrapedData//'
+    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
+    nflData = json.loads(open(inputDir + sourceFiles['nflData'][0], "r", encoding="utf-8").read())
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
+
+    createNewID(idConfig['nflData'], nflData, '_', True)
+
+    for x in nflData:
+        x['draft_year'] = x['year']
+    
+    for record in nflData:
+        del record['year']
+        del record['player']
+        del record['college_id']
+
+    return nflData
+
+# ---------------------------------------------------------------------------------------------------------------------------------------
+# Wikipedia - All American Specific Functions
+# NOTE: we don't keep the html files locally for this dataset, so get/process are one step
+# ---------------------------------------------------------------------------------------------------------------------------------------
+
+def handle_allAmerican(years, headers, sleepyTime=5):
+    all_players = []
+    for y in years: 
+        url = 'https://en.wikipedia.org/wiki/{}_College_Football_All-America_Team'.format(y)
+        r = requests.get(url, headers=headers)
+        aaSoup = BeautifulSoup(r.text, 'lxml')
+        for x in aaSoup.find_all("li", class_=""):
+            try:
+                player = []
+                if ((",") in x.text and ("(") in x.text and (")") in x.text and ("{") not in x.text \
+                    and ("Archived") not in x.text and ("Gridiron") not in x.text and ("edited") not in x.text \
+                    and ("all-purpose") not in x.text and ("Football") not in x.text and ("Foundation") not in x.text):
+                    playerInfo = x.text.split(",", 1)
+                    #year
+                    player.append(y)
+                    #Name
+                    player.append(playerInfo[0])
+                    playerInfo[1] = playerInfo[1].replace("(Fla.)", "FL")
+                    playerLocationAwards = playerInfo[1].split("(",1)
+                    #School
+                    if ("CONSENSUS" in x.text):
+                        playerLocationAwards[0] = playerLocationAwards[0].replace("-- CONSENSUS --", "")
+                        player.append(playerLocationAwards[0])
+                    elif ("UNANIMOUS" in x.text):
+                        playerLocationAwards[0] = playerLocationAwards[0].replace("-- UNANIMOUS --", "")
+                        player.append(playerLocationAwards[0])
+                    else:
+                        player.append(playerLocationAwards[0].strip())
+                    #Awards String
+                    awardString = playerLocationAwards[1]
+                    #coaches (AFCA)
+                    if ("AFCA" in awardString):
+                        player.append("1")
+                    else:
+                        player.append("0")
+                    #associated press (AP)
+                    if ("AP" in awardString):
+                        player.append("1")
+                    else:
+                        player.append("0")
+                    #writers (FWAA)
+                    if ("FWAA" in awardString):
+                        player.append("1")
+                    else:
+                        player.append("0")
+                    #sporting news (TSN)
+                    if ("TSN" in awardString):
+                        player.append("1")
+                    else:
+                        player.append("0")
+                    #walter camp (WCFF)
+                    if ("WCFF" in awardString):
+                        player.append("1")
+                    else:
+                        player.append("0")
+                    all_players.append(player)
+            except:
+                print(x)
+    time.sleep(sleepyTime)
+
+    final_aaSelections = []
+    aa_keys = ['year', 'player', 'school', 'afca', 'ap', 'fwaa', 'tsn', 'wcff']
+
+    for list in all_players:
+        newdict = {aa_keys[i]: list[i] for i in range(len(aa_keys))}
+        final_aaSelections.append(newdict)
+        newdict = {}
+    
+    return final_aaSelections
+
+def summarize_allAmerican():
+    inputDir = '..//scrapedData//'
+    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
+    aaData = json.loads(open(inputDir + sourceFiles['allAmerican'][0], "r", encoding="utf-8").read())
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
+
+    createNewID(idConfig['allAmerican'], aaData, '_', True)
+
+    finalOutput = []
+    for x in aaData:
+        if (len(searchID(x['ID'], finalOutput)) == 0):
+            playerList = searchAllAmerican(x['player'], x['school'], aaData)
+            finalPlayer = {}
+            finalPlayer['ID'] = x['ID']
+            finalPlayer['player'] = x['player']
+            finalPlayer['school'] = x['school']
+            year = 2021
+            afca = ap = fwaa = tsn = wcff = 0
+            for y in playerList:
+                afca = afca + int(y['afca'])
+                ap = ap + int(y['ap'])
+                fwaa = fwaa + int(y['fwaa'])
+                tsn = tsn + int(y['tsn'])
+                wcff = wcff + int(y['wcff'])
+                if (int(y['year']) < int(year)):
+                    year = y['year']
+            finalPlayer['afca'] = afca
+            finalPlayer['ap'] = ap
+            finalPlayer['fwaa'] = fwaa
+            finalPlayer['tsn'] = tsn
+            finalPlayer['wcff'] = wcff
+            finalPlayer['year'] = year
+            finalOutput.append(finalPlayer)
+
+    for record in finalOutput:
+        del record['year']
+        del record['player']
+        del record['school']
     
     return finalOutput
