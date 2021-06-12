@@ -223,6 +223,7 @@ def process_247Sports(prospectDirectory, teamDirectory):
                             if (rating.select('div[class*="rank-block"]') is not None):
                                 player['247Rating'] = (rating.select('div[class*="rank-block"]')[0].text)
                             #Stars
+                            ratingChildren = []
                             for ratingChild in rating.select('span[class*="icon-starsolid yellow"]'):
                                 ratingChildren.append(ratingChild)
                             i = 0
