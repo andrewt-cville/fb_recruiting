@@ -143,7 +143,7 @@ def process_247Sports(prospectDirectory, teamDirectory):
     all_recruits = []
 
     for file in os.listdir(teamDirectory):
-        gameSoup = BeautifulSoup(open(teamDirectory + file, "r", encoding='utf-8').read(), 'lxml')
+        gameSoup = BeautifulSoup(open(teamDirectory + file, "r", encoding='windows-1252').read(), 'lxml')
         team = file.split('_')[0]
         y = (file.split('_')[1]).split('.')[0]
         for x in gameSoup.find_all("li", class_="ri-page__list-item"):
