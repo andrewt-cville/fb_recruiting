@@ -6,7 +6,8 @@
             "247_sec.json",
             "247_acc.json",
             "247_pactwelve.json",
-            "247_american.json"
+            "247_american.json",
+            "247_independents.json"
         ], 
     "rivals" : 
         [
@@ -15,7 +16,8 @@
             "rivals_sec.json",
             "rivals_acc.json",
             "rivals_pactwelve.json",
-            "rivals_american.json"
+            "rivals_american.json",
+            "rivals_independents"
         ],
     "cfbRef" : 
         [
