@@ -422,9 +422,9 @@ def get_NCAA(schoolsList, ncaaDates, sleepyTime=6):
                 time.sleep(sleepyTime)
 
 def process_NCAA(conferences):
+    playerData = []
     for conf in conferences:
         rosterDir= "..//html//ncaa//" + conf + "//rosters//"
-        playerData = []
         for file in os.listdir(rosterDir):
             gameSoup = BeautifulSoup(open(rosterDir + file, "r", encoding='utf-8').read(), 'lxml')
             for x in gameSoup.find_all("tr", class_=""): 
