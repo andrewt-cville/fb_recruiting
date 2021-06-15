@@ -140,7 +140,10 @@ def process_247Sports(prospectDirectory, teamDirectory):
     all_recruits = []
 
     for file in os.listdir(teamDirectory):
-        gameSoup = BeautifulSoup(open(teamDirectory + file, "r", encoding='windows-1252').read(), 'lxml')
+        try:
+            gameSoup = BeautifulSoup(open(teamDirectory + file, "r", encoding='windows-1252').read(), 'lxml')
+        except:
+            print(file)
         team = file.split('_')[0]
         y = (file.split('_')[1]).split('.')[0]
         for x in gameSoup.find_all("li", class_="ri-page__list-item"):
@@ -295,27 +298,28 @@ def summarize_247Sports():
 def get_Rivals(conference, schoolsJSON, years, headers, sleepyTime=4):
     for y in years:
         for school in schoolsJSON:
-            teamFile = "..//html//rivals//" + conference + "//teams//" + school['rivals'] + "_" + y + ".html"
-            # TO-DO - problem here is that if you have the team file, but not all of the player files - it won't fetch those.  so need to rethink this a bit. 
-            if not (os.path.isfile(teamFile)):
-                if (school['conference'][0] == conference):
-                    url = 'https://{}.rivals.com/commitments/football/{}'.format(school['rivals'],y)
-                    r = requests.get(url, headers=headers)
-                    gameSoup = BeautifulSoup(r.text, 'lxml')
-                    with open(teamFile, "w") as write_file:
-                        write_file.write(r.text)
-                    print(school['rivals'] + ": " + str(y))
-                    print('------------------------------')
-                    commitments = gameSoup.find("rv-commitments")['prospects']
+            if ('rivals' in school.keys()):
+                teamFile = "..//html//rivals//" + conference + "//teams//" + school['rivals'] + "_" + y + ".html"
+                # TO-DO - problem here is that if you have the team file, but not all of the player files - it won't fetch those.  so need to rethink this a bit. 
+                if not (os.path.isfile(teamFile)):
+                    if (school['conference'][0] == conference):
+                        url = 'https://{}.rivals.com/commitments/football/{}'.format(school['rivals'],y)
+                        r = requests.get(url, headers=headers)
+                        gameSoup = BeautifulSoup(r.text, 'lxml')
+                        with open(teamFile, "w") as write_file:
+                            write_file.write(r.text)
+                        print(school['rivals'] + ": " + str(y))
+                        print('------------------------------')
+                        commitments = gameSoup.find("rv-commitments")['prospects']
 
-                    for commit in json.loads(commitments):
-                        if not (os.path.exists("..//html//rivals//" + conference + "//recruits//" + str(commit['id']) + "_" + school['rivals'] + "_" + y + ".html")):
-                            #go to player page
-                            recruitRequest = requests.get(commit['url'], headers=headers)
-                            with open("..//html//rivals//" + conference + "//recruits//" + str(commit['id']) + "_" + school['rivals'] + "_" + y + ".html", "w") as write_file:
-                                write_file.write(recruitRequest.text)
-                            print(commit['id'])
-                            time.sleep(sleepyTime)
+                        for commit in json.loads(commitments):
+                            if not (os.path.exists("..//html//rivals//" + conference + "//recruits//" + str(commit['id']) + "_" + school['rivals'] + "_" + y + ".html")):
+                                #go to player page
+                                recruitRequest = requests.get(commit['url'], headers=headers)
+                                with open("..//html//rivals//" + conference + "//recruits//" + str(commit['id']) + "_" + school['rivals'] + "_" + y + ".html", "w") as write_file:
+                                    write_file.write(recruitRequest.text)
+                                print(commit['id'])
+                                time.sleep(sleepyTime)
 
 #Rivals specific schools check due to their naming philosophy
 def checkSchools(recruitSchool, conference, schoolsJSON):
