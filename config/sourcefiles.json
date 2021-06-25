@@ -8,7 +8,8 @@
             "247_pactwelve.json",
             "247_american.json",
             "247_independents.json",
-            "247_cusa.json"
+            "247_cusa.json",
+            "247_mac.json"
         ], 
     "rivals" : 
         [
@@ -19,7 +20,8 @@
             "rivals_pactwelve.json",
             "rivals_american.json",
             "rivals_independents.json",
-            "rivals_cusa.json"
+            "rivals_cusa.json",
+            "rivals_mac.json"
         ],
     "cfbRef" : 
         [
