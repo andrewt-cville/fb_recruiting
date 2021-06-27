@@ -28,11 +28,14 @@ def mungeID(playerString):
     return ''.join(e for e in playerString if e.isalnum()).lower().replace("jr.", "").replace("st.", "state") 
 
 #Unique ID generator
-def createNewID (fieldList, thisDict, fieldAgg, ifNCAA = False):
+def createNewID (fieldList, thisDict, fieldAgg, ifAlternate = False):
     finalID= ''
     for i in thisDict:
-        if not (ifNCAA):
-            i['displayName'] = i['playerName']
+        if not (ifAlternate):
+            try:
+                i['displayName'] = i['playerName']
+            except:
+                print(i)
         for idx, val in enumerate(fieldList):
             if (type(i[val]) is list):
                 try:
@@ -711,7 +714,7 @@ def handle_nflData(years, headers, sleepyTime=10):
         time.sleep(sleepyTime)
     
     final_nflDraft = []
-    nfl_keys = ['year', 'draft_round', 'draft_pick', 'team', 'player', 'pos', 'all_pros_first_team', 'pro_bowls', 'years_as_primary_starter', 'g', 'college_id']
+    nfl_keys = ['year', 'draft_round', 'draft_pick', 'team', 'playerName', 'pos', 'all_pros_first_team', 'pro_bowls', 'years_as_primary_starter', 'g', 'college_id']
 
     for list in all_picks:
         newdict = {nfl_keys[i]: list[i] for i in range(len(nfl_keys))}
@@ -733,7 +736,7 @@ def summarize_nflDraft ():
     
     for record in nflData:
         del record['year']
-        del record['player']
+        del record['playerName']
         del record['college_id']
 
     return nflData
@@ -804,7 +807,7 @@ def handle_allAmerican(years, headers, sleepyTime=5):
     time.sleep(sleepyTime)
 
     final_aaSelections = []
-    aa_keys = ['year', 'player', 'school', 'afca', 'ap', 'fwaa', 'tsn', 'wcff']
+    aa_keys = ['year', 'playerName', 'school', 'afca', 'ap', 'fwaa', 'tsn', 'wcff']
 
     for list in all_players:
         newdict = {aa_keys[i]: list[i] for i in range(len(aa_keys))}
@@ -824,10 +827,10 @@ def summarize_allAmerican():
     finalOutput = []
     for x in aaData:
         if (len(searchID(x['ID'], finalOutput)) == 0):
-            playerList = searchAllAmerican(x['player'], x['school'], aaData)
+            playerList = searchAllConf(x['playerName'], x['school'], aaData)
             finalPlayer = {}
             finalPlayer['ID'] = x['ID']
-            finalPlayer['player'] = x['player']
+            finalPlayer['playerName'] = x['playerName']
             finalPlayer['school'] = x['school']
             year = 2021
             afca = ap = fwaa = tsn = wcff = 0
@@ -849,7 +852,7 @@ def summarize_allAmerican():
 
     for record in finalOutput:
         del record['year']
-        del record['player']
+        del record['playerName']
         del record['school']
     
     return finalOutput

@@ -11,12 +11,12 @@
         ], 
     "nflData" : 
         [
-            "player", 
+            "playerName", 
             "college_id"
         ], 
     "allAmerican" : 
         [
-            "player", 
+            "playerName", 
             "school"
         ], 
     "allConf" : 

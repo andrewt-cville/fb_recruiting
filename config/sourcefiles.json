@@ -23,12 +23,6 @@
             "rivals_cusa.json",
             "rivals_mac.json"
         ],
-    "cfbRef" : 
-        [
-            "cfb_ref_bigten.json",
-            "cfb_ref_bigtwelve.json",
-            "cfb_ref_sec.json"
-        ],
     "allConf" :
         [
             "SECAllConf.json", 
