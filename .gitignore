@@ -1,3 +1,5 @@
+
+*.pkl
 *.bak
 .gitattributes
 .last_checked
