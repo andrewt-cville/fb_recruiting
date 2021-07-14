@@ -1462,7 +1462,7 @@
         "conference": ["mwc"],
         "247":"san-diego-state",
         "rivals":"sandiegostate",
-        "rivalsDisplay":"SDSU",
+        "rivalsDisplay":"San Diego State",
         "wikipedia":"",
         "cfb-ref":"san diego state",
         "cfb-db":"",
@@ -1515,6 +1515,129 @@
         "cfb-ref":"wyoming",
         "cfb-db":"",
         "ncaa":"811"
+    },
+    {
+        "id":"appalachian-state",
+        "displayname":"Appalachian State",
+        "nickname" : "Mountaineers",
+        "conference": ["sunbelt"],
+        "247":"appalachian-state",
+        "rivals":"appalachianstate",
+        "rivalsDisplay":"Appalachian St",
+        "wikipedia":"",
+        "cfb-ref":"appalachian state",
+        "cfb-db":"",
+        "ncaa":"27"
+    },
+    {
+        "id":"arkansas-state",
+        "displayname":"Arkansas State",
+        "nickname" : "Red Wolves",
+        "conference": ["sunbelt"],
+        "247":"arkansas-state",
+        "rivals":"arkansasstate",
+        "rivalsDisplay":"Arkansas St",
+        "wikipedia":"",
+        "cfb-ref":"arkansas state",
+        "cfb-db":"",
+        "ncaa":"30"
+    },
+    {
+        "id":"coastal-carolina",
+        "displayname":"Coastal Carolina",
+        "nickname" : "Chanticleers",
+        "conference": ["sunbelt"],
+        "247":"coastal-carolina",
+        "wikipedia":"",
+        "cfb-ref":"coastal carolina",
+        "cfb-db":"",
+        "ncaa":"149"
+    },
+    {
+        "id":"georgia-southern",
+        "displayname":"Georgia Southern",
+        "nickname" : "Eagles",
+        "conference": ["sunbelt"],
+        "247":"georgia-southern",
+        "wikipedia":"",
+        "cfb-ref":"georgia southern",
+        "cfb-db":"",
+        "ncaa":"253"
+    },
+    {
+        "id":"georgia-state",
+        "displayname":"Georgia State",
+        "nickname" : "Panthers",
+        "conference": ["sunbelt"],
+        "247":"georgia-state",
+        "wikipedia":"",
+        "cfb-ref":"georgia state",
+        "cfb-db":"",
+        "ncaa":"254"
+    },
+    {
+        "id":"louisiana",
+        "displayname":"Louisiana",
+        "nickname" : "Ragin' Cajuns",
+        "conference": ["sunbelt"],
+        "247":"louisiana",
+        "wikipedia":"",
+        "cfb-ref":"louisiana",
+        "cfb-db":"",
+        "ncaa":"671"
+    },
+    {
+        "id":"louisiana-monroe",
+        "displayname":"Louisiana Monroe",
+        "nickname" : "Warhawks",
+        "conference": ["sunbelt"],
+        "247":"louisiana-monroe",
+        "rivals":"ulm",
+        "rivalsDisplay":"Louisiana Monroe",
+        "wikipedia":"",
+        "cfb-ref":"louisiana monroe",
+        "cfb-db":"",
+        "ncaa":"498"
+    },
+    {
+        "id":"south-alabama",
+        "displayname":"South Alabama",
+        "nickname" : "Jaguars",
+        "conference": ["sunbelt"],
+        "247":"south-alabama",
+        "wikipedia":"",
+        "cfb-ref":"south alabama",
+        "cfb-db":"",
+        "ncaa":"646"
+    },
+    {
+        "id":"texas-state",
+        "displayname":"Texas State",
+        "nickname" : "Bobcats",
+        "conference": ["sunbelt"],
+        "247":"texas-state",
+        "rivals":"texasstate",
+        "rivalsDisplay":"Texas St",
+        "wikipedia":"",
+        "cfb-ref":"texas state",
+        "cfb-db":"",
+        "ncaa":"670"
+    },
+    {
+        "id":"troy",
+        "displayname":"Troy",
+        "nickname" : "Trojans",
+        "conference": ["sunbelt"],
+        "247":"troy",
+        "rivals":"troy",
+        "rivalsDisplay":"Troy",
+        "wikipedia":"",
+        "cfb-ref":"troy",
+        "cfb-db":"",
+        "ncaa":"716"
     }
+
+
+
     
 ]

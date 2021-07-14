@@ -9,7 +9,8 @@
             "247_american.json",
             "247_independents.json",
             "247_cusa.json",
-            "247_mac.json"
+            "247_mac.json",
+            "247_mwc.json"
         ], 
     "rivals" : 
         [
@@ -21,7 +22,8 @@
             "rivals_american.json",
             "rivals_independents.json",
             "rivals_cusa.json",
-            "rivals_mac.json"
+            "rivals_mac.json",
+            "rivals_mwc.json"
         ],
     "allConf" :
         [
