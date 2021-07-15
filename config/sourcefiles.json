@@ -10,7 +10,8 @@
             "247_independents.json",
             "247_cusa.json",
             "247_mac.json",
-            "247_mwc.json"
+            "247_mwc.json",
+            "247_sunbelt.json"
         ], 
     "rivals" : 
         [
@@ -23,7 +24,8 @@
             "rivals_independents.json",
             "rivals_cusa.json",
             "rivals_mac.json",
-            "rivals_mwc.json"
+            "rivals_mwc.json",
+            "rivals_sunbelt.json"
         ],
     "allConf" :
         [

@@ -391,13 +391,16 @@ def summarize_Rivals():
     createNewID(idConfig[dataset], rivalsData, '_')
     finalRivals = []
     for record in rivalsData:
-        finalRecord = {}
-        finalRecord['ID'] = record['ID']
-        finalRecord['rivals_stars'] = record['stars']
-        finalRecord['rivals_natlRank'] = record['nationalRank']
-        finalRecord['rivals_posRank'] = record['positionRank']
-        finalRecord['rivals_stateRank'] = record['stateRank']
-        finalRivals.append(finalRecord)
+        try:
+            finalRecord = {}
+            finalRecord['ID'] = record['ID']
+            finalRecord['rivals_stars'] = record['stars']
+            finalRecord['rivals_natlRank'] = record['nationalRank']
+            finalRecord['rivals_posRank'] = record['positionRank']
+            finalRecord['rivals_stateRank'] = record['stateRank']
+            finalRivals.append(finalRecord)
+        except:
+            print(record)
     
     return finalRivals
 
