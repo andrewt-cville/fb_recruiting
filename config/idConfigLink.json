@@ -1,0 +1,39 @@
+{
+    "rivals" : 
+        [
+            "playerName", 
+            "school",
+            "year"
+        ],
+    "sports247" : 
+        [
+            "playerName", 
+            "school",
+            "year"
+        ], 
+    "nflData" : 
+        [
+            "playerName", 
+            "college_id"
+        ], 
+    "allAmerican" : 
+        [
+            "playerName", 
+            "school"
+        ], 
+    "allConf" : 
+        [
+            "playerName", 
+            "school"
+        ], 
+    "cfbRef" : 
+        [
+            "playerName", 
+            "school"
+        ],
+    "ncaa" :
+        [
+            "name",
+            "team"
+        ]
+}

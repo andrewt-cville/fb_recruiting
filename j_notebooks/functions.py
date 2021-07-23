@@ -1,4 +1,6 @@
 from bs4 import BeautifulSoup
+from bs4.builder import TreeBuilder
+from bs4 import UnicodeDammit
 import requests
 import lxml
 import time
@@ -8,6 +10,7 @@ import json
 import core_constants as cc
 import string
 import csv
+import cleantext as clean
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Common Functions
@@ -51,6 +54,8 @@ def createNewID (fieldList, thisDict, fieldAgg, ifAlternate = False):
                     print(i)
                 if (len(fieldList) - 1 == idx):
                     finalID += i[val]
+                elif (len(fieldList) - 2 == idx):
+                    finalID += i[val] + fieldAgg
                 else:
                     finalID = i[val] + fieldAgg
         i['ID'] = finalID
@@ -254,7 +259,14 @@ def process_247Sports(prospectDirectory, teamDirectory):
                                 print("Error: " + player['playerName'])
                         count += 1
             if player:
-                all_recruits.append(player)  
+                duplicate = False
+                for i in all_recruits:
+                    if (player['playerName'].lower().replace(".","").replace(" ", "").replace("'", "") == i['playerName'].lower().replace(".","").replace(" ", "").replace("'", "") ):
+                        if (player['year'] == i['year']):
+                            duplicate = True
+                
+                if (not duplicate):
+                    all_recruits.append(player)  
     return all_recruits
 
 def summarize_247Sports():
@@ -371,7 +383,15 @@ def process_Rivals(recruitDir, conference, schoolsJSON):
             player['positionRank'] = recruitInfo['position_rank']
             player['stateRank'] = recruitInfo['state_rank']
 
-            all_recruits.append(player)
+            if player:
+                duplicate = False
+                for i in all_recruits:
+                    if (player['playerName'].lower().replace(".","").replace(" ", "").replace("'", "") == i['playerName'].lower().replace(".","").replace(" ", "").replace("'", "") ):
+                        if (player['year'] == i['year']):
+                            duplicate = True
+                
+                if (not duplicate):
+                    all_recruits.append(player)  
         #else:
             #error_files.append(file)
     return all_recruits
