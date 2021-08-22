@@ -481,7 +481,7 @@ def summarize_NCAA():
     inputDir = '..//scrapedData//'
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
     ncaaData = json.loads(open(inputDir + sourceFiles['ncaa'][0], "r", encoding="utf-8").read())
-    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
+    idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
 
     createNewID(idConfig['ncaa'], ncaaData, '_', True)
 
@@ -683,7 +683,7 @@ def summarize_allConf():
     dataset = 'allConf'
 
     ## Load the id config
-    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
+    idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
 
     ## Load the source file dict
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
@@ -750,7 +750,7 @@ def summarize_nflDraft ():
     inputDir = '..//scrapedData//'
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
     nflData = json.loads(open(inputDir + sourceFiles['nflData'][0], "r", encoding="utf-8").read())
-    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
+    idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
 
     createNewID(idConfig['nflData'], nflData, '_', True)
 
@@ -843,7 +843,7 @@ def summarize_allAmerican():
     inputDir = '..//scrapedData//'
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
     aaData = json.loads(open(inputDir + sourceFiles['allAmerican'][0], "r", encoding="utf-8").read())
-    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
+    idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
 
     createNewID(idConfig['allAmerican'], aaData, '_', True)
 
