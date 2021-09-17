@@ -11,6 +11,9 @@ import core_constants as cc
 import string
 import csv
 import cleantext as clean
+import pandas as pd
+import sqlite3 as sql
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Common Functions
@@ -84,6 +87,11 @@ def searchAllConf(name, team, dataList):
 def searchAllAmerican(name, team, dataList):
     return [element for element in dataList if (element['player'] == name and element['school'] == team)]
 
+def connAndWriteDB(df, table):
+    conn = sql.connect(cc.databaseName)
+    c = conn.cursor()
+
+    df.to_sql(table, conn, if_exists='replace', index = False)
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # 247Sports Specific Functions
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -310,6 +318,23 @@ def summarize_247Sports():
 
     return final247
 
+def toDB_247Sports(df):
+    inputDirectory = '..//scrapedData//'
+    dataset = 'sports247'
+
+    ## Load the id config
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
+
+    ## Load the source file dict
+    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
+    
+    sports247Data = mergeSourceFiles(dataset, inputDirectory, sourceFiles)
+    createNewID(idConfig[dataset], sports247Data, '_')
+
+    connAndWriteDB(df, cc.table247)
+
+    return 'DB Write is done'
+
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Rivals Specific Functions
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -423,6 +448,25 @@ def summarize_Rivals():
             print(record)
     
     return finalRivals
+
+def toDB_Rivals():
+    inputDirectory = '..//scrapedData//'
+    dataset = 'rivals'
+
+    ## Load the id config
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
+
+    ## Load the source file dict
+    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
+    
+    rivalsData = mergeSourceFiles(dataset, inputDirectory, sourceFiles)
+    createNewID(idConfig[dataset], rivalsData, '_')
+
+    df = pd.DataFrame(rivalsData)
+
+    connAndWriteDB(df, cc.tableRivals)
+
+    return 'DB Write is done'
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # NCAA Specific Functions
