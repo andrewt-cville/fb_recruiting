@@ -37,4 +37,8 @@ def save_records(folder, filename, listPersist):
 databaseName = 'fb_recruiting.db'
 table247 = '247Sports'
 tableRivals = 'Rivals'
+tableNCAA = 'NCAA'
+tableAllConference = 'AllConference'
+tableNFLDraft = 'NFL'
+tableAllAmerican = 'AllAmerican'
 

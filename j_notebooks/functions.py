@@ -563,6 +563,25 @@ def summarize_NCAA():
     
     return(finalOutput)
 
+def toDB_NCAA():
+    inputDirectory = '..//scrapedData//'
+    dataset = 'ncaa'
+
+    ## Load the id config
+    idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
+
+    ## Load the source file dict
+    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
+    ncaaData = json.loads(open(inputDirectory + sourceFiles['ncaa'][0], "r", encoding="utf-8").read())
+
+    createNewID(idConfig[dataset], ncaaData, '_', True)
+
+    df = pd.DataFrame(ncaaData)
+
+    connAndWriteDB(df, cc.tableNCAA)
+
+    return 'DB Write is done'
+
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # All Conference Specific Functions
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -750,6 +769,25 @@ def summarize_allConf():
     
     return finalOutput
 
+def toDB_AllConference():
+    inputDirectory = '..//scrapedData//'
+    dataset = 'allConf'
+
+    ## Load the id config
+    idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
+
+    ## Load the source file dict
+    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
+    allConfData = mergeSourceFiles(dataset, inputDirectory, sourceFiles)
+
+    createNewID(idConfig[dataset], allConfData, '_')
+
+    df = pd.DataFrame(allConfData)
+
+    connAndWriteDB(df, cc.tableAllConference)
+
+    return 'DB Write is done'
+
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Sports Reference - NFL Draft Specific Functions
 # NOTE: we don't keep the html files locally for this dataset, so get/process are one step
@@ -791,9 +829,9 @@ def handle_nflData(years, headers, sleepyTime=10):
     return final_nflDraft
 
 def summarize_nflDraft ():
-    inputDir = '..//scrapedData//'
+    inputDirectory = '..//scrapedData//'
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
-    nflData = json.loads(open(inputDir + sourceFiles['nflData'][0], "r", encoding="utf-8").read())
+    nflData = json.loads(open(inputDirectory + sourceFiles['nflData'][0], "r", encoding="utf-8").read())
     idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
 
     createNewID(idConfig['nflData'], nflData, '_', True)
@@ -807,6 +845,25 @@ def summarize_nflDraft ():
         del record['college_id']
 
     return nflData
+
+def toDB_NFLDraft():
+    inputDirectory = '..//scrapedData//'
+    dataset = 'nflData'
+
+    ## Load the id config
+    idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
+
+    ## Load the source file dict
+    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
+    nflData = json.loads(open(inputDirectory + sourceFiles['nflData'][0], "r", encoding="utf-8").read())
+
+    createNewID(idConfig[dataset], nflData, '_')
+
+    df = pd.DataFrame(nflData)
+
+    connAndWriteDB(df, cc.tableNFLDraft)
+
+    return 'DB Write is done'
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Wikipedia - All American Specific Functions
@@ -884,9 +941,9 @@ def handle_allAmerican(years, headers, sleepyTime=5):
     return final_aaSelections
 
 def summarize_allAmerican():
-    inputDir = '..//scrapedData//'
+    inputDirectory = '..//scrapedData//'
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
-    aaData = json.loads(open(inputDir + sourceFiles['allAmerican'][0], "r", encoding="utf-8").read())
+    aaData = json.loads(open(inputDirectory + sourceFiles['allAmerican'][0], "r", encoding="utf-8").read())
     idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
 
     createNewID(idConfig['allAmerican'], aaData, '_', True)
@@ -923,3 +980,22 @@ def summarize_allAmerican():
         del record['school']
     
     return finalOutput
+
+def toDB_AllAmerican():
+    inputDirectory = '..//scrapedData//'
+    dataset = 'allAmerican'
+
+    ## Load the id config
+    idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
+
+    ## Load the source file dict
+    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
+    aaData = json.loads(open(inputDirectory + sourceFiles['allAmerican'][0], "r", encoding="utf-8").read())
+
+    createNewID(idConfig[dataset], aaData, '_')
+
+    df = pd.DataFrame(aaData)
+
+    connAndWriteDB(df, cc.tableAllAmerican)
+
+    return 'DB Write is done'
