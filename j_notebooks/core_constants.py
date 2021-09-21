@@ -34,8 +34,11 @@ def save_records(folder, filename, listPersist):
     with open("..//{}//{}.json".format(folder, filename), "w") as write_file:
         json.dump(listPersist, write_file)
 
+
+
+
 databaseName = 'fb_recruiting.db'
-table247 = '247Sports'
+table247 = 'Sports247'
 tableRivals = 'Rivals'
 tableNCAA = 'NCAA'
 tableAllConference = 'AllConference'

@@ -8,6 +8,18 @@
         [
             "playerName", 
             "school"
+        ],
+    "rivals_yr" : 
+        [
+            "playerName", 
+            "school",
+            "year"
+        ],
+    "sports247_yr" : 
+        [
+            "playerName", 
+            "school",
+            "year"
         ], 
     "nflData" : 
         [

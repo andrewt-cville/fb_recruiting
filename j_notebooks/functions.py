@@ -34,7 +34,7 @@ def mungeID(playerString):
     return ''.join(e for e in playerString if e.isalnum()).lower().replace("jr.", "").replace("st.", "state") 
 
 #Unique ID generator
-def createNewID (fieldList, thisDict, fieldAgg, ifAlternate = False):
+def createNewID (fieldList, thisDict, fieldAgg, ifAlternate = False, fieldName = 'ID'):
     finalID= ''
     for i in thisDict:
         if not (ifAlternate):
@@ -61,7 +61,7 @@ def createNewID (fieldList, thisDict, fieldAgg, ifAlternate = False):
                     finalID += i[val] + fieldAgg
                 else:
                     finalID = i[val] + fieldAgg
-        i['ID'] = finalID
+        i[fieldName] = finalID
         finalID=''
 
 #this is used by NCAA but really should be leveraged everywhere
@@ -86,6 +86,13 @@ def searchAllConf(name, team, dataList):
 
 def searchAllAmerican(name, team, dataList):
     return [element for element in dataList if (element['player'] == name and element['school'] == team)]
+
+def connDBAndReturnDF(SQL):
+    conn = sql.connect(cc.databaseName)
+    SQL_Query = pd.read_sql_query(SQL, conn)
+    df = pd.DataFrame(SQL_Query, columns=['ID'])
+
+    return df
 
 def connAndWriteDB(df, table):
     conn = sql.connect(cc.databaseName)
@@ -172,7 +179,7 @@ def process_247Sports(prospectDirectory, teamDirectory):
             if (x.find("p", class_="commit-date") is not None):
                 player_status = x.find("p", class_="commit-date").text
             if (player_status.strip() == 'Enrolled' or player_status.strip() == 'Signed'):
-                player['school'] = team
+                player['college'] = team
                 player['year'] = y
                 #Name
                 if (x.find("a", class_="ri-page__name-link") is not None):
@@ -232,7 +239,7 @@ def process_247Sports(prospectDirectory, teamDirectory):
                     player['stateRank'] = ((x.find("a", class_="sttrank").text).strip())
                 
                 ## We are going to get 247 rankings data from the prospect page, but nothing else
-                prospectFile = prospectDirectory + player['playerName'] + "_" + player['school'] + "_secondhop_" + player['year'] + ".html"
+                prospectFile = prospectDirectory + player['playerName'] + "_" + player['college'] + "_secondhop_" + player['year'] + ".html"
                 if (os.path.isfile(prospectFile)):
                     prospectSoup = BeautifulSoup(open(prospectFile, "r", encoding='utf8').read(), 'lxml')
                     # The recent crawl turned out a weird prospect file, so this catches any
@@ -295,7 +302,7 @@ def summarize_247Sports():
         finalRecord['ID'] = record['ID']
         finalRecord['playerName'] = record['displayName']
         finalRecord['year'] = record['year']
-        finalRecord['college'] = record['school']
+        finalRecord['college'] = record['college']
         finalRecord['highSchool'] = record['highSchool']
         finalRecord['homeCity'] = record['city']
         finalRecord['homeState'] = record['state']
@@ -318,9 +325,10 @@ def summarize_247Sports():
 
     return final247
 
-def toDB_247Sports(df):
+def toDB_247Sports():
     inputDirectory = '..//scrapedData//'
     dataset = 'sports247'
+    dataset_yr = 'sports247_yr'
 
     ## Load the id config
     idConfig = json.loads(open('..//config//idConfig.json', "r").read())
@@ -329,7 +337,12 @@ def toDB_247Sports(df):
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
     
     sports247Data = mergeSourceFiles(dataset, inputDirectory, sourceFiles)
+
+
     createNewID(idConfig[dataset], sports247Data, '_')
+    createNewID(idConfig[dataset_yr], sports247Data, '_', False, '247_ID')
+
+    df = pd.DataFrame(sports247Data)
 
     connAndWriteDB(df, cc.table247)
 
@@ -393,8 +406,8 @@ def process_Rivals(recruitDir, conference, schoolsJSON):
 
             #player info
             #rawSchool is helpful for troubleshooting rivals school names
-            player['rawSchool'] = recruitInfo['school_name']
-            player['school'] = checkSchools(recruitInfo['school_name'],conference, schoolsJSON)
+            player['rawCollege'] = recruitInfo['school_name']
+            player['college'] = checkSchools(recruitInfo['school_name'],conference, schoolsJSON)
             player['year'] = str(recruitInfo['recruit_year'])
             player['playerName'] = recruitInfo['full_name']
             player['city'] = recruitInfo['city']
@@ -525,7 +538,7 @@ def summarize_NCAA():
     inputDir = '..//scrapedData//'
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
     ncaaData = json.loads(open(inputDir + sourceFiles['ncaa'][0], "r", encoding="utf-8").read())
-    idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
 
     createNewID(idConfig['ncaa'], ncaaData, '_', True)
 
@@ -568,7 +581,7 @@ def toDB_NCAA():
     dataset = 'ncaa'
 
     ## Load the id config
-    idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
 
     ## Load the source file dict
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
@@ -617,7 +630,7 @@ def process_WikipediaBigTenBigTwelve(teamDir):
                     playerSAF = playerInfo[1].split("(", 1)
                     if(len(playerSAF) > 1):
                         #school
-                        player['school'] = playerSAF[0].strip()
+                        player['college'] = playerSAF[0].strip()
                         #AwardsFX
                         playerAwards = playerSAF[1].split(";")
                         if ("Coaches" in playerAwards[0] and len(playerAwards)> 1):
@@ -672,7 +685,7 @@ def process_WikipediaSEC(teamDir):
                 playerSAF = playerInfo[1].split("(", 1)
                 if(len(playerSAF) > 1):
                     #school
-                    player['school'] = playerSAF[0].strip()
+                    player['college'] = playerSAF[0].strip()
                     #AwardsFX
                     if ("," in playerSAF[1]):
                         playerAwards = playerSAF[1].split(",")
@@ -722,7 +735,7 @@ def process_csvAllConf(records):
     for record in records:
         try:
             record['playerName'] = record['First Name'] + ' ' + record['Last Name']
-            record['school'] = record['School']
+            record['college'] = record['School']
             record['position'] = record['POSITION']
             record['year'] = record['Year']
             record['team'] = record['Team']
@@ -746,7 +759,7 @@ def summarize_allConf():
     dataset = 'allConf'
 
     ## Load the id config
-    idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
 
     ## Load the source file dict
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
@@ -757,7 +770,7 @@ def summarize_allConf():
     for x in allConfData:
         if (len(searchID(x['ID'], finalOutput)) == 0):
             try:
-                playerList = searchAllConf(x['playerName'], x['school'], allConfData)
+                playerList = searchAllConf(x['playerName'], x['college'], allConfData)
                 finalPlayer = {}
                 finalPlayer['ID'] = x['ID']
                 finalPlayer['team'] = x['team']
@@ -774,7 +787,7 @@ def toDB_AllConference():
     dataset = 'allConf'
 
     ## Load the id config
-    idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
 
     ## Load the source file dict
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
@@ -832,7 +845,7 @@ def summarize_nflDraft ():
     inputDirectory = '..//scrapedData//'
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
     nflData = json.loads(open(inputDirectory + sourceFiles['nflData'][0], "r", encoding="utf-8").read())
-    idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
 
     createNewID(idConfig['nflData'], nflData, '_', True)
 
@@ -851,7 +864,7 @@ def toDB_NFLDraft():
     dataset = 'nflData'
 
     ## Load the id config
-    idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
 
     ## Load the source file dict
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
@@ -884,7 +897,7 @@ def handle_allAmerican(years, headers, sleepyTime=5):
                     and ("all-purpose") not in x.text and ("Football") not in x.text and ("Foundation") not in x.text):
                     playerInfo = x.text.split(",", 1)
                     #year
-                    player.append(y)
+                    player.append(int(y))
                     #Name
                     player.append(playerInfo[0])
                     playerInfo[1] = playerInfo[1].replace("(Fla.)", "FL")
@@ -902,36 +915,36 @@ def handle_allAmerican(years, headers, sleepyTime=5):
                     awardString = playerLocationAwards[1]
                     #coaches (AFCA)
                     if ("AFCA" in awardString):
-                        player.append("1")
+                        player.append(1)
                     else:
-                        player.append("0")
+                        player.append(0)
                     #associated press (AP)
                     if ("AP" in awardString):
-                        player.append("1")
+                        player.append(1)
                     else:
-                        player.append("0")
+                        player.append(0)
                     #writers (FWAA)
                     if ("FWAA" in awardString):
-                        player.append("1")
+                        player.append(1)
                     else:
-                        player.append("0")
+                        player.append(0)
                     #sporting news (TSN)
                     if ("TSN" in awardString):
-                        player.append("1")
+                        player.append(1)
                     else:
-                        player.append("0")
+                        player.append(0)
                     #walter camp (WCFF)
                     if ("WCFF" in awardString):
-                        player.append("1")
+                        player.append(1)
                     else:
-                        player.append("0")
+                        player.append(0)
                     all_players.append(player)
             except:
                 print(x)
     time.sleep(sleepyTime)
 
     final_aaSelections = []
-    aa_keys = ['year', 'playerName', 'school', 'afca', 'ap', 'fwaa', 'tsn', 'wcff']
+    aa_keys = ['year', 'playerName', 'college', 'afca', 'ap', 'fwaa', 'tsn', 'wcff']
 
     for list in all_players:
         newdict = {aa_keys[i]: list[i] for i in range(len(aa_keys))}
@@ -944,18 +957,18 @@ def summarize_allAmerican():
     inputDirectory = '..//scrapedData//'
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
     aaData = json.loads(open(inputDirectory + sourceFiles['allAmerican'][0], "r", encoding="utf-8").read())
-    idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
 
     createNewID(idConfig['allAmerican'], aaData, '_', True)
 
     finalOutput = []
     for x in aaData:
         if (len(searchID(x['ID'], finalOutput)) == 0):
-            playerList = searchAllConf(x['playerName'], x['school'], aaData)
+            playerList = searchAllConf(x['playerName'], x['college'], aaData)
             finalPlayer = {}
             finalPlayer['ID'] = x['ID']
             finalPlayer['playerName'] = x['playerName']
-            finalPlayer['school'] = x['school']
+            finalPlayer['college'] = x['college']
             year = 2021
             afca = ap = fwaa = tsn = wcff = 0
             for y in playerList:
@@ -977,7 +990,7 @@ def summarize_allAmerican():
     for record in finalOutput:
         del record['year']
         del record['playerName']
-        del record['school']
+        del record['college']
     
     return finalOutput
 
@@ -986,7 +999,7 @@ def toDB_AllAmerican():
     dataset = 'allAmerican'
 
     ## Load the id config
-    idConfig = json.loads(open('..//config//idConfigLink.json', "r").read())
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
 
     ## Load the source file dict
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
