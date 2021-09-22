@@ -90,7 +90,7 @@ def searchAllAmerican(name, team, dataList):
 def connDBAndReturnDF(SQL):
     conn = sql.connect(cc.databaseName)
     SQL_Query = pd.read_sql_query(SQL, conn)
-    df = pd.DataFrame(SQL_Query, columns=['ID'])
+    df = pd.DataFrame(SQL_Query)
 
     return df
 
@@ -340,7 +340,7 @@ def toDB_247Sports():
 
 
     createNewID(idConfig[dataset], sports247Data, '_')
-    createNewID(idConfig[dataset_yr], sports247Data, '_', False, '247_ID')
+    createNewID(idConfig[dataset_yr], sports247Data, '_', False, 'IDYR')
 
     df = pd.DataFrame(sports247Data)
 
@@ -465,6 +465,7 @@ def summarize_Rivals():
 def toDB_Rivals():
     inputDirectory = '..//scrapedData//'
     dataset = 'rivals'
+    dataset_yr = 'rivals_yr'
 
     ## Load the id config
     idConfig = json.loads(open('..//config//idConfig.json', "r").read())
@@ -474,6 +475,7 @@ def toDB_Rivals():
     
     rivalsData = mergeSourceFiles(dataset, inputDirectory, sourceFiles)
     createNewID(idConfig[dataset], rivalsData, '_')
+    createNewID(idConfig[dataset_yr], rivalsData, '_', False, 'IDYR')
 
     df = pd.DataFrame(rivalsData)
 
@@ -832,7 +834,7 @@ def handle_nflData(years, headers, sleepyTime=10):
         time.sleep(sleepyTime)
     
     final_nflDraft = []
-    nfl_keys = ['year', 'draft_round', 'draft_pick', 'team', 'playerName', 'pos', 'all_pros_first_team', 'pro_bowls', 'years_as_primary_starter', 'g', 'college_id']
+    nfl_keys = ['DraftYear', 'DraftRound', 'DraftPick', 'DraftTeam', 'playerName', 'Position', 'NFLAllProFirstTeam', 'NFLProBowl', 'NFLYearsAsStarter', 'NFLGamesPlayed', 'College']
 
     for list in all_picks:
         newdict = {nfl_keys[i]: list[i] for i in range(len(nfl_keys))}
