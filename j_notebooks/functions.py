@@ -13,6 +13,7 @@ import csv
 import cleantext as clean
 import pandas as pd
 import sqlite3 as sql
+import traceback
 
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -39,8 +40,9 @@ def createNewID (fieldList, thisDict, fieldAgg, ifAlternate = False, fieldName =
     for i in thisDict:
         if not (ifAlternate):
             try:
-                i['displayName'] = i['playerName']
+                i['displayName'] = i['PlayerName']
             except:
+                print('Error with Alternate')
                 print(i)
         for idx, val in enumerate(fieldList):
             if (type(i[val]) is list):
@@ -52,15 +54,15 @@ def createNewID (fieldList, thisDict, fieldAgg, ifAlternate = False, fieldName =
                     finalID += str(i[val]).strip('[]').strip("''")
             elif (type(val) is not list):
                 try:
-                    i[val] = mungeID(i[val])
-                except:
-                    print(i)
+                    i[val] = mungeID(str(i[val]))
+                except Exception as e:
+                    traceback.print_exc()
                 if (len(fieldList) - 1 == idx):
-                    finalID += i[val]
+                    finalID += str(i[val])
                 elif (len(fieldList) - 2 == idx):
-                    finalID += i[val] + fieldAgg
+                    finalID += str(i[val]) + fieldAgg
                 else:
-                    finalID = i[val] + fieldAgg
+                    finalID = str(i[val]) + fieldAgg
         i[fieldName] = finalID
         finalID=''
 
@@ -179,67 +181,81 @@ def process_247Sports(prospectDirectory, teamDirectory):
             if (x.find("p", class_="commit-date") is not None):
                 player_status = x.find("p", class_="commit-date").text
             if (player_status.strip() == 'Enrolled' or player_status.strip() == 'Signed'):
-                player['college'] = team
-                player['year'] = y
+                player['College'] = team
+                player['RecruitingClassYear'] = int(y)
                 #Name
                 if (x.find("a", class_="ri-page__name-link") is not None):
-                    player['playerName'] = x.find("a", class_="ri-page__name-link").text
+                    player['PlayerName'] = x.find("a", class_="ri-page__name-link").text
                 #School/CityState
                 if (x.find("span", class_="meta") is not None):
                     locationInfoRaw = x.find("span", class_="meta")
                     locationInfoList = locationInfoRaw.text.split("(")
-                    player['highSchool'] = (locationInfoList[0].strip())
+                    player['HighSchool'] = (locationInfoList[0].strip())
                     cityState = locationInfoList[1].split(', ')
                     if (len(cityState) > 1):
                         #print(cityState)
                         state = cityState[1].strip()
                         #print(state.rstrip(')'))
-                        player['city'] = (cityState[0].strip())
-                        player['state'] = (state.rstrip(')'))
+                        player['City'] = (cityState[0].strip())
+                        player['State'] = (state.rstrip(')'))
                     else:
-                        player['city'] = "None"
-                        player['state'] = "None"
+                        player['City'] = "None"
+                        player['State'] = "None"
                 #Position
                 if (x.find("div", class_="position") is not None):
-                    player['position'] = ((x.find("div", class_="position").text).strip())
+                    player['RecruitedPosition'] = ((x.find("div", class_="position").text).strip())
                 #Height/Weight
                 if (x.find("div", class_="metrics") is not None):
                     heightWeight = x.find("div", class_="metrics").text.strip()
                     height = (heightWeight.split(' / '))[0]
                     inchHeightPre = height.split('-')
                     if (inchHeightPre[0] != ''):
-                        inchHeight = int(inchHeightPre[0])*12 + float(inchHeightPre[1])
+                        player['Height'] = int(inchHeightPre[0])*12 + float(inchHeightPre[1])
                     else:
-                        inchHeight = '0.0'
-                    weight = (heightWeight.split(' / '))[1]
-                    if (weight == '-'):
-                        weight = '0'
-                    player['height'] = (inchHeight)
-                    player['weight'] = (weight)
+                        player['Height']  = None
+                    player['Weight'] = (heightWeight.split(' / '))[1]
+                    if (player['Weight'] == '-'):
+                        player['Weight'] = None
+                    else:
+                        player['Weight'] = int(player['Weight'])
                 #Getting composite rankings from the class page because of the prospect link, in some cases,
                 #actually goes to the JUCO page and as a result the JUCO rankings.
                 
                 #Composite Rating
                 if (x.select('span[class*="scorer"]') is not None):
-                    player['compRating'] = (x.find("span", class_="score").text)
+                    player['CompositeRating'] = (x.find("span", class_="score").text)
                 #Composite Stars
                 ratingChildren = x.select('span[class*="icon-starsolid yellow"]')
                 i = 0
                 for child in ratingChildren:
                     i = i + 1
-                player['compStars'] = (i)
+                if (i == 0):
+                    player['CompositeStars'] = None
+                else:
+                    player['CompositeStars'] = (i)
                 #Composite National Rank
                 if (x.select('a[class*="natrank"]') is not None):
-                    player['nationalRank'] = ((x.find("a", class_="natrank").text).strip())
+                    player['CompositeNationalRank'] = ((x.find("a", class_="natrank").text).strip())
+                    if (player['CompositeNationalRank'] == 'NA'):
+                        player['CompositeNationalRank'] = None
+                    else:
+                        player['CompositeNationalRank'] = int(player['CompositeNationalRank'])
                 #Composite Position Rank
                 if (x.select('a[class*="posrank"]') is not None):
-                    player['positionRank'] = ((x.find("a", class_="posrank").text).strip())
+                    player['CompositePositionRank'] = ((x.find("a", class_="posrank").text).strip())
+                    if (player['CompositePositionRank'] == 'NA'):
+                        player['CompositePositionRank'] = None
+                    else:
+                        player['CompositePositionRank'] = int(player['CompositePositionRank'])
                 #Composite State Rank
                 if (x.select('a[class*="sttrank"]') is not None):
-                    player['stateRank'] = ((x.find("a", class_="sttrank").text).strip())
-                
+                    player['CompositeStateRank'] = ((x.find("a", class_="sttrank").text).strip())
+                    if (player['CompositeStateRank'] == 'NA'):
+                        player['CompositeStateRank'] = None
+                    else:
+                        player['CompositeStateRank'] = int(player['CompositeStateRank'])
                 ## We are going to get 247 rankings data from the prospect page, but nothing else
-                prospectFile = prospectDirectory + player['playerName'] + "_" + player['college'] + "_secondhop_" + player['year'] + ".html"
+                prospectFile = prospectDirectory + player['PlayerName'] + "_" + player['College'] + "_secondhop_" + str(player['RecruitingClassYear']) + ".html"
                 if (os.path.isfile(prospectFile)):
                     prospectSoup = BeautifulSoup(open(prospectFile, "r", encoding='utf8').read(), 'lxml')
                     # The recent crawl turned out a weird prospect file, so this catches any
@@ -250,7 +266,9 @@ def process_247Sports(prospectDirectory, teamDirectory):
                         if (count == 1):
                             #247 Rating
                             if (rating.select('div[class*="rank-block"]') is not None):
-                                player['247Rating'] = (rating.select('div[class*="rank-block"]')[0].text)
+                                player['Rating247'] = (rating.select('div[class*="rank-block"]')[0].text).strip()
+                                if (player['Rating247'] == 'N/A'):
+                                    player['Rating247'] = None
                             #Stars
                             ratingChildren = []
                             for ratingChild in rating.select('span[class*="icon-starsolid yellow"]'):
@@ -258,26 +276,49 @@ def process_247Sports(prospectDirectory, teamDirectory):
                             i = 0
                             for child in ratingChildren:
                                 i = i + 1
-                            player['247Stars'] = (i)
+                            if (i == 0):
+                                player['Stars247'] = None
+                            else:
+                                player['Stars247'] = (i)
                             #247 Rankings are stupid
                             ratingValues = rating.find_all("li", class_=None)
                             if (len(ratingValues) >= 3):
-                                player['247nationalRank'] = ratingValues[0].find("strong").text
-                                player['247positionRank'] = ratingValues[1].find("strong").text
-                                player['247stateRank'] = ratingValues[2].find("strong").text   
+                                player['NationalRank247'] = ratingValues[0].find("strong").text
+                                if (player['NationalRank247'] == 'N/A'):
+                                    player['NationalRank247'] = None
+                                else:
+                                    player['NationalRank247'] = int(player['NationalRank247'])
+                                player['PositionRank247'] = ratingValues[1].find("strong").text
+                                if (player['PositionRank247'] == 'N/A'):
+                                    player['PositionRank247'] = None
+                                else:
+                                    player['PositionRank247'] = int(player['PositionRank247'])
+                                player['StateRank247'] = ratingValues[2].find("strong").text   
+                                if (player['StateRank247'] == 'N/A'):
+                                    player['StateRank247'] = None
+                                else:
+                                    player['StateRank247'] = int(player['StateRank247'])
                             elif (len(ratingValues) == 2):
                                 if (ratingValues[0].find("strong") is not None):
-                                    player['247positionRank'] = ratingValues[0].find("strong").text
+                                    player['PositionRank247'] = ratingValues[0].find("strong").text
+                                    if (player['PositionRank247'] == 'N/A'):
+                                        player['PositionRank247'] = None
+                                    else:
+                                        player['PositionRank247'] = int(player['PositionRank247'])
                                 if (ratingValues[1].find("strong") is not None):
-                                    player['247stateRank'] = ratingValues[1].find("strong").text
+                                    player['StateRank247'] = ratingValues[1].find("strong").text
+                                    if (player['StateRank247'] == 'N/A'):
+                                        player['StateRank247'] = None
+                                    else:
+                                        player['StateRank247'] = int(player['StateRank247'])
                             else:
-                                print("Error: " + player['playerName'])
+                                print("Error: " + player['PlayerName'])
                         count += 1
             if player:
                 duplicate = False
                 for i in all_recruits:
-                    if (player['playerName'].lower().replace(".","").replace(" ", "").replace("'", "") == i['playerName'].lower().replace(".","").replace(" ", "").replace("'", "") ):
-                        if (player['year'] == i['year']):
+                    if (player['PlayerName'].lower().replace(".","").replace(" ", "").replace("'", "") == i['PlayerName'].lower().replace(".","").replace(" ", "").replace("'", "") ):
+                        if (player['RecruitingClassYear'] == i['RecruitingClassYear']):
                             duplicate = True
                 
                 if (not duplicate):
@@ -345,6 +386,15 @@ def toDB_247Sports():
     df = pd.DataFrame(sports247Data)
 
     connAndWriteDB(df, cc.table247)
+
+    return 'DB Write is done'
+
+def sports247_SourcedPlayers():
+    SQL = '''SELECT * from Sports247'''
+    df = connDBAndReturnDF(SQL)
+    df['KeyDataSet'] = 1
+
+    connAndWriteDB(df, 'SourcedPlayers')
 
     return 'DB Write is done'
 

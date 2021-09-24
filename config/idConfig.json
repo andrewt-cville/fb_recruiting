@@ -1,13 +1,13 @@
 {
     "rivals" : 
         [
-            "playerName", 
+            "PlayerName", 
             "school"
         ],
     "sports247" : 
         [
-            "playerName", 
-            "school"
+            "PlayerName", 
+            "College"
         ],
     "rivals_yr" : 
         [
@@ -17,9 +17,9 @@
         ],
     "sports247_yr" : 
         [
-            "playerName", 
-            "school",
-            "year"
+            "PlayerName", 
+            "College",
+            "RecruitingClassYear"
         ], 
     "nflData" : 
         [
