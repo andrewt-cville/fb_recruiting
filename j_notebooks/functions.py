@@ -182,7 +182,7 @@ def process_247Sports(prospectDirectory, teamDirectory):
                 player_status = x.find("p", class_="commit-date").text
             if (player_status.strip() == 'Enrolled' or player_status.strip() == 'Signed'):
                 player['College'] = team
-                player['RecruitingClassYear'] = int(y)
+                player['Year'] = int(y)
                 #Name
                 if (x.find("a", class_="ri-page__name-link") is not None):
                     player['PlayerName'] = x.find("a", class_="ri-page__name-link").text
@@ -255,7 +255,7 @@ def process_247Sports(prospectDirectory, teamDirectory):
                     else:
                         player['CompositeStateRank'] = int(player['CompositeStateRank'])
                 ## We are going to get 247 rankings data from the prospect page, but nothing else
-                prospectFile = prospectDirectory + player['PlayerName'] + "_" + player['College'] + "_secondhop_" + str(player['RecruitingClassYear']) + ".html"
+                prospectFile = prospectDirectory + player['PlayerName'] + "_" + player['College'] + "_secondhop_" + str(player['Year']) + ".html"
                 if (os.path.isfile(prospectFile)):
                     prospectSoup = BeautifulSoup(open(prospectFile, "r", encoding='utf8').read(), 'lxml')
                     # The recent crawl turned out a weird prospect file, so this catches any
@@ -318,7 +318,7 @@ def process_247Sports(prospectDirectory, teamDirectory):
                 duplicate = False
                 for i in all_recruits:
                     if (player['PlayerName'].lower().replace(".","").replace(" ", "").replace("'", "") == i['PlayerName'].lower().replace(".","").replace(" ", "").replace("'", "") ):
-                        if (player['RecruitingClassYear'] == i['RecruitingClassYear']):
+                        if (player['Year'] == i['Year']):
                             duplicate = True
                 
                 if (not duplicate):
@@ -382,34 +382,33 @@ def toDB_247Sports():
     createNewID(idConfig[dataset], sports247Data, '_')
     createNewID(idConfig[dataset_yr], sports247Data, '_', False, 'IDYR')
 
-    columns = ['ID', 'IDYR', 'PlayerName', 'College', 
-        'RecruitingClassYear', 'HighSchool', 'City', 'State', 'RecruitedPosition', 'Height', 'Weight', 
+    columns = ['ID', 'IDYR', 'KeyDataSet', 'PlayerName', 'College', 
+        'Year', 'HighSchool', 'City', 'State', 'RecruitedPosition', 'Height', 'Weight', 
         'CompositeRating', 'CompositeStars', 'CompositeNationalRank', 'CompositeStateRank', 
         'CompositePositionRank', 'Rating247', 'Stars247', 'NationalRank247', 'StateRank247', 'PositionRank247']
 
-    query = ''' INSERT INTO SourcedPlayers(ID, IDYR, PlayerName, College, 
-        RecruitingClassYear, HighSchool, City, State, RecruitedPosition, Height, Weight, 
+    query = ''' INSERT INTO SourcedPlayers(ID, IDYR, KeyDataSet, PlayerName, College, 
+        Year, HighSchool, City, State, RecruitedPosition, Height, Weight, 
         CompositeRating, CompositeStars, CompositeNationalRank, CompositeStateRank, 
         CompositePositionRank, Rating247, Stars247, NationalRank247, StateRank247, PositionRank247)
         VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'''
     
-    finalPlayers = []
-    for player in sports247Data:
-        finalPlayer = {}
-        for column in columns:
-            if (column in player.keys()):
-                finalPlayer[column] = player[column]
-            else:
-                finalPlayer[column] = None
-        finalPlayers.append(finalPlayer)
-    
     conn = sql.connect(cc.databaseName)
     c = conn.cursor()
     
-
-    for i in finalPlayers:
-        c.execute(query, i)
-        conn.execute()
+    finalPlayers = []
+    for player in sports247Data:
+        finalPlayer = []
+        for column in columns:
+            if (column == 'KeyDataSet'):
+                finalPlayer.append(1)
+            elif (column in player.keys()):
+                finalPlayer.append(player[column])
+            else:
+                finalPlayer.append(None)
+        c.execute(query, finalPlayer)
+        conn.commit()
+    
 
     #df = pd.DataFrame(sports247Data)
 
@@ -467,14 +466,14 @@ def checkSchools(recruitSchool, conference, schoolsJSON):
             if ('rivalsDisplay' in school.keys() and recruitSchool == school['rivalsDisplay']):
                 return school['id']
 
-def process_Rivals(recruitDir, conference, schoolsJSON):
+def process_Rivals(recruitDir, conference, schoolsJSON, encode):
     all_recruits = []
     #error_files = [] 
     for file in os.listdir(recruitDir):
 
         player = {}
         #get file contents and soup it
-        recruitSoup = BeautifulSoup(io.open(recruitDir + file, "r", encoding='windows-1252').read(), 'lxml')
+        recruitSoup = BeautifulSoup(io.open(recruitDir + file, "r", encoding=encode).read(), 'lxml')
 
         #find the magical html attr
         if (recruitSoup.find("div", class_="profile-block") is not None):
@@ -484,16 +483,16 @@ def process_Rivals(recruitDir, conference, schoolsJSON):
 
             #player info
             #rawSchool is helpful for troubleshooting rivals school names
-            player['rawCollege'] = recruitInfo['school_name']
-            player['college'] = checkSchools(recruitInfo['school_name'],conference, schoolsJSON)
-            player['year'] = str(recruitInfo['recruit_year'])
-            player['playerName'] = recruitInfo['full_name']
-            player['city'] = recruitInfo['city']
-            player['state'] = recruitInfo['state_abbreviation']
-            player['highSchool'] = recruitInfo['highschool_name']        
-            player['position'] = recruitInfo['position_group_abbreviation']
-            player['height'] = recruitInfo['height']
-            player['weight'] = recruitInfo['weight']
+            player['CollegeRaw'] = recruitInfo['school_name']
+            player['College'] = checkSchools(recruitInfo['school_name'],conference, schoolsJSON)
+            player['Year'] = str(recruitInfo['recruit_year'])
+            player['PlayerName'] = recruitInfo['full_name']
+            player['City'] = recruitInfo['city']
+            player['State'] = recruitInfo['state_abbreviation']
+            player['HighSchool'] = recruitInfo['highschool_name']        
+            player['Position'] = recruitInfo['position_group_abbreviation']
+            player['Height'] = recruitInfo['height']
+            player['Weight'] = recruitInfo['weight']
             player['StarsRivals'] = recruitInfo['stars']
             player['NationalRankRivals'] = recruitInfo['national_rank']
             player['PositionRankRivals'] = recruitInfo['position_rank']
@@ -502,8 +501,8 @@ def process_Rivals(recruitDir, conference, schoolsJSON):
             if player:
                 duplicate = False
                 for i in all_recruits:
-                    if (player['playerName'].lower().replace(".","").replace(" ", "").replace("'", "") == i['playerName'].lower().replace(".","").replace(" ", "").replace("'", "") ):
-                        if (player['year'] == i['year']):
+                    if (player['PlayerName'].lower().replace(".","").replace(" ", "").replace("'", "") == i['PlayerName'].lower().replace(".","").replace(" ", "").replace("'", "") ):
+                        if (player['Year'] == i['Year']):
                             duplicate = True
                 
                 if (not duplicate):
@@ -594,13 +593,13 @@ def process_NCAA(conferences):
             for x in gameSoup.find_all("tr", class_=""): 
                 count = 0
                 player={}
-                player['team'] = file.split("_")[0]
-                player['year'] = file.split("_")[1].split(".")[0]
+                player['College'] = file.split("_")[0]
+                player['Year'] = file.split("_")[1].split(".")[0]
                 for z in x.find_all("td"):
                     if (count == 1):
-                        player['name'] = z.text.strip()
+                        player['PlayerName'] = z.text.strip()
                     elif (count == 2):
-                        player['position'] = z.text.strip()
+                        player['Position'] = z.text.strip()
                     elif (count == 4):
                         player['NCAAGamesPlayed'] = z.text.strip()
                     elif (count == 5):
@@ -609,8 +608,8 @@ def process_NCAA(conferences):
                 playerData.append(player)
     
     for player in playerData:
-        newName = player['name'].split(',')
-        player['name'] = newName[1].strip() + ' ' + newName[0].strip()
+        newName = player['PlayerName'].split(',')
+        player['PlayerName'] = newName[1].strip() + ' ' + newName[0].strip()
     
     return playerData
 
@@ -703,7 +702,7 @@ def process_WikipediaBigTenBigTwelve(teamDir):
                     player = {}
                     playerInfo = x.text.split(",", 1)
                     #year
-                    player['year'] = y
+                    player['Year'] = y
                     #name
                     player['playerName'] = playerInfo[0]
                     #schoolAndAwardsFX
