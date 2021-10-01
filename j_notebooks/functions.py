@@ -379,13 +379,41 @@ def toDB_247Sports():
     
     sports247Data = mergeSourceFiles(dataset, inputDirectory, sourceFiles)
 
-
     createNewID(idConfig[dataset], sports247Data, '_')
     createNewID(idConfig[dataset_yr], sports247Data, '_', False, 'IDYR')
 
-    df = pd.DataFrame(sports247Data)
+    columns = ['ID', 'IDYR', 'PlayerName', 'College', 
+        'RecruitingClassYear', 'HighSchool', 'City', 'State', 'RecruitedPosition', 'Height', 'Weight', 
+        'CompositeRating', 'CompositeStars', 'CompositeNationalRank', 'CompositeStateRank', 
+        'CompositePositionRank', 'Rating247', 'Stars247', 'NationalRank247', 'StateRank247', 'PositionRank247']
 
-    connAndWriteDB(df, cc.table247)
+    query = ''' INSERT INTO SourcedPlayers(ID, IDYR, PlayerName, College, 
+        RecruitingClassYear, HighSchool, City, State, RecruitedPosition, Height, Weight, 
+        CompositeRating, CompositeStars, CompositeNationalRank, CompositeStateRank, 
+        CompositePositionRank, Rating247, Stars247, NationalRank247, StateRank247, PositionRank247)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'''
+    
+    finalPlayers = []
+    for player in sports247Data:
+        finalPlayer = {}
+        for column in columns:
+            if (column in player.keys()):
+                finalPlayer[column] = player[column]
+            else:
+                finalPlayer[column] = None
+        finalPlayers.append(finalPlayer)
+    
+    conn = sql.connect(cc.databaseName)
+    c = conn.cursor()
+    
+
+    for i in finalPlayers:
+        c.execute(query, i)
+        conn.execute()
+
+    #df = pd.DataFrame(sports247Data)
+
+    #connAndWriteDB(df, cc.table247)
 
     return 'DB Write is done'
 
@@ -466,10 +494,10 @@ def process_Rivals(recruitDir, conference, schoolsJSON):
             player['position'] = recruitInfo['position_group_abbreviation']
             player['height'] = recruitInfo['height']
             player['weight'] = recruitInfo['weight']
-            player['stars'] = recruitInfo['stars']
-            player['nationalRank'] = recruitInfo['national_rank']
-            player['positionRank'] = recruitInfo['position_rank']
-            player['stateRank'] = recruitInfo['state_rank']
+            player['StarsRivals'] = recruitInfo['stars']
+            player['NationalRankRivals'] = recruitInfo['national_rank']
+            player['PositionRankRivals'] = recruitInfo['position_rank']
+            player['StateRankRivals'] = recruitInfo['state_rank']
 
             if player:
                 duplicate = False
@@ -574,9 +602,9 @@ def process_NCAA(conferences):
                     elif (count == 2):
                         player['position'] = z.text.strip()
                     elif (count == 4):
-                        player['gamesPlayed'] = z.text.strip()
+                        player['NCAAGamesPlayed'] = z.text.strip()
                     elif (count == 5):
-                        player['gamesStarted'] = z.text.strip()
+                        player['NCAAGamesStarted'] = z.text.strip()
                     count = count + 1
                 playerData.append(player)
     
@@ -709,7 +737,7 @@ def process_WikipediaBigTenBigTwelve(teamDir):
         if (len(player['media']) == 3):
             player['media'] == player['media'][0]
         
-        player['team'] = max(player['coaches'], player['media'])
+        player['AllConferenceTeam'] = max(player['coaches'], player['media'])
 
     for player in all_players:
         del player['coaches']
@@ -767,7 +795,7 @@ def process_WikipediaSEC(teamDir):
         if (len(player['media']) == 3):
             player['media'] == player['media'][0]
     
-        player['team'] = max(player['coaches'], player['media'])
+        player['AllConferenceTeam'] = max(player['coaches'], player['media'])
 
     for player in all_players:
         del player['coaches']
@@ -790,7 +818,7 @@ def process_csvAllConf(records):
             record['college'] = record['School']
             record['position'] = record['POSITION']
             record['year'] = record['Year']
-            record['team'] = record['Team']
+            record['AllConferenceTeam'] = record['Team']
             if (len(record['team']) > 1 ):
                 record['team'] = record['team'][0]
         except:
@@ -884,7 +912,7 @@ def handle_nflData(years, headers, sleepyTime=10):
         time.sleep(sleepyTime)
     
     final_nflDraft = []
-    nfl_keys = ['DraftYear', 'DraftRound', 'DraftPick', 'DraftTeam', 'playerName', 'Position', 'NFLAllProFirstTeam', 'NFLProBowl', 'NFLYearsAsStarter', 'NFLGamesPlayed', 'College']
+    nfl_keys = ['NFLDraftYear', 'NFLDraftRound', 'NFLDraftPick', 'NFLDraftTeam', 'playerName', 'Position', 'NFLAllProFirstTeam', 'NFLProBowl', 'NFLYearsAsStarter', 'NFLGamesPlayed', 'College']
 
     for list in all_picks:
         newdict = {nfl_keys[i]: list[i] for i in range(len(nfl_keys))}
@@ -996,7 +1024,7 @@ def handle_allAmerican(years, headers, sleepyTime=5):
     time.sleep(sleepyTime)
 
     final_aaSelections = []
-    aa_keys = ['year', 'playerName', 'college', 'afca', 'ap', 'fwaa', 'tsn', 'wcff']
+    aa_keys = ['year', 'playerName', 'college', 'AllAmericanAFCA', 'AllAmericanAP', 'AllAmericanFWAA', 'AllAmericanTSN', 'AllAmericanWCFF']
 
     for list in all_players:
         newdict = {aa_keys[i]: list[i] for i in range(len(aa_keys))}
