@@ -101,6 +101,27 @@ def connAndWriteDB(df, table):
     c = conn.cursor()
 
     df.to_sql(table, conn, if_exists='replace', index = False)
+
+def writeToSourcedPlayers(dataset, columns, query, keydataset):
+    conn = sql.connect(cc.databaseName)
+    c = conn.cursor()
+    
+    finalPlayers = []
+    for player in dataset:
+        finalPlayer = []
+        for column in columns:
+            if (column == 'KeyDataSet'):
+                finalPlayer.append(keydataset)
+            elif (column in player.keys()):
+                finalPlayer.append(player[column])
+            else:
+                finalPlayer.append(None)
+        c.execute(query, finalPlayer)
+        conn.commit()
+    
+    conn.close()
+
+    return 'DB Write is done'
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # 247Sports Specific Functions
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -203,7 +224,7 @@ def process_247Sports(prospectDirectory, teamDirectory):
                         player['State'] = "None"
                 #Position
                 if (x.find("div", class_="position") is not None):
-                    player['RecruitedPosition'] = ((x.find("div", class_="position").text).strip())
+                    player['Position'] = ((x.find("div", class_="position").text).strip())
                 #Height/Weight
                 if (x.find("div", class_="metrics") is not None):
                     heightWeight = x.find("div", class_="metrics").text.strip()
@@ -383,38 +404,17 @@ def toDB_247Sports():
     createNewID(idConfig[dataset_yr], sports247Data, '_', False, 'IDYR')
 
     columns = ['ID', 'IDYR', 'KeyDataSet', 'PlayerName', 'College', 
-        'Year', 'HighSchool', 'City', 'State', 'RecruitedPosition', 'Height', 'Weight', 
+        'Year', 'HighSchool', 'City', 'State', 'Position', 'Height', 'Weight', 
         'CompositeRating', 'CompositeStars', 'CompositeNationalRank', 'CompositeStateRank', 
         'CompositePositionRank', 'Rating247', 'Stars247', 'NationalRank247', 'StateRank247', 'PositionRank247']
 
     query = ''' INSERT INTO SourcedPlayers(ID, IDYR, KeyDataSet, PlayerName, College, 
-        Year, HighSchool, City, State, RecruitedPosition, Height, Weight, 
+        Year, HighSchool, City, State, Position, Height, Weight, 
         CompositeRating, CompositeStars, CompositeNationalRank, CompositeStateRank, 
         CompositePositionRank, Rating247, Stars247, NationalRank247, StateRank247, PositionRank247)
         VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'''
     
-    conn = sql.connect(cc.databaseName)
-    c = conn.cursor()
-    
-    finalPlayers = []
-    for player in sports247Data:
-        finalPlayer = []
-        for column in columns:
-            if (column == 'KeyDataSet'):
-                finalPlayer.append(1)
-            elif (column in player.keys()):
-                finalPlayer.append(player[column])
-            else:
-                finalPlayer.append(None)
-        c.execute(query, finalPlayer)
-        conn.commit()
-    
-
-    #df = pd.DataFrame(sports247Data)
-
-    #connAndWriteDB(df, cc.table247)
-
-    return 'DB Write is done'
+    writeToSourcedPlayers(sports247Data, columns, query, 1)
 
 def sports247_SourcedPlayers():
     SQL = '''SELECT * from Sports247'''
@@ -554,9 +554,17 @@ def toDB_Rivals():
     createNewID(idConfig[dataset], rivalsData, '_')
     createNewID(idConfig[dataset_yr], rivalsData, '_', False, 'IDYR')
 
-    df = pd.DataFrame(rivalsData)
+    columns = ['ID', 'IDYR', 'KeyDataSet', 'PlayerName', 'College', 'CollegeRaw'
+        'Year', 'HighSchool', 'City', 'State', 'Position', 'Height', 'Weight', 
+        'Rating247', 'Stars247', 'NationalRank247', 'StateRank247', 'PositionRank247']
 
-    connAndWriteDB(df, cc.tableRivals)
+    query = ''' INSERT INTO SourcedPlayers(ID, IDYR, KeyDataSet, PlayerName, College, CollegeRaw
+        Year, HighSchool, City, State, RecruitedPosition, Height, Weight, 
+        CompositeRating, CompositeStars, CompositeNationalRank, CompositeStateRank, 
+        CompositePositionRank, Rating247, Stars247, NationalRank247, StateRank247, PositionRank247)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'''
+    
+    writeToSourcedPlayers(rivalsData, columns, query, 2)
 
     return 'DB Write is done'
 
@@ -668,9 +676,16 @@ def toDB_NCAA():
 
     createNewID(idConfig[dataset], ncaaData, '_', True)
 
-    df = pd.DataFrame(ncaaData)
+    columns = ['ID', 'KeyDataSet', 'PlayerName', 'College', 
+        'Year', 'Position',
+        'NCAAGamesPlayed', 'NCAAGamesStarted']
 
-    connAndWriteDB(df, cc.tableNCAA)
+    query = ''' INSERT INTO SourcedPlayers(ID, KeyDataSet, PlayerName, College, 
+        Year, Position, 
+        NCAAGamesPlayed, NCAAGamesStarted)
+        VALUES (?,?,?,?,?,?,?,?)'''
+    
+    writeToSourcedPlayers(ncaaData, columns, query, 5)
 
     return 'DB Write is done'
 

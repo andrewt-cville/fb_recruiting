@@ -2,7 +2,7 @@
     "rivals" : 
         [
             "PlayerName", 
-            "school"
+            "College"
         ],
     "sports247" : 
         [
@@ -11,39 +11,39 @@
         ],
     "rivals_yr" : 
         [
-            "playerName", 
-            "school",
-            "year"
+            "PlayerName", 
+            "College",
+            "Year"
         ],
     "sports247_yr" : 
         [
             "PlayerName", 
             "College",
-            "RecruitingClassYear"
+            "Year"
         ], 
     "nflData" : 
         [
-            "playerName", 
-            "college_id"
+            "PlayerName", 
+            "College"
         ], 
     "allAmerican" : 
         [
-            "playerName", 
-            "school"
+            "PlayerName", 
+            "College"
         ], 
     "allConf" : 
         [
-            "playerName", 
-            "school"
+            "PlayerName", 
+            "College"
         ], 
     "cfbRef" : 
         [
-            "playerName", 
-            "school"
+            "PlayerName", 
+            "College"
         ],
     "ncaa" :
         [
-            "name",
-            "team"
+            "PlayerName",
+            "College"
         ]
 }
