@@ -84,7 +84,7 @@ def search(name, team, dataList):
     return [element for element in dataList if (element['name'] == name and element['team'] == team)]
 
 def searchAllConf(name, team, dataList):
-    return [element for element in dataList if (element['playerName'] == name and element['school'] == team)]
+    return [element for element in dataList if (element['PlayerName'] == name and element['College'] == team)]
 
 def searchAllAmerican(name, team, dataList):
     return [element for element in dataList if (element['player'] == name and element['school'] == team)]
@@ -554,15 +554,14 @@ def toDB_Rivals():
     createNewID(idConfig[dataset], rivalsData, '_')
     createNewID(idConfig[dataset_yr], rivalsData, '_', False, 'IDYR')
 
-    columns = ['ID', 'IDYR', 'KeyDataSet', 'PlayerName', 'College', 'CollegeRaw'
+    columns = ['ID', 'IDYR', 'KeyDataSet', 'PlayerName', 'College', 'CollegeRaw',
         'Year', 'HighSchool', 'City', 'State', 'Position', 'Height', 'Weight', 
-        'Rating247', 'Stars247', 'NationalRank247', 'StateRank247', 'PositionRank247']
+        'StarsRivals', 'NationalRankRivals', 'StateRankRivals', 'PositionRankRivals']
 
-    query = ''' INSERT INTO SourcedPlayers(ID, IDYR, KeyDataSet, PlayerName, College, CollegeRaw
-        Year, HighSchool, City, State, RecruitedPosition, Height, Weight, 
-        CompositeRating, CompositeStars, CompositeNationalRank, CompositeStateRank, 
-        CompositePositionRank, Rating247, Stars247, NationalRank247, StateRank247, PositionRank247)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'''
+    query = ''' INSERT INTO SourcedPlayers(ID, IDYR, KeyDataSet, PlayerName, College, CollegeRaw,
+        Year, HighSchool, City, State, Position, Height, Weight, 
+        StarsRivals, NationalRankRivals, StateRankRivals, PositionRankRivals)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'''
     
     writeToSourcedPlayers(rivalsData, columns, query, 2)
 
@@ -719,43 +718,43 @@ def process_WikipediaBigTenBigTwelve(teamDir):
                     #year
                     player['Year'] = y
                     #name
-                    player['playerName'] = playerInfo[0]
+                    player['PlayerName'] = playerInfo[0]
                     #schoolAndAwardsFX
                     playerSAF = playerInfo[1].split("(", 1)
                     if(len(playerSAF) > 1):
                         #school
-                        player['college'] = playerSAF[0].strip()
+                        player['College'] = playerSAF[0].strip()
                         #AwardsFX
                         playerAwards = playerSAF[1].split(";")
                         if ("Coaches" in playerAwards[0] and len(playerAwards)> 1):
                             playerCoaches = playerAwards[0].split("-", 1)
-                            player['coaches'] = playerCoaches[1][:1]           
+                            player['Coaches'] = playerCoaches[1][:1]           
                         elif ("Coaches" in playerAwards[0] and len(playerAwards) == 1):
                             playerCoaches = playerAwards[0].split("-", 1)
-                            player['coaches'] = playerCoaches[1][:-1]
-                            player['media'] = "0"
+                            player['Coaches'] = playerCoaches[1][:-1]
+                            player['Media'] = "0"
                         elif ("Media" in playerAwards[0]):
                             playerMedia = playerAwards[0].split("-", 1)
-                            player['coaches'] = "0"
-                            player['media'] = playerMedia[1][:1]
+                            player['Coaches'] = "0"
+                            player['Media'] = playerMedia[1][:1]
                         if (len(playerAwards) > 1 and ("Media" in playerAwards[1])):
                             playerMedia = playerAwards[1].split("-", 1)
-                            player['media'] = playerMedia[1][:1]
+                            player['Media'] = playerMedia[1][:1]
                         else:
-                            player['media'] = "0"
+                            player['Media'] = "0"
                         all_players.append(player)
     
     for player in all_players:
-        if (len(player['coaches']) == 3):
-            player['coaches'] == player['coaches'][0]
-        if (len(player['media']) == 3):
-            player['media'] == player['media'][0]
+        if (len(player['Coaches']) == 3):
+            player['Coaches'] == player['Coaches'][0]
+        if (len(player['Media']) == 3):
+            player['Media'] == player['Media'][0]
         
-        player['AllConferenceTeam'] = max(player['coaches'], player['media'])
+        player['AllConferenceTeam'] = max(player['Coaches'], player['Media'])
 
     for player in all_players:
-        del player['coaches']
-        del player['media']
+        del player['Coaches']
+        del player['Media']
     
     return all_players
 
@@ -772,14 +771,14 @@ def process_WikipediaSEC(teamDir):
                 player = {}
                 playerInfo = x.text.split(",", 1)
                 #year
-                player['year'] = y
+                player['Year'] = y
                 #name
-                player['playerName'] = playerInfo[0]
+                player['PlayerName'] = playerInfo[0]
                 #schoolAndAwardsFX
                 playerSAF = playerInfo[1].split("(", 1)
                 if(len(playerSAF) > 1):
                     #school
-                    player['college'] = playerSAF[0].strip()
+                    player['College'] = playerSAF[0].strip()
                     #AwardsFX
                     if ("," in playerSAF[1]):
                         playerAwards = playerSAF[1].split(",")
@@ -828,14 +827,17 @@ def get_csvAllConf(filename):
 def process_csvAllConf(records):
     for record in records:
         try:
-            record['playerName'] = record['First Name'] + ' ' + record['Last Name']
-            record['college'] = record['School']
-            record['position'] = record['POSITION']
-            record['year'] = record['Year']
+            record['PlayerName'] = record['First Name'] + ' ' + record['Last Name']
+            record['College'] = record['School']
+            record['Position'] = record['POSITION']
+            record['Year'] = record['Year']
+
+            if (len(record['Team']) > 1 ):
+                record['Tam'] = record['Team'][0]
             record['AllConferenceTeam'] = record['Team']
-            if (len(record['team']) > 1 ):
-                record['team'] = record['team'][0]
-        except:
+
+        except Exception as e:
+            print (e)
             print (record)
 
     for record in records:
@@ -848,34 +850,6 @@ def process_csvAllConf(records):
     
     return records
 
-def summarize_allConf():
-    inputDirectory = '..//scrapedData//'
-    dataset = 'allConf'
-
-    ## Load the id config
-    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
-
-    ## Load the source file dict
-    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
-    
-    allConfData = mergeSourceFiles(dataset, inputDirectory, sourceFiles)
-    createNewID(idConfig[dataset], allConfData, '_')
-    finalOutput = []
-    for x in allConfData:
-        if (len(searchID(x['ID'], finalOutput)) == 0):
-            try:
-                playerList = searchAllConf(x['playerName'], x['college'], allConfData)
-                finalPlayer = {}
-                finalPlayer['ID'] = x['ID']
-                finalPlayer['team'] = x['team']
-            
-            except:
-                print (x)
-            
-            finalOutput.append(finalPlayer)
-    
-    return finalOutput
-
 def toDB_AllConference():
     inputDirectory = '..//scrapedData//'
     dataset = 'allConf'
@@ -885,16 +859,34 @@ def toDB_AllConference():
 
     ## Load the source file dict
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
+    
     allConfData = mergeSourceFiles(dataset, inputDirectory, sourceFiles)
-
     createNewID(idConfig[dataset], allConfData, '_')
+    allConf = []
+    for x in allConfData:
+        if (len(searchID(x['ID'], allConf)) == 0):
+            try:
+                playerList = searchAllConf(x['PlayerName'], x['College'], allConfData)
+                finalPlayer = {}
+                finalPlayer['ID'] = x['ID']
+                finalPlayer['AllConferenceTeam'] = x['AllConferenceTeam']
+            
+            except Exception as e:
+                print(e)
+                print(playerList)
+                print (x)
+            
+            allConf.append(finalPlayer)
+    
+    columns = ['ID', 'KeyDataSet', 'AllConferenceTeam']
 
-    df = pd.DataFrame(allConfData)
-
-    connAndWriteDB(df, cc.tableAllConference)
+    query = ''' INSERT INTO SourcedPlayers(ID, KeyDataSet, AllConferenceTeam)
+        VALUES (?,?,?)'''
+    
+    writeToSourcedPlayers(allConf, columns, query, 4)
 
     return 'DB Write is done'
-
+    
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Sports Reference - NFL Draft Specific Functions
 # NOTE: we don't keep the html files locally for this dataset, so get/process are one step
@@ -926,7 +918,7 @@ def handle_nflData(years, headers, sleepyTime=10):
         time.sleep(sleepyTime)
     
     final_nflDraft = []
-    nfl_keys = ['NFLDraftYear', 'NFLDraftRound', 'NFLDraftPick', 'NFLDraftTeam', 'playerName', 'Position', 'NFLAllProFirstTeam', 'NFLProBowl', 'NFLYearsAsStarter', 'NFLGamesPlayed', 'College']
+    nfl_keys = ['Year', 'NFLDraftRound', 'NFLDraftPick', 'NFLDraftTeam', 'PlayerName', 'Position', 'NFLAllProFirstTeam', 'NFLProBowl', 'NFLYearsAsStarter', 'NFLGamesPlayed', 'College']
 
     for list in all_picks:
         newdict = {nfl_keys[i]: list[i] for i in range(len(nfl_keys))}
@@ -966,9 +958,16 @@ def toDB_NFLDraft():
 
     createNewID(idConfig[dataset], nflData, '_')
 
-    df = pd.DataFrame(nflData)
+    columns = ['ID', 'KeyDataSet', 'PlayerName', 'College',
+        'Year', 'Position',
+        'NFLDraftRound', 'NFLDraftPick', 'NFLDraftTeam', 'NFLAllProFirstTeam', 'NFLProBowl', 'NFLYearsAsStarter', 'NFLGamesPlayed' ]
 
-    connAndWriteDB(df, cc.tableNFLDraft)
+    query = ''' INSERT INTO SourcedPlayers(ID, KeyDataSet, PlayerName, College,
+        Year, Position,
+        NFLDraftRound, NFLDraftPick, NFLDraftTeam, NFLAllProFirstTeam, NFLProBowl, NFLYearsAsStarter, NFLGamesPlayed)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)'''
+    
+    writeToSourcedPlayers(nflData, columns, query, 3)
 
     return 'DB Write is done'
 
@@ -1038,7 +1037,7 @@ def handle_allAmerican(years, headers, sleepyTime=5):
     time.sleep(sleepyTime)
 
     final_aaSelections = []
-    aa_keys = ['year', 'playerName', 'college', 'AllAmericanAFCA', 'AllAmericanAP', 'AllAmericanFWAA', 'AllAmericanTSN', 'AllAmericanWCFF']
+    aa_keys = ['Year', 'PlayerName', 'College', 'AllAmericanAFCA', 'AllAmericanAP', 'AllAmericanFWAA', 'AllAmericanTSN', 'AllAmericanWCFF']
 
     for list in all_players:
         newdict = {aa_keys[i]: list[i] for i in range(len(aa_keys))}
@@ -1101,8 +1100,15 @@ def toDB_AllAmerican():
 
     createNewID(idConfig[dataset], aaData, '_')
 
-    df = pd.DataFrame(aaData)
+    columns = ['ID', 'KeyDataSet', 'PlayerName', 'College',
+        'Year',
+        'AllAmericanAFCA', 'AllAmericanAP', 'AllAmericanFWAA', 'AllAmericanTSN', 'AllAmericanWCFF']
 
-    connAndWriteDB(df, cc.tableAllAmerican)
+    query = ''' INSERT INTO SourcedPlayers(ID, KeyDataSet, PlayerName, College,
+        Year,
+        AllAmericanAFCA, AllAmericanAP, AllAmericanFWAA, AllAmericanTSN, AllAmericanWCFF)
+        VALUES (?,?,?,?,?,?,?,?,?,?)'''
+    
+    writeToSourcedPlayers(aaData, columns, query, 6)
 
     return 'DB Write is done'
