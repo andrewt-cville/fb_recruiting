@@ -1,0 +1,2487 @@
+{
+  "version": 1,
+  "pairs": [
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "joshpruitt",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "baronlemar",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Garden City C.C.",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Garden City",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Lutcher",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "KS",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "LA",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "TE",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "DE",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 75,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 77,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 235,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 280,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "joshpruitt_troy_2005",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "baronlemar_troy_2005",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "joshpruitt_troy_2005"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "baronlemar_troy_2005"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "joshpruitt",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "brandonlang",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Garden City C.C.",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "Hargrave Military Academy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Garden City",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Chatham",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "KS",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "VA",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "TE",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "DE",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 75,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 77,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 235,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 265,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "joshpruitt_troy_2005",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "brandonlang_troy_2005",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "joshpruitt_troy_2005"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "brandonlang_troy_2005"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "joshpruitt",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "joebaker",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Garden City C.C.",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "Baldwin",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Garden City",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Hardrick",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "KS",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "GA",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "TE",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "LB",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 75,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 73,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 235,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 215,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "joshpruitt_troy_2005",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "joebaker_troy_2005",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "joshpruitt_troy_2005"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "joebaker_troy_2005"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "sethsutton",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "joshpruitt",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Coffeyville C.C.",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Coffeyville",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Ellsworth",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "KS",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "KS",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "OT",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "TE",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 78,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 75,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 315,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 235,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "sethsutton_troy_2005",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "joshpruitt_troy_2005",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "sethsutton_troy_2005"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "joshpruitt_troy_2005"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "sethsutton",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "sethsutton",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Coffeyville C.C.",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Coffeyville",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Cartersville",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "KS",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "GA",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "OT",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "OL",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 78,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 78,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 315,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 315,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "sethsutton_troy_2005",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "sethsutton_troy_2005",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "sethsutton_troy_2005"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "sethsutton_troy_2005"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "sethsutton",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "baronlemar",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Coffeyville C.C.",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Coffeyville",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Lutcher",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "KS",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "LA",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "OT",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "DE",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 78,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 77,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 315,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 280,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "sethsutton_troy_2005",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "baronlemar_troy_2005",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "sethsutton_troy_2005"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "baronlemar_troy_2005"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "sethsutton",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "brandonlang",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Coffeyville C.C.",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "Hargrave Military Academy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Coffeyville",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Chatham",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "KS",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "VA",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "OT",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "DE",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 78,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 77,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 315,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 265,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "sethsutton_troy_2005",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "brandonlang_troy_2005",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "sethsutton_troy_2005"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "brandonlang_troy_2005"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "sethsutton",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "joebaker",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Coffeyville C.C.",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "Baldwin",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Coffeyville",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Hardrick",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "KS",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "GA",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "OT",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "LB",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 78,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 73,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 315,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 215,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "sethsutton_troy_2005",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "joebaker_troy_2005",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "sethsutton_troy_2005"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "joebaker_troy_2005"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "baronlemar",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "joshpruitt",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Fort Scott C.C.",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Fort Scott",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Ellsworth",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "KS",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "KS",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "SDE",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "TE",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 77,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 75,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 280,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 235,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "baronlemar_troy_2005",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "joshpruitt_troy_2005",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "baronlemar_troy_2005"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "joshpruitt_troy_2005"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "baronlemar",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "sethsutton",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Fort Scott C.C.",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Fort Scott",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Cartersville",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "KS",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "GA",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "SDE",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "OL",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 77,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 78,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 280,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 315,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "baronlemar_troy_2005",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "sethsutton_troy_2005",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "baronlemar_troy_2005"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "sethsutton_troy_2005"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "baronlemar",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "baronlemar",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Fort Scott C.C.",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Fort Scott",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Lutcher",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "KS",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "LA",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "SDE",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "DE",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 77,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 77,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 280,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 280,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "baronlemar_troy_2005",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "baronlemar_troy_2005",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "baronlemar_troy_2005"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "baronlemar_troy_2005"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "baronlemar",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "brandonlang",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Fort Scott C.C.",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "Hargrave Military Academy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Fort Scott",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Chatham",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "KS",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "VA",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "SDE",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "DE",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 77,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 77,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 280,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 265,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "baronlemar_troy_2005",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "brandonlang_troy_2005",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "baronlemar_troy_2005"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "brandonlang_troy_2005"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "baronlemar",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "joebaker",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2005,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Fort Scott C.C.",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "Baldwin",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Fort Scott",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Hardrick",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "KS",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "GA",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "SDE",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "LB",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 77,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 73,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 280,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 215,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "baronlemar_troy_2005",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "joebaker_troy_2005",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "baronlemar_troy_2005"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "joebaker_troy_2005"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "xavierfields",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "xavierfields",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2013,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2013,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Stanhope Elmore",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "Stanhope Elmore",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Millbrook",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Montgomery",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "AL",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "AL",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "OG",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "OL",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 76,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 76,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 335,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 345,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "xavierfields_troy_2013",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "xavierfields_troy_2013",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "xavierfields_troy_2013"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "xavierfields_troy_2013"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "xavierfields",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "olufemiodaibo",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2013,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2013,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Stanhope Elmore",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "Santa Barbara C.C.",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Millbrook",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Santa Barbara",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "AL",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "CA",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "OG",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "DB",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 76,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 74,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 335,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 195,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "xavierfields_troy_2013",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "olufemiodaibo_troy_2013",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "xavierfields_troy_2013"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "olufemiodaibo_troy_2013"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "brettmedforth",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "xavierfields",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2013,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2013,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Sylacauga Sch",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "Stanhope Elmore",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Sylacauga",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Montgomery",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "AL",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "AL",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "OG",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "OL",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 75,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 76,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 245,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 345,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "brettmedforth_troy_2013",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "xavierfields_troy_2013",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "brettmedforth_troy_2013"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "xavierfields_troy_2013"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "brettmedforth",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "olufemiodaibo",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2013,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2013,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "troy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "HighSchool",
+            "value": "Sylacauga Sch",
+            "type": "String"
+          },
+          "b": {
+            "name": "HighSchool",
+            "value": "Santa Barbara C.C.",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "City",
+            "value": "Sylacauga",
+            "type": "String"
+          },
+          "b": {
+            "name": "City",
+            "value": "Santa Barbara",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "State",
+            "value": "AL",
+            "type": "String"
+          },
+          "b": {
+            "name": "State",
+            "value": "CA",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Position",
+            "value": "OG",
+            "type": "String"
+          },
+          "b": {
+            "name": "Position",
+            "value": "DB",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Height",
+            "value": 75,
+            "type": "String"
+          },
+          "b": {
+            "name": "Height",
+            "value": 74,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Weight",
+            "value": 245,
+            "type": "String"
+          },
+          "b": {
+            "name": "Weight",
+            "value": 195,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "IDYR",
+            "value": "brettmedforth_troy_2013",
+            "type": "String"
+          },
+          "b": {
+            "name": "IDYR",
+            "value": "olufemiodaibo_troy_2013",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "247 Sports",
+          "record": "brettmedforth_troy_2013"
+        },
+        "b": {
+          "dataset": "Rivals",
+          "record": "olufemiodaibo_troy_2013"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    }
+  ]
+}
