@@ -346,47 +346,6 @@ def process_247Sports(prospectDirectory, teamDirectory):
                     all_recruits.append(player)  
     return all_recruits
 
-def summarize_247Sports():
-    inputDirectory = '..//scrapedData//'
-    dataset = 'sports247'
-
-    ## Load the id config
-    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
-
-    ## Load the source file dict
-    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
-    
-    sports247Data = mergeSourceFiles(dataset, inputDirectory, sourceFiles)
-    createNewID(idConfig[dataset], sports247Data, '_')
-    final247 = []
-    for record in sports247Data:
-        finalRecord = {}
-        finalRecord['ID'] = record['ID']
-        finalRecord['playerName'] = record['displayName']
-        finalRecord['year'] = record['year']
-        finalRecord['college'] = record['college']
-        finalRecord['highSchool'] = record['highSchool']
-        finalRecord['homeCity'] = record['city']
-        finalRecord['homeState'] = record['state']
-        finalRecord['position'] = record['position']
-        finalRecord['height'] = record['height']
-        finalRecord['weight'] = record['weight']
-        finalRecord['comp_stars'] = record['compStars']
-        finalRecord['comp_rating'] = record['compRating']
-        finalRecord['comp_natlRank'] = record['nationalRank']
-        finalRecord['comp_posRank'] = record['positionRank']
-        finalRecord['comp_stateRank'] = record['stateRank']
-        if ('247Rating' in record.keys()):
-            finalRecord['247_rating'] = record['247Rating']
-            finalRecord['247_stars'] = record['247Stars']
-        if ('247positionRank' in record.keys()):
-            finalRecord['247_positionRank'] = record['247positionRank'] 
-        if ('247stateRank' in record.keys()):
-            finalRecord['247_stateRank'] = record['247stateRank']
-        final247.append(finalRecord)
-
-    return final247
-
 def toDB_247Sports():
     inputDirectory = '..//scrapedData//'
     dataset = 'sports247'
@@ -511,34 +470,6 @@ def process_Rivals(recruitDir, conference, schoolsJSON, encode):
             #error_files.append(file)
     return all_recruits
 
-def summarize_Rivals():
-    inputDir = '..//scrapedData//'
-    dataset = 'rivals'
-
-    ## Load the id config
-    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
-
-    ## Load the source file dict
-    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
-
-    rivalsData = mergeSourceFiles(dataset, inputDir, sourceFiles)
-
-    createNewID(idConfig[dataset], rivalsData, '_')
-    finalRivals = []
-    for record in rivalsData:
-        try:
-            finalRecord = {}
-            finalRecord['ID'] = record['ID']
-            finalRecord['rivals_stars'] = record['stars']
-            finalRecord['rivals_natlRank'] = record['nationalRank']
-            finalRecord['rivals_posRank'] = record['positionRank']
-            finalRecord['rivals_stateRank'] = record['stateRank']
-            finalRivals.append(finalRecord)
-        except:
-            print(record)
-    
-    return finalRivals
-
 def toDB_Rivals():
     inputDirectory = '..//scrapedData//'
     dataset = 'rivals'
@@ -619,48 +550,6 @@ def process_NCAA(conferences):
         player['PlayerName'] = newName[1].strip() + ' ' + newName[0].strip()
     
     return playerData
-
-def summarize_NCAA():
-    inputDir = '..//scrapedData//'
-    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
-    ncaaData = json.loads(open(inputDir + sourceFiles['ncaa'][0], "r", encoding="utf-8").read())
-    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
-
-    createNewID(idConfig['ncaa'], ncaaData, '_', True)
-
-    finalOutput = []
-    for x in ncaaData:
-        if (len(searchID(x['ID'], finalOutput)) == 0):
-            playerList = search(x['name'], x['team'], ncaaData)
-            finalPlayer = {}
-            finalPlayer['ID'] = x['ID']
-            finalPlayer['name'] = x['name']
-            finalPlayer['team'] = x['team']
-            gamesPlayed = 0
-            gamesStarted = 0
-            year = 2021
-            for y in playerList:
-                gamesPlayed = gamesPlayed + int(y['gamesPlayed'])
-                gamesStarted = gamesStarted + int(y['gamesStarted'])
-                if (int(y['year']) < int(year)):
-                    year = y['year']
-            finalPlayer['gamesPlayed'] = gamesPlayed
-            finalPlayer['gamesStarted'] = gamesStarted
-            finalPlayer['year'] = year
-            finalOutput.append(finalPlayer)
-    
-    for record in finalOutput:
-        record['ncaa_gamesPlayed'] = record['gamesPlayed']
-        record['ncaa_gamesStarted'] = record['gamesStarted']
-        del record['gamesPlayed']
-        del record['gamesStarted']
-        del record['year']
-        del record['name']
-        del record['team']
-        if ('position' in record.keys()):
-            del record['position']
-    
-    return(finalOutput)
 
 def toDB_NCAA():
     inputDirectory = '..//scrapedData//'
@@ -927,24 +816,6 @@ def handle_nflData(years, headers, sleepyTime=10):
     
     return final_nflDraft
 
-def summarize_nflDraft ():
-    inputDirectory = '..//scrapedData//'
-    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
-    nflData = json.loads(open(inputDirectory + sourceFiles['nflData'][0], "r", encoding="utf-8").read())
-    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
-
-    createNewID(idConfig['nflData'], nflData, '_', True)
-
-    for x in nflData:
-        x['draft_year'] = x['year']
-    
-    for record in nflData:
-        del record['year']
-        del record['playerName']
-        del record['college_id']
-
-    return nflData
-
 def toDB_NFLDraft():
     inputDirectory = '..//scrapedData//'
     dataset = 'nflData'
@@ -1045,47 +916,6 @@ def handle_allAmerican(years, headers, sleepyTime=5):
         newdict = {}
     
     return final_aaSelections
-
-def summarize_allAmerican():
-    inputDirectory = '..//scrapedData//'
-    sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
-    aaData = json.loads(open(inputDirectory + sourceFiles['allAmerican'][0], "r", encoding="utf-8").read())
-    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
-
-    createNewID(idConfig['allAmerican'], aaData, '_', True)
-
-    finalOutput = []
-    for x in aaData:
-        if (len(searchID(x['ID'], finalOutput)) == 0):
-            playerList = searchAllConf(x['playerName'], x['college'], aaData)
-            finalPlayer = {}
-            finalPlayer['ID'] = x['ID']
-            finalPlayer['playerName'] = x['playerName']
-            finalPlayer['college'] = x['college']
-            year = 2021
-            afca = ap = fwaa = tsn = wcff = 0
-            for y in playerList:
-                afca = afca + int(y['afca'])
-                ap = ap + int(y['ap'])
-                fwaa = fwaa + int(y['fwaa'])
-                tsn = tsn + int(y['tsn'])
-                wcff = wcff + int(y['wcff'])
-                if (int(y['year']) < int(year)):
-                    year = y['year']
-            finalPlayer['afca'] = afca
-            finalPlayer['ap'] = ap
-            finalPlayer['fwaa'] = fwaa
-            finalPlayer['tsn'] = tsn
-            finalPlayer['wcff'] = wcff
-            finalPlayer['year'] = year
-            finalOutput.append(finalPlayer)
-
-    for record in finalOutput:
-        del record['year']
-        del record['playerName']
-        del record['college']
-    
-    return finalOutput
 
 def toDB_AllAmerican():
     inputDirectory = '..//scrapedData//'
