@@ -14,6 +14,7 @@ import cleantext as clean
 import pandas as pd
 import sqlite3 as sql
 import traceback
+import recordlinkage
 
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -122,6 +123,134 @@ def writeToSourcedPlayers(dataset, columns, query, keydataset):
     conn.close()
 
     return 'DB Write is done'
+
+def getKeyDataset(value):
+    conn = sql.connect(cc.databaseName)
+    conn.row_factory = sql.Row
+    c = conn.cursor()
+
+    query = '''SELECT KeyDataSet FROM DataSet where DataSet = ?''' 
+    vars = [value]
+    c.execute(query, vars)
+
+    result = (c.fetchall())[0]
+
+    return result[0]
+
+# ---------------------------------------------------------------------------------------------------------------------------------------
+# Fuzzy Matching Functions
+# ---------------------------------------------------------------------------------------------------------------------------------------
+
+def queryBuilderFM(KeyDataSet, DataSet):
+    fuzzyFields = cc.fuzzyFields[DataSet]
+    query = '''SELECT '''
+    count = len(fuzzyFields)
+    i = 1
+    for field in fuzzyFields:
+        if i == count:
+            query = query + field
+        else:
+           query = query + field + ', '
+        i = i + 1
+    
+    query = query + ''' FROM SourcedPlayers where KeyDataSet = ''' + str(KeyDataSet)
+    return query
+    
+
+def doFuzzyMatching (source, target):
+    
+
+    # Create Dataframes
+
+    ###### Source Dataframe
+    ######## I'm setting the key equal to the target dataset - that way we don't compare IDYR to ID
+    key = getKeyDataset(source)
+    #tkey = getKeyDataset(target)
+    SQL = queryBuilderFM(key, source)
+    if (key in (1,2)):
+        df_source = (connDBAndReturnDF(SQL)).set_index('IDYR')
+        df_source.index.name = source + '_IDYR'
+        df_source['IDYR'] = df_source.index.get_level_values(0)
+    else:
+        df_source = (connDBAndReturnDF(SQL)).set_index('ID')
+        df_source.index.name = source + '_ID'
+        df_source['ID'] = df_source.index.get_level_values(0)
+    
+    ###### Target Dataframe
+    key = getKeyDataset(target)
+
+    SQL = queryBuilderFM(key, target)
+    if (key in (1,2)):
+        df_target = (connDBAndReturnDF(SQL)).set_index('IDYR')
+        df_target.index.name = target + '_IDYR'
+        df_target['IDYR'] = df_target.index.get_level_values(0)
+    else:
+        df_target = (connDBAndReturnDF(SQL)).set_index('ID')
+        df_target.index.name = target + '_ID'
+        df_target['ID'] = df_target.index.get_level_values(0)
+    
+    #Create Blockers & Build Candidate Links
+    indexer = recordlinkage.BlockIndex(on=cc.blockers[target])
+    candidate_links = indexer.index(df_source, df_target)
+    
+    targetFuzzy = cc.fuzzyFields[target]
+    sumFields = []
+    c = recordlinkage.Compare()
+    if 'IDYR' in targetFuzzy:
+        c.exact('IDYR', 'IDYR', label='IDYR')
+        sumFields.append('IDYR')
+    if 'ID' in targetFuzzy:
+        c.string('ID', 'ID', label='ID')
+        sumFields.append('ID')
+    if 'PlayerName' in targetFuzzy:
+        c.string('PlayerName', 'PlayerName', method='damerau_levenshtein', label='PlayerName')
+        sumFields.append('PlayerName')
+    if 'City' in targetFuzzy:
+        c.string('City', 'City', label='City')
+        sumFields.append('City')
+    if 'State' in targetFuzzy:
+        c.exact('State', 'State', label='State')
+        sumFields.append('State')
+    if 'HighSchool' in targetFuzzy:
+        c.string('HighSchool', 'HighSchool', label='HighSchool')
+        sumFields.append('HighSchool')
+    if 'Position' in targetFuzzy:
+        c.exact('Position', 'Position', label='Position')
+        sumFields.append('Position')
+
+    try:
+        features = c.compute(candidate_links, df_source, df_target)
+    except KeyError as e:
+        print(e)
+    
+    sum = 0
+    for field in sumFields:
+        sum = sum + features[field]
+
+    features['sum'] = sum / len(sumFields)
+
+    filteredList = []
+    noMatch = []
+
+    features['sourceID'] = features.index.get_level_values(0)
+    features['targetID'] = features.index.get_level_values(1)
+
+    for idx, data in features.groupby(level=0):
+        data = data.loc[data['sum'].idxmax()]
+        if (data['ID'] == 1):
+            filteredList.append(data)
+        elif (data['ID'] != 1 and data['sum'] > .5):
+            filteredList.append(data)
+        else:
+            noMatch.append(data)
+
+    dfFinal = pd.DataFrame()
+    dfFinal = dfFinal.append(filteredList)
+    dfFinal.to_csv("results.csv")
+
+    return dfFinal
+
+
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # 247Sports Specific Functions
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -759,6 +888,8 @@ def toDB_AllConference():
                 finalPlayer = {}
                 finalPlayer['ID'] = x['ID']
                 finalPlayer['AllConferenceTeam'] = x['AllConferenceTeam']
+                finalPlayer['PlayerName'] = x['PlayerName']
+                finalPlayer['College'] = x['College']
             
             except Exception as e:
                 print(e)
@@ -767,10 +898,10 @@ def toDB_AllConference():
             
             allConf.append(finalPlayer)
     
-    columns = ['ID', 'KeyDataSet', 'AllConferenceTeam']
+    columns = ['ID', 'KeyDataSet', 'AllConferenceTeam', 'PlayerName', 'College']
 
-    query = ''' INSERT INTO SourcedPlayers(ID, KeyDataSet, AllConferenceTeam)
-        VALUES (?,?,?)'''
+    query = ''' INSERT INTO SourcedPlayers(ID, KeyDataSet, AllConferenceTeam, PlayerName, College)
+        VALUES (?,?,?,?,?)'''
     
     writeToSourcedPlayers(allConf, columns, query, 4)
 

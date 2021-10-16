@@ -38,10 +38,20 @@ def save_records(folder, filename, listPersist):
 
 
 databaseName = 'fb_recruiting.db'
-table247 = 'Sports247'
-tableRivals = 'Rivals'
-tableNCAA = 'NCAA'
-tableAllConference = 'AllConference'
-tableNFLDraft = 'NFL'
-tableAllAmerican = 'AllAmerican'
 
+sports247FuzzyFields = ['ID', 'IDYR', 'College', 'Year', 'PlayerName', 'HighSchool', 'City', 'State', 'Position']
+rivalsFuzzyFields = ['IDYR', 'College', 'Year', 'PlayerName', 'HighSchool', 'City', 'State', 'Position']
+nflFuzzyFields = ['ID', 'College', 'Year', 'PlayerName', 'Position']
+allconfFuzzyFields = ['ID', 'College', 'PlayerName']
+ncaaFuzzyFields = ['ID', 'College', 'PlayerName', 'Position']
+allamericanFuzzyFields = ['ID', 'College', 'Year', 'PlayerName']
+
+sports247Blockers = ['College', 'Year']
+rivalsBlockers = ['College', 'Year']
+nflBlockers = ['College']
+allconfBlockers = ['College']
+ncaaBlockers = ['College']
+allamericanBlockers = ['College']
+
+fuzzyFields = {'Rivals': rivalsFuzzyFields, 'NFL': nflFuzzyFields, 'AllConference': allconfFuzzyFields, 'NCAA': ncaaFuzzyFields, 'AllAmerican': allamericanFuzzyFields, 'Sports247': sports247FuzzyFields}
+blockers = {'Rivals': rivalsBlockers, 'NFL': nflBlockers, 'AllConference': allconfBlockers, 'NCAA': ncaaBlockers, 'AllAmerican': allamericanBlockers, 'Sports247': sports247Blockers}
