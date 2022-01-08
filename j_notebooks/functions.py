@@ -152,8 +152,11 @@ def queryBuilderFM(KeyDataSet, DataSet):
         else:
            query = query + field + ', '
         i = i + 1
+    if (KeyDataSet == 3):
+        query = query + ''' FROM UnlinkedNFL '''
     
-    query = query + ''' FROM SourcedPlayers where KeyDataSet = ''' + str(KeyDataSet)
+    else:
+        query = query + ''' FROM SourcedPlayers where KeyDataSet = ''' + str(KeyDataSet)
     return query
     
 
@@ -176,6 +179,7 @@ def doFuzzyMatching (source, target):
         df_source.index.name = source + '_ID'
         df_source['ID'] = df_source.index.get_level_values(0)
     
+    df_source.head()
     ###### Target Dataframe
     key = getKeyDataset(target)
 
@@ -189,11 +193,12 @@ def doFuzzyMatching (source, target):
         df_target.index.name = target + '_ID'
         df_target['ID'] = df_target.index.get_level_values(0)
     
-    #Create Blockers & Build Candidate Links
-    indexer = recordlinkage.BlockIndex(on=cc.blockers[target])
+    #Create Blockers & Build Candidate Links - !!changing blockers from target to source
+    indexer = recordlinkage.BlockIndex(on=cc.blockers[source])
     candidate_links = indexer.index(df_source, df_target)
     
-    targetFuzzy = cc.fuzzyFields[target]
+    #changing this from target being NFL to target being 247 for a test
+    targetFuzzy = cc.fuzzyFields[source]
     sumFields = []
     c = recordlinkage.Compare()
     if 'IDYR' in targetFuzzy:
@@ -215,7 +220,7 @@ def doFuzzyMatching (source, target):
         c.string('HighSchool', 'HighSchool', label='HighSchool')
         sumFields.append('HighSchool')
     if 'Position' in targetFuzzy:
-        c.exact('Position', 'Position', label='Position')
+        c.exact('Position', 'Position', label='Position', agree_value=.25)
         sumFields.append('Position')
 
     try:
@@ -239,7 +244,8 @@ def doFuzzyMatching (source, target):
         data = data.loc[data['sum'].idxmax()]
         if (data['ID'] == 1):
             filteredList.append(data)
-        elif (data['ID'] != 1 and data['sum'] > .5):
+        #elif (data['ID'] != 1 and data['sum'] > 0):
+        elif (data['ID'] != 1):
             filteredList.append(data)
         else:
             noMatch.append(data)
@@ -248,7 +254,7 @@ def doFuzzyMatching (source, target):
     dfFinal = dfFinal.append(filteredList)
     dfFinal.to_csv("results.csv")
 
-    return dfFinal
+    return df_source
 
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -912,7 +918,19 @@ def toDB_AllConference():
 # NOTE: we don't keep the html files locally for this dataset, so get/process are one step
 # ---------------------------------------------------------------------------------------------------------------------------------------
 
-def handle_nflData(years, headers, sleepyTime=10):
+def normalizeNFLCollege(recruitSchool, schoolsJSON):
+    college = ""
+    for school in schoolsJSON:
+        if ('nfl-ref' in school.keys()):
+            if (recruitSchool == school['nfl-ref']):
+                college = school['id']
+    
+    if college is not None:
+        return college
+    else:
+        return recruitSchool
+
+def handle_nflData(years, headers, schoolsJSON, sleepyTime=10):
     all_picks = []
     for y in years:
         url = 'https://www.pro-football-reference.com/years/{}/draft.htm'.format(y)
@@ -933,7 +951,12 @@ def handle_nflData(years, headers, sleepyTime=10):
                 draftPick.append(x.find("td", attrs={"data-stat":"pro_bowls"}).text)
                 draftPick.append(x.find("td", attrs={"data-stat":"years_as_primary_starter"}).text)
                 draftPick.append(x.find("td", attrs={"data-stat":"g"}).text)
-                draftPick.append(x.find("td", attrs={"data-stat":"college_id"}).text)
+                #This all needs to be cleaned but it's for normalizing the college name
+                drafteeSchool = x.find("td", attrs={"data-stat":"college_id"}).text
+                alphanum = [character for character in drafteeSchool if character.isalnum()]
+                alphanum = ("".join(alphanum)).lower()
+                draftPick.append(normalizeNFLCollege(alphanum, schoolsJSON))
+                #draftPick.append(x.find("td", attrs={"data-stat":"college_id"}).text)
                 all_picks.append(draftPick)
         time.sleep(sleepyTime)
     

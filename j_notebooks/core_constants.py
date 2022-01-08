@@ -35,8 +35,6 @@ def save_records(folder, filename, listPersist):
         json.dump(listPersist, write_file)
 
 
-
-
 databaseName = 'fb_recruiting.db'
 
 sports247FuzzyFields = ['ID', 'IDYR', 'College', 'Year', 'PlayerName', 'HighSchool', 'City', 'State', 'Position']
@@ -48,7 +46,7 @@ allamericanFuzzyFields = ['ID', 'College', 'Year', 'PlayerName']
 
 sports247Blockers = ['College', 'Year']
 rivalsBlockers = ['College', 'Year']
-nflBlockers = ['College']
+nflBlockers = []
 allconfBlockers = ['College']
 ncaaBlockers = ['College']
 allamericanBlockers = ['College']
