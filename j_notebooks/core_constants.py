@@ -46,7 +46,7 @@ allamericanFuzzyFields = ['ID', 'College', 'Year', 'PlayerName']
 
 sports247Blockers = ['College', 'Year']
 rivalsBlockers = ['College', 'Year']
-nflBlockers = []
+nflBlockers = ['College']
 allconfBlockers = ['College']
 ncaaBlockers = ['College']
 allamericanBlockers = ['College']

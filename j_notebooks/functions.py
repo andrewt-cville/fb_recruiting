@@ -179,7 +179,6 @@ def doFuzzyMatching (source, target):
         df_source.index.name = source + '_ID'
         df_source['ID'] = df_source.index.get_level_values(0)
     
-    df_source.head()
     ###### Target Dataframe
     key = getKeyDataset(target)
 
@@ -237,8 +236,10 @@ def doFuzzyMatching (source, target):
     filteredList = []
     noMatch = []
 
-    features['sourceID'] = features.index.get_level_values(0)
-    features['targetID'] = features.index.get_level_values(1)
+    #features['sourceID'] = features.index.get_level_values(0)
+    #features['targetID'] = features.index.get_level_values(1)
+    features.insert(0, 'sourceID', features.index.get_level_values(0))
+    features.insert(1, 'targetID', features.index.get_level_values(1))
 
     for idx, data in features.groupby(level=0):
         data = data.loc[data['sum'].idxmax()]
@@ -254,7 +255,7 @@ def doFuzzyMatching (source, target):
     dfFinal = dfFinal.append(filteredList)
     dfFinal.to_csv("results.csv")
 
-    return df_source
+    return dfFinal
 
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
