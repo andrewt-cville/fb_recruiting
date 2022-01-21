@@ -41,7 +41,7 @@ sports247FuzzyFields = ['ID', 'IDYR', 'College', 'Year', 'PlayerName', 'HighScho
 rivalsFuzzyFields = ['IDYR', 'College', 'Year', 'PlayerName', 'HighSchool', 'City', 'State', 'Position']
 nflFuzzyFields = ['ID', 'College', 'Year', 'PlayerName', 'Position']
 allconfFuzzyFields = ['ID', 'College', 'PlayerName']
-ncaaFuzzyFields = ['ID', 'College', 'PlayerName', 'Position']
+ncaaFuzzyFields = ['ID', 'College', 'Year', 'PlayerName', 'Position']
 allamericanFuzzyFields = ['ID', 'College', 'Year', 'PlayerName']
 
 sports247Blockers = ['College', 'Year']

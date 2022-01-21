@@ -154,7 +154,10 @@ def queryBuilderFM(KeyDataSet, DataSet):
         i = i + 1
     if (KeyDataSet == 3):
         query = query + ''' FROM UnlinkedNFL '''
-    
+    elif (KeyDataSet == 4):
+        query = query + ''' FROM UnlinkedAllConference '''
+    elif (KeyDataSet == 5):
+        query = query + ''' FROM UnlinkedNCAA '''
     else:
         query = query + ''' FROM SourcedPlayers where KeyDataSet = ''' + str(KeyDataSet)
     return query
@@ -221,6 +224,9 @@ def doFuzzyMatching (source, target):
     if 'Position' in targetFuzzy:
         c.exact('Position', 'Position', label='Position', agree_value=.25)
         sumFields.append('Position')
+    if 'Year' in targetFuzzy:
+        c.exact('Year', 'Year', label='Year', agree_value=.25)
+        sumFields.append('Year')
 
     try:
         features = c.compute(candidate_links, df_source, df_target)
@@ -236,8 +242,6 @@ def doFuzzyMatching (source, target):
     filteredList = []
     noMatch = []
 
-    #features['sourceID'] = features.index.get_level_values(0)
-    #features['targetID'] = features.index.get_level_values(1)
     features.insert(0, 'sourceID', features.index.get_level_values(0))
     features.insert(1, 'targetID', features.index.get_level_values(1))
 
@@ -245,8 +249,9 @@ def doFuzzyMatching (source, target):
         data = data.loc[data['sum'].idxmax()]
         if (data['ID'] == 1):
             filteredList.append(data)
-        #elif (data['ID'] != 1 and data['sum'] > 0):
-        elif (data['ID'] != 1):
+        #NFL was set to .72 threshold
+        elif (data['ID'] != 1 and data['sum'] > .41864):
+        #elif (data['ID'] != 1):
             filteredList.append(data)
         else:
             noMatch.append(data)
@@ -663,23 +668,32 @@ def process_NCAA(conferences):
     for conf in conferences:
         rosterDir= "..//html//ncaa//" + conf + "//rosters//"
         for file in os.listdir(rosterDir):
-            gameSoup = BeautifulSoup(open(rosterDir + file, "r", encoding='utf-8').read(), 'lxml')
-            for x in gameSoup.find_all("tr", class_=""): 
-                count = 0
-                player={}
-                player['College'] = file.split("_")[0]
-                player['Year'] = file.split("_")[1].split(".")[0]
-                for z in x.find_all("td"):
-                    if (count == 1):
-                        player['PlayerName'] = z.text.strip()
-                    elif (count == 2):
-                        player['Position'] = z.text.strip()
-                    elif (count == 4):
-                        player['NCAAGamesPlayed'] = z.text.strip()
-                    elif (count == 5):
-                        player['NCAAGamesStarted'] = z.text.strip()
-                    count = count + 1
-                playerData.append(player)
+            try:
+                gameSoup = BeautifulSoup(open(rosterDir + file, "r").read(), 'lxml')
+                for x in gameSoup.find_all("tr", class_=""): 
+                    count = 0
+                    player={}
+                    player['College'] = file.split("_")[0]
+                    player['Year'] = file.split("_")[1].split(".")[0]
+                    for z in x.find_all("td"):
+                        if (count == 1):
+                            player['PlayerName'] = z.text.strip()
+                        if (count == 2):
+                            player['Position'] = z.text.strip()
+                        if (len(x.find_all("td")) == 6):
+                            if (count == 4):
+                                player['NCAAGamesPlayed'] = z.text.strip()
+                            if (count == 5):
+                                player['NCAAGamesStarted'] = z.text.strip()
+                        else:
+                            if (count == 5):
+                                player['NCAAGamesPlayed'] = z.text.strip()
+                            if (count == 6):
+                                player['NCAAGamesStarted'] = z.text.strip()
+                        count = count + 1
+                    playerData.append(player)
+            except:
+                print(file)
     
     for player in playerData:
         newName = player['PlayerName'].split(',')
