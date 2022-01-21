@@ -762,7 +762,11 @@ def process_WikipediaBigTenBigTwelve(teamDir):
                     playerSAF = playerInfo[1].split("(", 1)
                     if(len(playerSAF) > 1):
                         #school
-                        player['College'] = playerSAF[0].strip()
+                        college = playerSAF[0].strip()
+                        if (college.startswith('Jr., ')):
+                            player['College'] = college[5:-1]
+                        else:
+                            player['College'] = college
                         #AwardsFX
                         playerAwards = playerSAF[1].split(";")
                         if ("Coaches" in playerAwards[0] and len(playerAwards)> 1):
@@ -817,7 +821,11 @@ def process_WikipediaSEC(teamDir):
                 playerSAF = playerInfo[1].split("(", 1)
                 if(len(playerSAF) > 1):
                     #school
-                    player['College'] = playerSAF[0].strip()
+                    college = playerSAF[0].strip()
+                    if (college.startswith('Jr., ')):
+                        player['College'] = college[5:-1]
+                    else:
+                        player['College'] = college
                     #AwardsFX
                     if ("," in playerSAF[1]):
                         playerAwards = playerSAF[1].split(",")
@@ -872,7 +880,7 @@ def process_csvAllConf(records):
             record['Year'] = record['Year']
 
             if (len(record['Team']) > 1 ):
-                record['Tam'] = record['Team'][0]
+                record['Team'] = record['Team'][0]
             record['AllConferenceTeam'] = record['Team']
 
         except Exception as e:
@@ -918,13 +926,13 @@ def toDB_AllConference():
                 print (x)
             
             allConf.append(finalPlayer)
-    
+    print(allConf)
     columns = ['ID', 'KeyDataSet', 'AllConferenceTeam', 'PlayerName', 'College']
 
     query = ''' INSERT INTO SourcedPlayers(ID, KeyDataSet, AllConferenceTeam, PlayerName, College)
         VALUES (?,?,?,?,?)'''
     
-    writeToSourcedPlayers(allConf, columns, query, 4)
+    #writeToSourcedPlayers(allConf, columns, query, 4)
 
     return 'DB Write is done'
     
