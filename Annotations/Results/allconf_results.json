@@ -1,0 +1,7023 @@
+{
+  "version": 1,
+  "pairs": [
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northtexas",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northtexas",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "aaronfortenberry_northtexas"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "averyfortenberry_northtexas_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "centralflorida",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "centralflorida",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "aaronrobinson_centralflorida"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "lorenrobinson_centralflorida_2008"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "westernmichigan",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "westernmichigan",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "adamanderson_westernmichigan"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kjanderson_westernmichigan_2017"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "newmexico",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "newmexico",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "adammiller_newmexico"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "bradmiller_newmexico_2010"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "floridastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "floridastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "alexbarron_floridastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "alexboston_floridastate_2003"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "airforce",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "airforce",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "alexhansen_airforce"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "rileyhansen_airforce_2018"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arizonastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arizonastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "andrewwalter_arizonastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "andrewpettes_arizonastate_2004"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "georgiatech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "georgiatech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "anthonyallen_georgiatech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "anthonybarnes_georgiatech_2006"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "wisconsin",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "wisconsin",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "anthonydavis_wisconsin"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "anthonymains_wisconsin_2008"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "anthonyhill_northcarolinastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "anthonysmith_northcarolinastate_2020"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "memphis",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "memphis",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "anthonymiller_memphis"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "anthonyballard_memphis_2018"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "ohiostate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "ohiostate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "antoniopittman_ohiostate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "tonypittman_ohiostate_2004"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oregonstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oregonstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "aricwilliams_oregonstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "javonwilliams_oregonstate_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "houston",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "houston",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "austinrobinson_houston"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "austinwilson_houston_2010"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "washington",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "washington",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "bebenkirven_washington"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "benburrkirven_washington_2015"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northernillinois",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northernillinois",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "benleuck_northernillinois"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "benleroy_northernillinois_2016"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oklahomastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oklahomastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "blakejarwin_oklahomastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "blakebarron_oklahomastate_2018"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "texasam",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "texasam",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "bobbybrowniii_texasam"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "bobbybrown_texasam_2018"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arizona",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arizona",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "bobbywade_arizona"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "bobbywolfe_arizona_2019"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "stanford",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "stanford",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "bomcnally_stanford"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "bowenmcnally_stanford_2005"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "olddominion",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "olddominion",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "brandonaddison_olddominion"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "brandontyson_olddominion_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "centralflorida",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "centralflorida",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "brandonalexander_centralflorida"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "chadalexander_centralflorida_2007"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "vanderbilt",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "vanderbilt",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "brandonbarden_vanderbilt"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "brandonmaddox_vanderbilt_2019"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oregonstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oregonstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "brandonhughes_oregonstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "brandonscales_oregonstate_2002"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "virginiatech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "virginiatech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "brandonpace_virginiatech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "brandongore_virginiatech_2002"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oklahomastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oklahomastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "brandonweeden_oklahomastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "brandonwebb_oklahomastate_2009"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "pennstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "pennstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "bryantjohnson_pennstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "juwanjohnson_pennstate_2015"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "clemson",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "clemson",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "bryantmcneal_clemson"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "brycemcneal_clemson_2009"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "eastcarolina",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "eastcarolina",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "brycewilliams_eastcarolina"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "taywilliams_eastcarolina_2018"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "texasam",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "texasam",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "byronjones_texasam"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jaylonjones_texasam_2020"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "louisville",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "louisville",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "camerongraham_louisville"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "cameronfraser_louisville_2013"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arizona",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arizona",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "camnelson_arizona"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "camdenson_arizona_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "floridainternational",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "floridainternational",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "chandlerwilliams_floridainternational"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "deandrewilliams_floridainternational_2017"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "westvirginia",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "westvirginia",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "charlessims_westvirginia"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "charleshales_westvirginia_2002"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "louisianamonroe",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "louisianamonroe",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "chazwilliams_louisianamonroe"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "rhoywilliams_louisianamonroe_2017"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "rice",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "rice",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "chrisbarnes_rice"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "chrisjones_rice_2007"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "olemiss",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "olemiss",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "chriscollins_olemiss"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "chriswilliams_olemiss_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "utahstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "utahstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "chriscooley_utahstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "chriscopier_utahstate_2015"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "virginiatech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "virginiatech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "chrishazley_virginiatech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "krisharley_virginiatech_2011"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "eastcarolina",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "eastcarolina",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "chrismoore_eastcarolina"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "chrishonrose_eastcarolina_2010"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arkansasstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arkansasstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "chrisstone_arkansasstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "chrisstevens_arkansasstate_2011"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "toledo",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "toledo",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "codycodythompson_toledo"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "codythompson_toledo_2014"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "texastech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "texastech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "codyhodges_texastech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "codyhayes_texastech_2013"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "georgiatech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "georgiatech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "cordhoward_georgiatech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "cordarohoward_georgiatech_2005"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arkansasstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arkansasstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "coreywilliams_arkansasstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "joewilliams_arkansasstate_2002"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "floridaatlantic",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "floridaatlantic",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "coryhenry_floridaatlantic"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "joehenry_floridaatlantic_2011"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "kentucky",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "kentucky",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "coryjohnson_kentucky"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "cjjohnson_kentucky_2014"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "tcu",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "tcu",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "coryrodgers_tcu"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "dacorrodgers_tcu_2002"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "ohiostate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "ohiostate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "danherron_ohiostate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "danielherron_ohiostate_2007"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "georgia",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "georgia",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "danielinman_georgia"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "daninman_georgia_2002"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oklahomastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oklahomastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "darrentwilliams_oklahomastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "larrywilliams_oklahomastate_2016"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "appalachianstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "appalachianstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "davanteharris_appalachianstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "devonteharrison_appalachianstate_2016"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arizonastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arizonastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "davidjohnson_arizonastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jamesjohnson_arizonastate_2013"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "lsu",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "lsu",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "davidjones_lsu"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jarvisjones_lsu_2007"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "middletennesseestate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "middletennesseestate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "demetrioswalker_middletennesseestate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "demetriusfrazier_middletennesseestate_2012"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "texas",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "texas",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "derrickdockery_texas"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "cedricdockery_texas_2004"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "texas",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "texas",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "derrickjohnson_texas"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "derekjohnson_texas_2009"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "derricknix_southernmississippi"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "derrickdixon_southernmississippi_2015"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "california",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "california",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "deseanseanjackson_california"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "deseanjackson_california_2005"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "marshall",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "marshall",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "devonsmith_marshall"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jasonsmith_marshall_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "coastalcarolina",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "coastalcarolina",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "djordanjordanstrong_coastalcarolina"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "djordanstrong_coastalcarolina_2020"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "appalachianstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "appalachianstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "dmarcomarcojackson_appalachianstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "dmarcojackson_appalachianstate_2017"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "dneriusneriusantoine_southernmississippi"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "dneriusantoine_southernmississippi_2015"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "wakeforest",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "wakeforest",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "dommaggio_wakeforest"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "dominicmaggio_wakeforest_2016"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "nevada",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "nevada",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "dompeterson_nevada"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "dominicpeterson_nevada_2017"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "kentstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "kentstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "dridriarcher_kentstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "driarcher_kentstate_2009"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "middletennesseestate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "middletennesseestate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "dwonehicks_middletennesseestate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "tyronehicks_middletennesseestate_2003"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oregon",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oregon",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "eddiepleasant_oregon"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "edwardpleasant_oregon_2007"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "georgiasouthern",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "georgiasouthern",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "edwinjackson_georgiasouthern"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jalenjackson_georgiasouthern_2020"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "maryland",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "maryland",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "ejhenderson_maryland"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "erinhenderson_maryland_2004"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "texastech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "texastech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "elihoward_texastech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "ericward_texastech_2009"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "eastcarolina",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "eastcarolina",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "emanueleast_eastcarolina"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "emanueldavis_eastcarolina_2007"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "michiganstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "michiganstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "ericsmith_michiganstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "fredsmith_michiganstate_2008"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "memphis",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "memphis",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "erictaylor_memphis"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "patricktaylor_memphis_2016"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arkansasstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arkansasstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "garryjohnson_arkansasstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "averyjohnson_arkansasstate_2015"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "marshall",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "marshall",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "gatorhoskins_marshall"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "haroldhoskins_marshall_2010"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "cincinnati",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "cincinnati",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "ginoguidugli_cincinnati"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "benguidugli_cincinnati_2006"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "centralmichigan",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "centralmichigan",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "ikebrown_centralmichigan"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "ticobrown_centralmichigan_2018"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "georgiatech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "georgiatech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jabarihunthuntdays_georgiatech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jabarihuntdays_georgiatech_2011"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "sanjosestate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "sanjosestate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jacksnyder_sanjosestate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jacksonsnyder_sanjosestate_2015"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jacoriussouthern_southernmississippi"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jacoriuscotton_southernmississippi_2010"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "westernmichigan",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "westernmichigan",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jaimejaimewilson_westernmichigan"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jaimewilson_westernmichigan_2012"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "centralflorida",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "centralflorida",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jakebrown_centralflorida"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jakeberman_centralflorida_2013"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "southalabama",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "southalabama",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jakejohnson_southalabama"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "xavierjohnson_southalabama_2013"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "tcu",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "tcu",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jakekirkpatrick_tcu"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jacobkirkpatrick_tcu_2006"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "akron",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "akron",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jamaldavis_akron"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jaleeldavis_akron_2016"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arkansasstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arkansasstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jamesjohnson_arkansasstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "samyjohnson_arkansasstate_2019"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "coloradostate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "coloradostate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jaredroberts_coloradostate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "lukeroberts_coloradostate_2003"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northcarolina",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northcarolina",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jasonbrown_northcarolina"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jordonbrown_northcarolina_2016"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oklahoma",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oklahoma",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jasonwhite_oklahoma"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jessewhite_oklahoma_2005"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arkansasstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arkansasstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "javonrolland_arkansasstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "javonrollandjones_arkansasstate_2013"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "pennstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "pennstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jayalford_pennstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jasonalford_pennstate_2002"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northtexas",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northtexas",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jefferywilson_northtexas"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jeffwilson_northtexas_2014"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "nevada",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "nevada",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jeffnady_nevada"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jeffreynady_nevada_2008"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "georgiatech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "georgiatech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jeremymuyres_georgiatech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jeremymoore_georgiatech_2009"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jeremyparquet_southernmississippi"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jeremyharper_southernmississippi_2002"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "olemiss",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "olemiss",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jessemitchell_olemiss"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jaymemitchell_olemiss_2002"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "louisiana",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "louisiana",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jessenewman_louisiana"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jessefreeman_louisiana_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "wakeforest",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "wakeforest",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jessiebates_wakeforest"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jessiebatesiii_wakeforest_2015"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "coloradostate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "coloradostate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jimmiekaylor_coloradostate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jimkaylor_coloradostate_2003"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "louisianatech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "louisianatech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jmarmarsmith_louisianatech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jmarsmith_louisianatech_2015"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "bostoncollege",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "bostoncollege",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jodunbar_bostoncollege"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jolonndunbar_bostoncollege_2003"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arizona",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arizona",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "joelongacre_arizona"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "josephlongacre_arizona_2004"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "wisconsin",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "wisconsin",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "joeschobert_wisconsin"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "joeschafer_wisconsin_2008"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "michiganstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "michiganstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "joetate_michiganstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "joetoth_michiganstate_2003"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "toledo",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "toledo",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "johnjohnstepec_toledo"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "johnstepec_toledo_2013"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "louisianamonroe",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "louisianamonroe",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "johnompson_louisianamonroe"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "joshthompson_louisianamonroe_2004"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arkansasstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arkansasstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jonathanburke_arkansasstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jonathanwhite_arkansasstate_2006"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oklahoma",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oklahoma",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jonathanjackson_oklahoma"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jonathannelson_oklahoma_2006"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "georgiatech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "georgiatech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jonathansmith_georgiatech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "dontaesmith_georgiatech_2018"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "tcu",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "tcu",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jonathansong_tcu"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jonathanjones_tcu_2007"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northernillinois",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northernillinois",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jordangandy_northernillinois"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jordanhansen_northernillinois_2020"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "centralflorida",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "centralflorida",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jordanrae_centralflorida"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jordanmccray_centralflorida_2010"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "louisianatech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "louisianatech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "josephbrunson_louisianatech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "josephmason_louisianatech_2020"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "wakeforest",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "wakeforest",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "joshgattis_wakeforest"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "joshharris_wakeforest_2013"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "sanjosestate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "sanjosestate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "joshlove_sanjosestate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "josholiver_sanjosestate_2015"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "iowa",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "iowa",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "jovonjohnson_iowa"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "donavanjohnson_iowa_2010"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "missouri",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "missouri",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "justingage_missouri"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "justingarrett_missouri_2007"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "louisianatech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "louisianatech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "justinhenderson_louisianatech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "christianhenderson_louisianatech_2018"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "wisconsin",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "wisconsin",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "kendebauche_wisconsin"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kennethdebauche_wisconsin_2003"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "louisianamonroe",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "louisianamonroe",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "kendorsey_louisianamonroe"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kennethdorsey_louisianamonroe_2007"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "wakeforest",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "wakeforest",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "kennethmoore_wakeforest"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kennymoore_wakeforest_2003"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "vanderbilt",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "vanderbilt",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "kennyladler_vanderbilt"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kennethladler_vanderbilt_2010"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "miami",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "miami",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "kennyphillips_miami"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kennethphillips_miami_2005"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oregon",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oregon",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "kennywashington_oregon"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "tonywashington_oregon_2010"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "bostoncollege",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "bostoncollege",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "kevinpierrepierrelouis_bostoncollege"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kevinpierrelouis_bostoncollege_2010"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "utahstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "utahstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "kevinrobertson_utahstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kevinrobinson_utahstate_2003"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "easternmichigan",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "easternmichigan",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "kevinwalter_easternmichigan"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kevinwheeler_easternmichigan_2010"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "keviscoley_southernmississippi"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "traviscooley_southernmississippi_2002"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "westvirginia",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "westvirginia",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "kylebosch_westvirginia"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kylerose_westvirginia_2011"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "sanjosestate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "sanjosestate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "kyleharmon_sanjosestate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kylehart_sanjosestate_2012"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oregon",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oregon",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "lamichaeljames_oregon"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "lamikejames_oregon_2008"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "eastcarolina",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "eastcarolina",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "lanceeast_eastcarolina"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "lanceray_eastcarolina_2012"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "lukejohnson_southernmississippi"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "trejohnson_southernmississippi_2019"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "sandiegostate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "sandiegostate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "luqbarcoo_sandiegostate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "luqmanbarcoo_sandiegostate_2018"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "virginiatech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "virginiatech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "machoharris_virginiatech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "victorharris_virginiatech_2005"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "tennessee",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "tennessee",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "malikjackson_tennessee"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "marcusjackson_tennessee_2011"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "sandiegostate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "sandiegostate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "marcusdemps_sandiegostate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "marcusstamps_sandiegostate_2013"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "olemiss",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "olemiss",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "marcusjohnson_olemiss"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "marcusrobinson_olemiss_2013"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "houston",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "houston",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "marcusjones_houston"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "marcusross_houston_2003"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "ucla",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "ucla",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "marcusreese_ucla"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "marcusrios_ucla_2012"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "usc",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "usc",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "marvelltell_usc"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "marvelltelliii_usc_2015"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "marvinyoung_southernmississippi"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "marteviousyoung_southernmississippi_2006"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "buffalo",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "buffalo",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "masonmasonschreck_buffalo"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "masonschreck_buffalo_2012"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northernillinois",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northernillinois",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "mathewsims_northernillinois"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "matsims_northernillinois_2010"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "temple",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "temple",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "mattbrown_temple"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "mattbarone_temple_2013"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "nevada",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "nevada",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "mattgalas_nevada"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "matthewgalas_nevada_2010"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "centralflorida",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "centralflorida",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "matthewlee_centralflorida"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "mattlee_centralflorida_2019"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "ohio",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "ohio",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "mattmiller_ohio"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "matthewmiller_ohio_2003"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "ohio",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "ohio",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "mattweller_ohio"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "matthewweller_ohio_2008"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "kentucky",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "kentucky",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "michaelaitcheson_kentucky"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "mikeaitcheson_kentucky_2002"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "michaelboley_southernmississippi"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "michaelmcgee_southernmississippi_2006"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "westvirginia",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "westvirginia",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "michaelbrown_westvirginia"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "mikebrown_westvirginia_2018"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "centralmichigan",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "centralmichigan",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "michaeldanna_centralmichigan"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "mikedanna_centralmichigan_2015"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "memphis",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "memphis",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "michaelgibson_memphis"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "michaeldenson_memphis_2019"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "toledo",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "toledo",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "michaelroberts_toledo"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "michaelebert_toledo_2012"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arkansas",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arkansas",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "michaelsmith_arkansas"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "micahhsmith_arkansas_2016"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arizonastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arizonastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "michaelturk_arizonastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "michaeleubank_arizonastate_2011"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northernillinois",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northernillinois",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "michaelturner_northernillinois"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "michaelgegner_northernillinois_2010"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "ohiostate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "ohiostate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "mikebrewster_ohiostate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "michaelbrewster_ohiostate_2008"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "ohiostate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "ohiostate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "mikedoss_ohiostate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "mikeadams_ohiostate_2008"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "easternmichigan",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "easternmichigan",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "mikeglassiii_easternmichigan"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "mikeglass_easternmichigan_2017"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "alabama",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "alabama",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "mikejohnson_alabama"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "nicojohnson_alabama_2009"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "pennstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "pennstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "mikemiranda_pennstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "michaelmiranda_pennstate_2017"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "texastech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "texastech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "mikesmith_texastech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "willsmith_texastech_2012"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "wisconsin",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "wisconsin",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "miketaylor_wisconsin"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "michaeltaylor_wisconsin_2008"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arizona",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arizona",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "mikethomas_arizona"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "michaelthomas_arizona_2005"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "georgia",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "georgia",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "mikeyhenderson_georgia"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "michaelhenderson_georgia_2003"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northernillinois",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northernillinois",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "mykeltiwilliams_northernillinois"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "mattwilliams_northernillinois_2012"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "ucla",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "ucla",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "natefikse_ucla"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "nateiese_ucla_2012"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "nateirving_northcarolinastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "nathanielirving_northcarolinastate_2006"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "ballstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "ballstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "nateollie_ballstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "nathanollie_ballstate_2010"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "washington",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "washington",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "natewilliams_washington"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kasenwilliams_washington_2011"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "nebraska",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "nebraska",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "nathangerry_nebraska"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "nategerry_nebraska_2013"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "iowastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "iowastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "nickfett_iowastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "nickfrere_iowastate_2004"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "easternmichigan",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "easternmichigan",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "noskilafleur_easternmichigan"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "alvinoskilafleur_easternmichigan_2019"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "louisiana",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "louisiana",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "ocyruscyrustorrence_louisiana"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "ocyrustorrence_louisiana_2019"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "utep",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "utep",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "oneillcouisins_utep"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "onielcousins_utep_2003"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "virginiatech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "virginiatech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "orionmartin_virginiatech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "ericmartin_virginiatech_2008"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "centralflorida",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "centralflorida",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "patbrown_centralflorida"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "patrickbrown_centralflorida_2005"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "patthomas_northcarolinastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "drakethomas_northcarolinastate_2019"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "coloradostate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "coloradostate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "peterhogan_coloradostate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "petethomas_coloradostate_2010"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "virginiatech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "virginiatech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "pjwilliams_virginiatech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "ryanwilliams_virginiatech_2008"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northcarolina",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northcarolina",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "quansturdivant_northcarolina"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "quantaviussturdivant_northcarolina_2007"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "massachusetts",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "massachusetts",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "randalljette_massachusetts"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "randallwest_massachusetts_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oklahomastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oklahomastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "rashaunwoods_oklahomastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "djaunwoods_oklahomastate_2002"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "miami",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "miami",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "rayarmstrong_miami"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "rayrayarmstrong_miami_2009"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "pittsburgh",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "pittsburgh",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "raygraham_pittsburgh"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "raymondgraham_pittsburgh_2009"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northernillinois",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northernillinois",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "raysmith_northernillinois"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "dracosmith_northernillinois_2013"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "floridaatlantic",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "floridaatlantic",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "reggiebain_floridaatlantic"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "reggiebrown_floridaatlantic_2013"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "auburn",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "auburn",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "reggietorbor_auburn"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "reggietaylor_auburn_2009"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "alabamabirmingham",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "alabamabirmingham",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "roddywhite_alabamabirmingham"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "coreywhite_alabamabirmingham_2003"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "appalachianstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "appalachianstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "ronaldblair_appalachianstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "ronaldclarke_appalachianstate_2020"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "kentstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "kentstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "rooseveltnix_kentstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "rooseveltnixjones_kentstate_2010"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "nebraska",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "nebraska",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "royhelujr_nebraska"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "royhelu_nebraska_2007"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "texas",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "texas",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "roywilliams_texas"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "aaronwilliams_texas_2008"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "washington",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "washington",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "ryanbowman_washington"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "shanebowman_washington_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "ryanfinley_northcarolinastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "benfinley_northcarolinastate_2020"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "florida",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "florida",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "ryansmith_florida"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jordansmith_florida_2016"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "texastech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "texastech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "rylanreed_texastech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "lareed_texastech_2004"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "floridainternational",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "floridainternational",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "samuelsmith_floridainternational"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kaseysmith_floridainternational_2008"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "georgia",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "georgia",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "seanjones_georgia"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "benjones_georgia_2008"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "coastalcarolina",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "coastalcarolina",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "shanejohnson_coastalcarolina"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jamesjohnson_coastalcarolina_2020"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "cincinnati",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "cincinnati",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "shaqwashington_cincinnati"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "shaquillewashington_cincinnati_2011"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "alabama",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "alabama",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "shaudwilliams_alabama"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "chaviswilliams_alabama_2007"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "shawnprice_northcarolinastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "hansrice_northcarolinastate_2009"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "michigan",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "michigan",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "sheapatterson_michigan"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "adampatterson_michigan_2006"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "utsa",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "utsa",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "spencerburford_utsa"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "spencerburfordwatts_utsa_2018"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oregonstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oregonstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "stevenjackson_oregonstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "rubenjackson_oregonstate_2005"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "centralflorida",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "centralflorida",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "stormjohnson_centralflorida"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "amarijohnson_centralflorida_2019"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "sandiegostate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "sandiegostate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "tannerkuljian_sandiegostate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "tannerblain_sandiegostate_2015"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "alabamabirmingham",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "alabamabirmingham",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "tdmarshall_alabamabirmingham"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "tylermarshall_alabamabirmingham_2016"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arizonastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arizonastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "terrellsuggs_arizonastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "terrelldavis_arizonastate_2012"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "texasam",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "texasam",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "terrencemurphy_texasam"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "terrencemccoy_texasam_2006"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "thayerthomas_northcarolinastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "drakethomas_northcarolinastate_2019"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "westvirginia",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "westvirginia",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "timbrown_westvirginia"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "sambrown_westvirginia_2020"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arkansasstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arkansasstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "timothystarson_arkansasstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "timstarson_arkansasstate_2008"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arizonastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arizonastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "timparker_arizonastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "rickparker_arizonastate_2002"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "florida",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "florida",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "toddjohnson_florida"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "fredjohnson_florida_2015"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "memphis",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "memphis",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "tonybrown_memphis"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "anthonybrown_memphis_2010"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "iowa",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "iowa",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "tonymoeaki_iowa"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "anthonymoeaki_iowa_2005"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northernillinois",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northernillinois",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "travismoore_northernillinois"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "travishouse_northernillinois_2002"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "auburn",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "auburn",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "traviswilliams_auburn"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "trewilliams_auburn_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "cincinnati",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "cincinnati",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "trentcole_cincinnati"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "trentcloud_cincinnati_2017"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "bowlinggreen",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "bowlinggreen",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "trentgreene_bowlinggreen"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "travisgreene_bowlinggreen_2011"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "ohio",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "ohio",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "troytroywatson_ohio"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "troywatson_ohio_2012"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "charlotte",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "charlotte",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "victortucker_charlotte"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "victucker_charlotte_2017"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "california",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "california",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "vincenzodamato_california"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "vincedamato_california_2009"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "memphis",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "memphis",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "wesleysmith_memphis"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "wessmith_memphis_2002"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "alabama",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "alabama",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "willieandersonjr_alabama"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "willanderson_alabama_2020"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "floridaatlantic",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "floridaatlantic",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "williehughley_floridaatlantic"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "williehuggins_floridaatlantic_2010"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arizonastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arizonastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "willsutton_arizonastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "williamsutton_arizonastate_2009"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oregon",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oregon",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "willtukuafu_oregon"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "williamtukuafu_oregon_2007"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arkansasstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arkansasstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "xavierwoodsonluster_arkansasstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "xavierwoodson_arkansasstate_2013"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northtexas",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northtexas",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "zacharyorr_northtexas"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "zachorr_northtexas_2010"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "iowastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "iowastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "zachbutler_iowastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "zachguyer_iowastate_2008"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "easternmichigan",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "easternmichigan",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "zachjohnson_easternmichigan"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "pauljohnson_easternmichigan_2006"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "tulsa",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "tulsa",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "zacklong_tulsa"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "zacklanger_tulsa_2011"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "toledo",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "toledo",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "zaczackerin_toledo"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "zackerin_toledo_2009"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "purdue",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "purdue",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "zanderhorvath_purdue"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "alexanderhorvath_purdue_2017"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "bostoncollege",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "bostoncollege",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "zionjohnson_bostoncollege"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "johnjohnson_bostoncollege_2013"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "louisiana",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "louisiana",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllConference",
+          "record": "ziyonyonhill_louisiana"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "ziyonhill_louisiana_2017"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    }
+  ]
+}

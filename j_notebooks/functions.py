@@ -250,7 +250,9 @@ def doFuzzyMatching (source, target):
         if (data['ID'] == 1):
             filteredList.append(data)
         #NFL was set to .72 threshold
-        elif (data['ID'] != 1 and data['sum'] > .41864):
+        #NCAA was set to .41864
+        #AllConf was set to .8347 and .75 for annotations
+        elif (data['ID'] != 1 and data['sum'] > .75):
         #elif (data['ID'] != 1):
             filteredList.append(data)
         else:
@@ -926,13 +928,16 @@ def toDB_AllConference():
                 print (x)
             
             allConf.append(finalPlayer)
-    print(allConf)
+    #finalList = []
+    #for record in allConf:
+    #    finalList.append(record['ID'])
+    #print(len(list(set(finalList))))
     columns = ['ID', 'KeyDataSet', 'AllConferenceTeam', 'PlayerName', 'College']
 
     query = ''' INSERT INTO SourcedPlayers(ID, KeyDataSet, AllConferenceTeam, PlayerName, College)
         VALUES (?,?,?,?,?)'''
     
-    #writeToSourcedPlayers(allConf, columns, query, 4)
+    writeToSourcedPlayers(allConf, columns, query, 4)
 
     return 'DB Write is done'
     
