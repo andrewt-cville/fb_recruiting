@@ -137,6 +137,48 @@ def getKeyDataset(value):
 
     return result[0]
 
+def clearDB(dataset):
+    conn = sql.connect(cc.databaseName)
+    c = conn.cursor()
+
+    sourcedPlayersQuery = ''' DELETE FROM SourcedPlayers WHERE KeyDataSet =  ''' + str(getKeyDataset(dataset))
+    c.execute(sourcedPlayersQuery)
+    conn.commit()
+
+    recordLinksQuery = ''' DELETE FROM RecordLinks WHERE KeyDataSet =  ''' + str(getKeyDataset(dataset))
+    c.execute(recordLinksQuery)
+    conn.commit()
+
+    return 'Success'
+
+# ---------------------------------------------------------------------------------------------------------------------------------------
+# Literal Linking Functions
+# ---------------------------------------------------------------------------------------------------------------------------------------
+def literalLinking(dataset):
+    conn = sql.connect(cc.databaseName)
+    c = conn.cursor()
+    print("Connected to SQLite")
+
+    ## Get the KeyDataSet
+    keyDataset = getKeyDataset(dataset)
+    ## Load all of the IDs
+    dataset_tuple = [keyDataset]
+    if(keyDataset != 5):
+        fetchIds = c.execute('SELECT a.ID from SourcedPlayers a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1) where a.KeyDataSet = ?', dataset_tuple)
+    else:
+        fetchIds = c.execute('SELECT DISTINCT a.ID from SummarizedNCAAData a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1)')
+    records = c.fetchall()
+    
+    ## Insert records into the RecordLinks table
+    for record in records:
+        #below you are hardcoding the KeyLinkType - this should probably be a lookup so it doesn't break in the future
+        sqlite_insert_query = """INSERT INTO RecordLinks
+                            (MasterID, TargetID, KeyDataSet, KeyLinkType, LinkConfidence) 
+                            VALUES 
+                            (?,?,?,2,1);"""
+        data_tuple = [record[0],record[0],keyDataset]
+        count = c.execute(sqlite_insert_query, data_tuple)
+        conn.commit()
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Fuzzy Matching Functions
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -158,6 +200,8 @@ def queryBuilderFM(KeyDataSet, DataSet):
         query = query + ''' FROM UnlinkedAllConference '''
     elif (KeyDataSet == 5):
         query = query + ''' FROM UnlinkedNCAA '''
+    elif (KeyDataSet == 6):
+        query = query + ''' FROM UnlinkedAllAmerican '''
     else:
         query = query + ''' FROM SourcedPlayers where KeyDataSet = ''' + str(KeyDataSet)
     return query
@@ -170,6 +214,7 @@ def doFuzzyMatching (source, target):
 
     ###### Source Dataframe
     ######## I'm setting the key equal to the target dataset - that way we don't compare IDYR to ID
+    ######## HEY when you changed target vs source being 247, I think you broke the linked players view.  those joins need to be revisited!
     key = getKeyDataset(source)
     #tkey = getKeyDataset(target)
     SQL = queryBuilderFM(key, source)
@@ -200,6 +245,7 @@ def doFuzzyMatching (source, target):
     candidate_links = indexer.index(df_source, df_target)
     
     #changing this from target being NFL to target being 247 for a test
+    ######## HEY when you changed target vs source being 247, I think you broke the linked players view.  those joins need to be revisited!
     targetFuzzy = cc.fuzzyFields[source]
     sumFields = []
     c = recordlinkage.Compare()
@@ -252,7 +298,8 @@ def doFuzzyMatching (source, target):
         #NFL was set to .72 threshold
         #NCAA was set to .41864
         #AllConf was set to .8347 and .75 for annotations
-        elif (data['ID'] != 1 and data['sum'] > .75):
+        #AllAmerican was set to .831 and .72 for annotations
+        elif (data['ID'] != 1 and data['sum'] > .3):
         #elif (data['ID'] != 1):
             filteredList.append(data)
         else:
