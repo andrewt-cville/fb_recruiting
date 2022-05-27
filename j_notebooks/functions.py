@@ -164,7 +164,7 @@ def literalLinking(dataset):
     ## Load all of the IDs
     dataset_tuple = [keyDataset]
     if(keyDataset != 5):
-        fetchIds = c.execute('SELECT a.ID from SourcedPlayers a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1) where a.KeyDataSet = ?', dataset_tuple)
+        fetchIds = c.execute('SELECT a.ID, b.IDYR from SourcedPlayers a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1) where a.KeyDataSet = ?', dataset_tuple)
     else:
         fetchIds = c.execute('SELECT DISTINCT a.ID from SummarizedNCAAData a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1)')
     records = c.fetchall()
@@ -172,11 +172,12 @@ def literalLinking(dataset):
     ## Insert records into the RecordLinks table
     for record in records:
         #below you are hardcoding the KeyLinkType - this should probably be a lookup so it doesn't break in the future
+        #if i'm working with All American data, as an example, then the MasterID is going to be the data source's unique ID and target will be 247
         sqlite_insert_query = """INSERT INTO RecordLinks
                             (MasterID, TargetID, KeyDataSet, KeyLinkType, LinkConfidence) 
                             VALUES 
                             (?,?,?,2,1);"""
-        data_tuple = [record[0],record[0],keyDataset]
+        data_tuple = [record[0],record[1],keyDataset]
         count = c.execute(sqlite_insert_query, data_tuple)
         conn.commit()
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -299,7 +300,7 @@ def doFuzzyMatching (source, target):
         #NCAA was set to .41864
         #AllConf was set to .8347 and .75 for annotations
         #AllAmerican was set to .831 and .72 for annotations
-        elif (data['ID'] != 1 and data['sum'] > .3):
+        elif (data['ID'] != 1 and data['sum'] > .72):
         #elif (data['ID'] != 1):
             filteredList.append(data)
         else:
