@@ -616,6 +616,24 @@ def checkSchools(recruitSchool, conference, schoolsJSON):
             if ('rivalsDisplay' in school.keys() and recruitSchool == school['rivalsDisplay']):
                 return school['id']
 
+#The below is used to cycle through all conferences maintaing the proper encoding for the different data sets. Not sure what to do with this yet, but don't want to lose it.
+""" conferences = cc.get_availableConferences()
+
+#conferences = ['sunbelt']
+for conf in conferences:
+    print ("working on - " + conf)
+    conference = conf
+
+    years = cc.get_defYears()
+    headers= cc.get_header()
+    schoolsList = cc.get_schoolsList()
+    teamDirectory = cc.get_htmlDir('rivals', conference, 'teams')
+    playerDirectory = cc.get_htmlDir('rivals', conference, 'recruits')
+    if (conf == 'acc' or conf == 'pactwelve'):
+        cc.save_records('scrapedData', 'rivals_' + conference, fx.process_Rivals(playerDirectory, conference, schoolsList, 'utf-8'))
+    else:
+        cc.save_records('scrapedData', 'rivals_' + conference, fx.process_Rivals(playerDirectory, conference, schoolsList, 'windows-1252'))"""
+
 def process_Rivals(recruitDir, conference, schoolsJSON, encode):
     all_recruits = []
     #error_files = [] 
