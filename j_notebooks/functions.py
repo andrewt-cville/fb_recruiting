@@ -166,7 +166,7 @@ def literalLinking(dataset):
     if(keyDataset != 5):
         fetchIds = c.execute('SELECT a.ID, b.IDYR from SourcedPlayers a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1) where a.KeyDataSet = ?', dataset_tuple)
     else:
-        fetchIds = c.execute('SELECT DISTINCT a.ID from SummarizedNCAAData a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1)')
+        fetchIds = c.execute('SELECT DISTINCT a.ID, b.IDYR from SummarizedNCAAData a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1)')
     records = c.fetchall()
     
     ## Insert records into the RecordLinks table
@@ -300,7 +300,7 @@ def doFuzzyMatching (source, target):
         #NCAA was set to .41864
         #AllConf was set to .8347 and .75 for annotations
         #AllAmerican was set to .831 and .72 for annotations
-        elif (data['ID'] != 1 and data['sum'] > .72):
+        elif (data['ID'] != 1 and data['sum'] > .4186):
         #elif (data['ID'] != 1):
             filteredList.append(data)
         else:
