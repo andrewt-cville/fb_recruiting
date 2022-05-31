@@ -163,10 +163,14 @@ def literalLinking(dataset):
     keyDataset = getKeyDataset(dataset)
     ## Load all of the IDs
     dataset_tuple = [keyDataset]
-    if(keyDataset != 5):
-        fetchIds = c.execute('SELECT a.ID, b.IDYR from SourcedPlayers a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1) where a.KeyDataSet = ?', dataset_tuple)
-    else:
+    
+    if(keyDataset == 2):
+        fetchIds = c.execute('SELECT a.IDYR, b.IDYR from SourcedPlayers a inner join SourcedPlayers b on (a.IDYR = b.IDYR and b.KeyDataSet = 1) where a.KeyDataSet = ?', dataset_tuple)
+    elif(keyDataset == 5):
         fetchIds = c.execute('SELECT DISTINCT a.ID, b.IDYR from SummarizedNCAAData a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1)')
+    else:
+        fetchIds = c.execute('SELECT a.ID, b.IDYR from SourcedPlayers a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1) where a.KeyDataSet = ?', dataset_tuple)
+
     records = c.fetchall()
     
     ## Insert records into the RecordLinks table
