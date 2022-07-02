@@ -39,7 +39,7 @@ databaseName = 'fb_recruiting.db'
 
 sports247FuzzyFields = ['ID', 'IDYR', 'College', 'Year', 'PlayerName', 'HighSchool', 'City', 'State', 'Position']
 rivalsFuzzyFields = ['IDYR', 'College', 'Year', 'PlayerName', 'HighSchool', 'City', 'State', 'Position']
-nflFuzzyFields = ['ID', 'College', 'Year', 'PlayerName', 'Position']
+nflFuzzyFields = ['ID', 'College', 'Year', 'PlayerName', 'StandardizedPosition']
 allconfFuzzyFields = ['ID', 'College', 'PlayerName']
 ncaaFuzzyFields = ['ID', 'College', 'Year', 'PlayerName', 'Position']
 allamericanFuzzyFields = ['ID', 'College', 'PlayerName']
