@@ -828,128 +828,6 @@ def get_WikipediaAllConf(pageTitles, headers, years, sleepyTime = 5):
                 write_file.write(r.text)
             time.sleep(sleepyTime)
 
-def process_WikipediaBigTenBigTwelve(teamDir):
-    all_players = []
-    for folder in teamDir:
-        for file in os.listdir(folder):
-            wikiSoup = BeautifulSoup(open(folder + file, "r", encoding="utf-8").read(), 'lxml')
-            y = file.split('.')[0]
-            
-            for x in wikiSoup.find_all("li", class_=""):
-                if ((",") in x.text and ("(") in x.text and (")") in x.text and ("{") not in x.text \
-                    and ("Archived") not in x.text and ("Gridiron") not in x.text and ("edited") not in x.text \
-                    and ("all-purpose") not in x.text and ("Football") not in x.text and ("Coaches")):
-                    player = {}
-                    playerInfo = x.text.split(",", 1)
-                    #year
-                    player['Year'] = y
-                    #name
-                    player['PlayerName'] = playerInfo[0]
-                    #schoolAndAwardsFX
-                    playerSAF = playerInfo[1].split("(", 1)
-                    if(len(playerSAF) > 1):
-                        #school
-                        college = playerSAF[0].strip()
-                        if (college.startswith('Jr., ')):
-                            player['College'] = college[5:-1]
-                        else:
-                            player['College'] = college
-                        #AwardsFX
-                        playerAwards = playerSAF[1].split(";")
-                        if ("Coaches" in playerAwards[0] and len(playerAwards)> 1):
-                            playerCoaches = playerAwards[0].split("-", 1)
-                            player['Coaches'] = playerCoaches[1][:1]           
-                        elif ("Coaches" in playerAwards[0] and len(playerAwards) == 1):
-                            playerCoaches = playerAwards[0].split("-", 1)
-                            player['Coaches'] = playerCoaches[1][:-1]
-                            player['Media'] = "0"
-                        elif ("Media" in playerAwards[0]):
-                            playerMedia = playerAwards[0].split("-", 1)
-                            player['Coaches'] = "0"
-                            player['Media'] = playerMedia[1][:1]
-                        if (len(playerAwards) > 1 and ("Media" in playerAwards[1])):
-                            playerMedia = playerAwards[1].split("-", 1)
-                            player['Media'] = playerMedia[1][:1]
-                        else:
-                            player['Media'] = "0"
-                        all_players.append(player)
-    
-    for player in all_players:
-        if (len(player['Coaches']) == 3):
-            player['Coaches'] == player['Coaches'][0]
-        if (len(player['Media']) == 3):
-            player['Media'] == player['Media'][0]
-        
-        player['AllConferenceTeam'] = max(player['Coaches'], player['Media'])
-
-    for player in all_players:
-        del player['Coaches']
-        del player['Media']
-    
-    return all_players
-
-def process_WikipediaSEC(teamDir):
-    all_players = []
-    for file in os.listdir(teamDir):
-        wikiSoup = BeautifulSoup(open(teamDir + file, "r", encoding="utf-8").read(), 'lxml')
-        y = file.split('.')[0]
-        for x in wikiSoup.find_all("li", class_=""):
-            if ((",") in x.text and ("(") in x.text and (")") in x.text and ("{") not in x.text \
-                and ("Archived") not in x.text and ("^") not in x.text and ("Gridiron") not in x.text \
-                and ("edited") not in x.text \
-                and ("all-purpose") not in x.text and ("Football") not in x.text and ("Coaches")):
-                player = {}
-                playerInfo = x.text.split(",", 1)
-                #year
-                player['Year'] = y
-                #name
-                player['PlayerName'] = playerInfo[0]
-                #schoolAndAwardsFX
-                playerSAF = playerInfo[1].split("(", 1)
-                if(len(playerSAF) > 1):
-                    #school
-                    college = playerSAF[0].strip()
-                    if (college.startswith('Jr., ')):
-                        player['College'] = college[5:-1]
-                    else:
-                        player['College'] = college
-                    #AwardsFX
-                    if ("," in playerSAF[1]):
-                        playerAwards = playerSAF[1].split(",")
-                    if (";" in playerSAF[1]):
-                        playerAwards = playerSAF[1].split(",")
-                    if ("AP" in playerAwards[0] and len(playerAwards)> 1):
-                        playerCoaches = playerAwards[0].split("-", 1)
-                        player['coaches'] = playerCoaches[1][:1]              
-                    elif ("AP" in playerAwards[0] and len(playerAwards) == 1):
-                        playerCoaches = playerAwards[0].split("-", 1)
-                        player['coaches'] = playerCoaches[1][:-1] 
-                        player['media'] = "0"
-                    elif ("Coaches" in playerAwards[0]):
-                        playerMedia = playerAwards[0].split("-", 1)
-                        player['coaches'] = "0"
-                        player['media'] = playerMedia[1][:1]
-                    if (len(playerAwards) > 1 and ("Coaches" in playerAwards[1])):
-                        playerMedia = playerAwards[1].split("-", 1)
-                        player['media'] = playerMedia[1][:1]
-                    else:
-                        player['media'] = "0"
-                    all_players.append(player)   
-
-    for player in all_players:
-        if (len(player['coaches']) == 3):
-            player['coaches'] == player['coaches'][0]
-        if (len(player['media']) == 3):
-            player['media'] == player['media'][0]
-    
-        player['AllConferenceTeam'] = max(player['coaches'], player['media'])
-
-    for player in all_players:
-        del player['coaches']
-        del player['media']
-    
-    return all_players
-
 def process_wikiConferences(teamDir):
     all_players = []
     for folder in teamDir:
@@ -1005,8 +883,6 @@ def process_wikiConferences(teamDir):
                     print('ERROR - No Conditional Match: ' + row + ' Year:' + y)
     return all_players
 
-
-
 def get_csvAllConf(filename):
     csvFile = csv.DictReader(open(filename))
     finalList = []
@@ -1051,7 +927,7 @@ def toDB_AllConference():
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
     
     #allConfData = mergeSourceFiles(dataset, inputDirectory, sourceFiles)
-    allConfData = mergeSourceFiles('allConf_nu', inputDirectory, sourceFiles)
+    allConfData = mergeSourceFiles('allConf', inputDirectory, sourceFiles)
 
     createNewID(idConfig[dataset], allConfData, '_')
     allConf = []
@@ -1083,7 +959,7 @@ def toDB_AllConference():
         VALUES (?,?,?,?,?,?,?)'''
     
     # Changing temporarily from 4 to 10 so I can test the code
-    writeToSourcedPlayers(allConf, columns, query, 10)
+    writeToSourcedPlayers(allConf, columns, query, 4)
 
     return 'DB Write is done'
     

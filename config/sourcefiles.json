@@ -29,12 +29,6 @@
         ],
     "allConf" :
         [
-            "SECAllConf.json", 
-            "Ten12AllConf.json",
-            "allConf.json"
-        ],
-    "allConf_nu" :
-        [
             "Wiki_AllConf.json",
             "allConf.json"
         ],
