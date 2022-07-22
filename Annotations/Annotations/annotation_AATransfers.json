@@ -1,0 +1,605 @@
+{
+  "version": 1,
+  "pairs": [
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "andyisabella",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "andyisabella",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2018,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2015,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All American",
+          "record": "andyisabella_umass"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "andyisabella_massachusetts_2015"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "garrettbradbury",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "garrettbradbury",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2018,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2014,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All American",
+          "record": "garrettbradbury_ncstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "garrettbradbury_northcarolinastate_2014"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "harrisonbryant",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "harrisonbryant",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2016,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All American",
+          "record": "harrisonbryant_fau"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "harrisonbryant_floridaatlantic_2016"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "jaelanphillips",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "jaelanphillips",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2020,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2017,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All American",
+          "record": "jaelanphillips_miami"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jaelanphillips_ucla_2017"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "jeremycash",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "jeremycash",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2015,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2011,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All American",
+          "record": "jeremycash_duke"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jeremycash_ohiostate_2011"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "joeburrow",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "joeburrow",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2015,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All American",
+          "record": "joeburrow_lsu"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "joeburrow_ohiostate_2015"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "jonathangreenard",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "jonathangreenard",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2015,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All American",
+          "record": "jonathangreenard_florida"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jonathangreenard_louisville_2015"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "joseborregales",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "joseborregales",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2020,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2016,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All American",
+          "record": "joseborregales_miami"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "joseborregales_floridainternational_2016"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "jrreed",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "jrreed",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2014,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All American",
+          "record": "jrreed_georgia"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jrreed_tulsa_2014"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "kylermurray",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "kylermurray",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2018,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2015,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All American",
+          "record": "kylermurray_oklahoma"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kylermurray_texasam_2015"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "landondickerson",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "landondickerson",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2020,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2016,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All American",
+          "record": "landondickerson_alabama"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "landondickerson_floridastate_2016"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "marcusjones",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "marcusjones",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2020,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2015,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All American",
+          "record": "marcusjones_houston"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "marcusjones_northernillinois_2015"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "michaelroberts",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "michaelroberts",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2016,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2012,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All American",
+          "record": "michaelroberts_toledo"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "michaelroberts_ohio_2012"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "robertnkemdiche",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "robertnkemdiche",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2015,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2013,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All American",
+          "record": "robertnkemdiche_mississippi"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "robertnkemdiche_olemiss_2013"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "tajaesharpe",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "tajaesharpe",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2015,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2012,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All American",
+          "record": "tajaesharpe_umass"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "tajaesharpe_massachusetts_2012"
+        }
+      }
+    }
+  ]
+}

@@ -15,6 +15,7 @@ import pandas as pd
 import sqlite3 as sql
 import traceback
 import recordlinkage
+from recordlinkage.base import BaseCompareFeature
 
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -39,12 +40,12 @@ def mungeID(playerString):
 def createNewID (fieldList, thisDict, fieldAgg, ifAlternate = False, fieldName = 'ID'):
     finalID= ''
     for i in thisDict:
-        if not (ifAlternate):
-            try:
-                i['displayName'] = i['PlayerName']
-            except:
-                print('Error with Alternate')
-                print(i)
+        #if not (ifAlternate):
+        #    try:
+        #        i['displayName'] = i['PlayerName']
+        #    except:
+        #        print('Error with Alternate')
+        #        print(i)
         for idx, val in enumerate(fieldList):
             if (type(i[val]) is list):
                 try:
@@ -316,6 +317,20 @@ def doFuzzyMatching (source, target):
 
     return dfFinal
 
+# ---------------------------------------------------------------------------------------------------------------------------------------
+# Transfer Functions - Year 
+# ---------------------------------------------------------------------------------------------------------------------------------------
+
+class YearNFL(BaseCompareFeature):
+
+    def _compute_vectorized(self, s1, s2):
+        """Compare years
+
+        College players can only get drafted after 3 years but usually within 5
+        """
+        sim = ((s1 == s2 + 2) | (s1 == s2 + 3) | (s1 == s2 + 4) | (s1 == s2 + 5) | (s1 == s2 + 6)).astype(float)
+
+        return sim
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # 247Sports Specific Functions
@@ -935,6 +950,63 @@ def process_WikipediaSEC(teamDir):
     
     return all_players
 
+def process_wikiConferences(teamDir):
+    all_players = []
+    for folder in teamDir:
+        for file in os.listdir(folder):
+            wikiSoup = BeautifulSoup(open(folder + file, "r", encoding="utf-8").read(), 'lxml')
+            y = file.split('.')[0]
+            firsth3 = wikiSoup.h3
+            targetedWiki = firsth3.find_all_next(string = True)
+            quitKeyword = 'Key'
+            removeKeywords = ['[', 'edit', ']']
+            positionKeywords = ['Quaterbacks', 'Running backs', 'Fullbacks', 'Wide receivers', 'Receivers', 'Centers', 'Guards', 'Tackles', 'Tight ends', 'Defensive linemen', 'Defensive ends', 'Defensive tackles', 'Linebackers', 'Defensive backs', 'Cornerbacks', 'Safeties', 'Kickers', 'Punter', 'Punters', 'All purpose/return specialist', 'All-purpose / Return specialists','Return specialist']
+            position = 'Quaterbacks'
+            playerName = ''
+            player = {}
+            for row in targetedWiki:
+                row = row.lstrip()
+                row = row.replace('†', '').replace('*', '').replace('#', '')
+                #print (row)
+                if (', ' != row[0:2] and '(' in row):
+                    try:
+                        playerName = row.split(',', 1)[0]
+                        college = (row.split(',', 1)[1]).split('(', 1)[0].lstrip().rstrip()
+                        allConfTeam = [int(char) for char in row if char.isdigit()]
+                        player['PlayerName'] = playerName
+                        player['Position'] = position
+                        player['College'] = college
+                        player['AllConferenceTeam'] = min(allConfTeam)
+                        player['Year'] = y
+                        all_players.append(player)
+                        player = {}
+                    except:
+                        print('ERROR - Couldn"t write record without link: ' + row + ' Year: ' + y)
+                elif (row == quitKeyword):
+                    break
+                elif (row in positionKeywords):
+                    position = row
+                elif ('(' not in row):
+                    playerName = row
+                elif (row not in removeKeywords):
+                    try:
+                        college = row.split('(', 1)[0].replace(', ', '').rstrip()
+                        allConfTeam = [int(char) for char in row if char.isdigit()]
+                        player['PlayerName'] = playerName
+                        player['Position'] = position
+                        player['College'] = college
+                        player['AllConferenceTeam'] = min(allConfTeam)
+                        player['Year'] = y
+                        all_players.append(player)
+                        player = {}
+                    except:
+                        print('ERROR - Couldn"t write record: ' + row + ' Year:' + y)
+                else:
+                    print('ERROR - No Conditional Match: ' + row + ' Year:' + y)
+    return all_players
+
+
+
 def get_csvAllConf(filename):
     csvFile = csv.DictReader(open(filename))
     finalList = []
@@ -961,11 +1033,10 @@ def process_csvAllConf(records):
 
     for record in records:
         del record['School']
-        del record['POSITION']
         del record['First Name']
         del record['Last Name']
-        del record['Year']
         del record['Team']
+        del record['POSITION']
     
     return records
 
@@ -979,7 +1050,9 @@ def toDB_AllConference():
     ## Load the source file dict
     sourceFiles = json.loads(open('..//config//sourceFiles.json', "r").read())
     
-    allConfData = mergeSourceFiles(dataset, inputDirectory, sourceFiles)
+    #allConfData = mergeSourceFiles(dataset, inputDirectory, sourceFiles)
+    allConfData = mergeSourceFiles('allConf_nu', inputDirectory, sourceFiles)
+
     createNewID(idConfig[dataset], allConfData, '_')
     allConf = []
     for x in allConfData:
@@ -991,6 +1064,8 @@ def toDB_AllConference():
                 finalPlayer['AllConferenceTeam'] = x['AllConferenceTeam']
                 finalPlayer['PlayerName'] = x['PlayerName']
                 finalPlayer['College'] = x['College']
+                finalPlayer['Year'] = x['Year']
+                finalPlayer['Position'] = x['Position']
             
             except Exception as e:
                 print(e)
@@ -1002,12 +1077,13 @@ def toDB_AllConference():
     #for record in allConf:
     #    finalList.append(record['ID'])
     #print(len(list(set(finalList))))
-    columns = ['ID', 'KeyDataSet', 'AllConferenceTeam', 'PlayerName', 'College']
+    columns = ['ID', 'KeyDataSet', 'AllConferenceTeam', 'PlayerName', 'College', 'Year', 'Position']
 
-    query = ''' INSERT INTO SourcedPlayers(ID, KeyDataSet, AllConferenceTeam, PlayerName, College)
-        VALUES (?,?,?,?,?)'''
+    query = ''' INSERT INTO SourcedPlayers (ID, KeyDataSet, AllConferenceTeam, PlayerName, College, Year, Position)
+        VALUES (?,?,?,?,?,?,?)'''
     
-    writeToSourcedPlayers(allConf, columns, query, 4)
+    # Changing temporarily from 4 to 10 so I can test the code
+    writeToSourcedPlayers(allConf, columns, query, 10)
 
     return 'DB Write is done'
     
