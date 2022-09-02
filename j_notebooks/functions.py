@@ -305,7 +305,7 @@ def doFuzzyMatching (source, target):
         #NCAA was set to .41864
         #AllConf was set to .8347 and .75 for annotations
         #AllAmerican was set to .831 and .72 for annotations
-        elif (data['ID'] != 1 and data['sum'] > .4186):
+        elif (data['ID'] != 1 and data['sum'] > .8346):
         #elif (data['ID'] != 1):
             filteredList.append(data)
         else:
