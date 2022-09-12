@@ -974,6 +974,8 @@ def normalizeNFLCollege(recruitSchool, schoolsJSON):
         if ('nfl-ref' in school.keys()):
             if (recruitSchool == school['nfl-ref']):
                 college = school['id']
+            else:
+                college = recruitSchool
     
     if college is not None:
         return college

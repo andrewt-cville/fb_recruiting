@@ -1,4 +1,4 @@
- 
+[ 
     {
          "id":"maryland",
          "displayname":"Maryland",
@@ -324,7 +324,7 @@
         "id":"missouri",
         "displayname":"Missouri",
         "nickname" : "Tigers",
-        "conference":  "sec", "bigtwelve" ,
+        "conference":  "sec",
         "247":"missouri",
         "rivals":"missouri",
         "rivalsDisplay":"Missouri",
@@ -1765,6 +1765,7 @@
         "cfb-db":"",
         "ncaa":"716"
     }
+]
 
 
 
