@@ -318,7 +318,7 @@ def doFuzzyMatching (source, target):
     return dfFinal
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
-# Transfer Functions - Year 
+# Transfer Functions
 # ---------------------------------------------------------------------------------------------------------------------------------------
 
 class YearNFL(BaseCompareFeature):
@@ -331,6 +331,18 @@ class YearNFL(BaseCompareFeature):
         sim = ((s1 == s2 + 2) | (s1 == s2 + 3) | (s1 == s2 + 4) | (s1 == s2 + 5) | (s1 == s2 + 6)).astype(float)
 
         return sim
+
+class YearOther(BaseCompareFeature):
+
+    def _compute_vectorized(self, s1, s2):
+        """Compare years
+
+        College players can only get drafted after 3 years but usually within 5
+        """
+        sim = ((s1 == s2 + 1) | (s1 == s2 + 2) | (s1 == s2 + 3) | (s1 == s2 + 4) | (s1 == s2 + 5)).astype(float)
+
+        return sim
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # 247Sports Specific Functions
