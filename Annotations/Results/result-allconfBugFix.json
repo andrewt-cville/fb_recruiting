@@ -1,0 +1,685 @@
+{
+  "version": 1,
+  "pairs": [
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "adriankillinsjr",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "adriankillins",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2017,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2016,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "RB",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "RB",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "adriankillinsjr_centralflorida"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "adriankillins_centralflorida_2016"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "alexjohnson",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "kalebjohnson",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2012,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2011,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "OL",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "OL",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "alexjohnson_sandiegostate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kalebjohnson_rutgers_2011"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "arthurjackson",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "arthurjacksoniii",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2018,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "WR",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "WR",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "arthurjackson_easternmichigan"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "arthurjacksoniii_easternmichigan_2018"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "brandonwilson",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "brandonwatson",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2016,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2014,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "DB",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "DB",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 2,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 2,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "brandonwilson_houston"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "brandonwatson_michigan_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "chrissteele",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "chrissteele",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2020,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "DB",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "DB",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 2,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 2,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "chrissteele_usc"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "chrissteele_florida_2019"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "elijahmcguire",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "elijahmcguire",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2014,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2013,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "RB",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "RB",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "elijahmcguire_louisianalafayette"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "elijahmcguire_louisiana_2013"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "jordangandy",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "jordanhendy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2020,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2018,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "DB",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "DB",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 2,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 2,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "jordangandy_northernillinois"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jordanhendy_toledo_2018"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "justinhardy",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "justinhardee",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2014,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2012,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "WR",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "WR",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "justinhardy_eastcarolina"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "justinhardee_illinois_2012"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "louiszervos",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "louiezervos",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2016,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2015,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "K",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "K",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 3,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 3,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "louiszervos_ohio"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "louiezervos_ohio_2015"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "ulyssesbentleyiv",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "ulyssesbentley",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2020,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "RB",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "RB",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "ulyssesbentleyiv_smu"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "ulyssesbentley_smu_2019"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    }
+  ]
+}
