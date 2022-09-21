@@ -153,7 +153,7 @@ def clearDB(dataset):
     return 'Success'
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
-# Literal Linking Functions
+# Literal Linking Functions - used ONLY for linking back to 247
 # ---------------------------------------------------------------------------------------------------------------------------------------
 def literalLinking(dataset):
     conn = sql.connect(cc.databaseName)
@@ -162,6 +162,7 @@ def literalLinking(dataset):
 
     ## Get the KeyDataSet
     keyDataset = getKeyDataset(dataset)
+
     ## Load all of the IDs
     dataset_tuple = [keyDataset]
     
