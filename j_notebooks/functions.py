@@ -201,7 +201,9 @@ def queryBuilderFM(KeyDataSet, DataSet):
         else:
            query = query + field + ', '
         i = i + 1
-    if (KeyDataSet == 3):
+    if (KeyDataSet == 2):
+        query = query + ''' FROM UnlinkedRivals '''
+    elif (KeyDataSet == 3):
         query = query + ''' FROM UnlinkedNFL '''
     elif (KeyDataSet == 4):
         query = query + ''' FROM UnlinkedAllConference '''
@@ -251,8 +253,6 @@ def doFuzzyMatching (source, target):
     indexer = recordlinkage.BlockIndex(on=cc.blockers[source])
     candidate_links = indexer.index(df_source, df_target)
     
-    #changing this from target being NFL to target being 247 for a test
-    ######## HEY when you changed target vs source being 247, I think you broke the linked players view.  those joins need to be revisited!
     targetFuzzy = cc.fuzzyFields[source]
     sumFields = []
     c = recordlinkage.Compare()
@@ -300,13 +300,13 @@ def doFuzzyMatching (source, target):
 
     for idx, data in features.groupby(level=0):
         data = data.loc[data['sum'].idxmax()]
-        if (data['ID'] == 1):
+        if (data['IDYR'] == 1):
             filteredList.append(data)
         #NFL was set to .72 threshold
         #NCAA was set to .41864
         #AllConf was set to .8347 and .75 for annotations
         #AllAmerican was set to .831 and .72 for annotations
-        elif (data['ID'] != 1 and data['sum'] > .8346):
+        elif (data['IDYR'] != 1 and data['sum'] > .49):
         #elif (data['ID'] != 1):
             filteredList.append(data)
         else:
