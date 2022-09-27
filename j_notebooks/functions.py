@@ -300,13 +300,13 @@ def doFuzzyMatching (source, target):
 
     for idx, data in features.groupby(level=0):
         data = data.loc[data['sum'].idxmax()]
-        if (data['IDYR'] == 1):
+        if (data['ID'] == 1):
             filteredList.append(data)
         #NFL was set to .72 threshold
         #NCAA was set to .41864
         #AllConf was set to .8347 and .75 for annotations
         #AllAmerican was set to .831 and .72 for annotations
-        elif (data['IDYR'] != 1 and data['sum'] > .49):
+        elif (data['ID'] != 1 and data['sum'] > .65):
         #elif (data['ID'] != 1):
             filteredList.append(data)
         else:
@@ -987,10 +987,8 @@ def normalizeNFLCollege(recruitSchool, schoolsJSON):
         if ('nfl-ref' in school.keys()):
             if (recruitSchool == school['nfl-ref']):
                 college = school['id']
-            else:
-                college = recruitSchool
     
-    if college is not None:
+    if college != '':
         return college
     else:
         return recruitSchool
