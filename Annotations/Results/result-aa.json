@@ -1,0 +1,1426 @@
+{
+  "version": 1,
+  "pairs": [
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "floridastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "floridastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "alexbarron_floridastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "alexboston_floridastate_2003"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "memphis",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "memphis",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "anthonymiller_memphis"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "anthonyballard_memphis_2018"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "minnesota",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "minnesota",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "antoinewinfieldjr_minnesota"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "antoinewinfield_minnesota_2016"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oklahoma",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oklahoma",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "antonioperkins_oklahoma"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "ronnieperkins_oklahoma_2018"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "boisestate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "boisestate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "averywilliams_boisestate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "averywillliams_boisestate_2016"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "floridastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "floridastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "björnwerner_floridastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "bjoernwerner_floridastate_2010"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "tcu",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "tcu",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "coryrodgers_tcu"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "dacorrodgers_tcu_2002"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "lsu",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "lsu",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "derekstingleyjr_lsu"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "derekstingley_lsu_2019"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "texas",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "texas",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "derrickdockery_texas"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "cedricdockery_texas_2004"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "texas",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "texas",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "derrickjohnson_texas"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "derekjohnson_texas_2009"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "michigan",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "michigan",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "devinbush_michigan"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "devinbushjr_michigan_2016"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "maryland",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "maryland",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "ejhenderson_maryland"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "erinhenderson_maryland_2004"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northwestern",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northwestern",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "gregnewsomeii_northwestern"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "gregnewsome_northwestern_2018"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oregonstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oregonstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "hamilcarrashedjr_oregonstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "hamilcarrashed_oregonstate_2016"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "tcu",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "tcu",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "jakekirkpatrick_tcu"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jacobkirkpatrick_tcu_2006"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "rice",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "rice",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "jarettdillard_rice"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jarrettdillard_rice_2004"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northcarolina",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northcarolina",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "jasonbrown_northcarolina"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jordonbrown_northcarolina_2016"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oklahoma",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oklahoma",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "jasonwhite_oklahoma"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jessewhite_oklahoma_2005"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "wisconsin",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "wisconsin",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "jjwatt_wisconsin"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "tjwatt_wisconsin_2013"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "wisconsin",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "wisconsin",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "joeschobert_wisconsin"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "joeschafer_wisconsin_2008"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "kansasstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "kansasstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "joshuayoungblood_kansasstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "joshyoungblood_kansasstate_2019"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "tennessee",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "tennessee",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "kevinburnett_tennessee"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kivonbennett_tennessee_2017"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oregon",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oregon",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "lamichaeljames_oregon"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "lamikejames_oregon_2008"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "kentucky",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "kentucky",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "lynnbowden_kentucky"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "lynnbowdenjr_kentucky_2017"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "texas",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "texas",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "marcusgriffin_texas"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "dallasgriffin_texas_2003"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "houston",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "houston",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "marcusjones_houston"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "marcusross_houston_2003"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "byu",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "byu",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "mattpayne_byu"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "mitchpayne_byu_2003"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "michigan",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "michigan",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "mauricehurstjr_michigan"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "mauricehurst_michigan_2013"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "southernmississippi",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "michaelboley_southernmississippi"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "michaelmcgee_southernmississippi_2006"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "texas",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "texas",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "michaelhuff_texas"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "michaelhuey_texas_2007"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "toledo",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "toledo",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "michaelroberts_toledo"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "michaelebert_toledo_2012"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "ohiostate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "ohiostate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "mikebrewster_ohiostate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "michaelbrewster_ohiostate_2008"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "ohiostate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "ohiostate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "mikedoss_ohiostate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "mikeadams_ohiostate_2008"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "alabama",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "alabama",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "mikejohnson_alabama"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "nicojohnson_alabama_2009"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "cincinnati",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "cincinnati",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "mikemickens_cincinnati"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "mickmickens_cincinnati_2005"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "nateirving_northcarolinastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "nathanielirving_northcarolinastate_2006"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "wakeforest",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "wakeforest",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "nicksciba_wakeforest"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "nicolassciba_wakeforest_2018"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oklahoma",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oklahoma",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "orlandobrownjr_oklahoma"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "orlandobrown_oklahoma_2014"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oklahomastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oklahomastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "rashaunwoods_oklahomastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "djaunwoods_oklahomastate_2002"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "alabamabirmingham",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "alabamabirmingham",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "roddywhite_alabamabirmingham"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "coreywhite_alabamabirmingham_2003"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "louisianatech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "louisianatech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "ryanallen_louisianatech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "ryanzeller_louisianatech_2010"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "texastech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "texastech",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "rylanreed_texastech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "lareed_texastech_2004"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arizona",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arizona",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "scoobywrightiii_arizona"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "scoobywright_arizona_2013"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "georgia",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "georgia",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "seanjones_georgia"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "benjones_georgia_2008"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "oregonstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "oregonstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "stevenjackson_oregonstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "rubenjackson_oregonstate_2005"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arizonastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arizonastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "terrellsuggs_arizonastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "terrelldavis_arizonastate_2012"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "terroneprescod_northcarolinastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "terronneprescod_northcarolinastate_2014"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "florida",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "florida",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "vernonhargreaves_florida"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "vernonhargreavesiii_florida_2013"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "arizonastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arizonastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "willsutton_arizonastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "williamsutton_arizonastate_2009"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    }
+  ]
+}

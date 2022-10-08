@@ -295,6 +295,7 @@ def doFuzzyMatching (source, target):
     filteredList = []
     noMatch = []
 
+
     features.insert(0, 'sourceID', features.index.get_level_values(0))
     features.insert(1, 'targetID', features.index.get_level_values(1))
 
@@ -306,7 +307,7 @@ def doFuzzyMatching (source, target):
         #NCAA was set to .41864
         #AllConf was set to .8347 and .75 for annotations
         #AllAmerican was set to .831 and .72 for annotations
-        elif (data['ID'] != 1 and data['sum'] > .65):
+        elif (data['ID'] != 1 and data['sum'] > .77):
         #elif (data['ID'] != 1):
             filteredList.append(data)
         else:
@@ -1064,6 +1065,20 @@ def toDB_NFLDraft():
 # NOTE: we don't keep the html files locally for this dataset, so get/process are one step
 # ---------------------------------------------------------------------------------------------------------------------------------------
 
+def normalizeAACollege(recruitSchool, schoolsJSON):
+    college = ""
+    for school in schoolsJSON:
+        if ('wikipedia' in school.keys()):
+            recruitSchool = recruitSchool.lower().lstrip().rstrip()
+            if (recruitSchool == school['wikipedia']):
+                college = school['id']
+                break
+    print(college)
+    if college != '':
+        return college
+    else:
+        return recruitSchool
+
 def handle_allAmerican(years, headers, sleepyTime=5):
     all_players = []
     for y in years: 
@@ -1081,17 +1096,17 @@ def handle_allAmerican(years, headers, sleepyTime=5):
                     player.append(int(y))
                     #Name
                     player.append(playerInfo[0])
-                    playerInfo[1] = playerInfo[1].replace("(Fla.)", "FL")
                     playerLocationAwards = playerInfo[1].split("(",1)
+
                     #School
                     if ("CONSENSUS" in x.text):
                         playerLocationAwards[0] = playerLocationAwards[0].replace("-- CONSENSUS --", "")
-                        player.append(playerLocationAwards[0])
                     elif ("UNANIMOUS" in x.text):
                         playerLocationAwards[0] = playerLocationAwards[0].replace("-- UNANIMOUS --", "")
-                        player.append(playerLocationAwards[0])
-                    else:
-                        player.append(playerLocationAwards[0].strip())
+                    playerLocationAwards[0] = playerLocationAwards[0].lower()
+                    if ('miami' in playerLocationAwards[0]):
+                        playerLocationAwards[0] = 'miamifl'
+                    player.append(playerLocationAwards[0].strip().replace(',',''))
                     #Awards String
                     awardString = playerLocationAwards[1]
                     #coaches (AFCA)
@@ -1121,7 +1136,7 @@ def handle_allAmerican(years, headers, sleepyTime=5):
                         player.append(0)
                     all_players.append(player)
             except:
-                print(x)
+                print('Error: ' + x)
     time.sleep(sleepyTime)
 
     final_aaSelections = []
@@ -1129,8 +1144,11 @@ def handle_allAmerican(years, headers, sleepyTime=5):
 
     for list in all_players:
         newdict = {aa_keys[i]: list[i] for i in range(len(aa_keys))}
+        newdict['College'] = normalizeAACollege(newdict['College'], cc.get_schoolsList())
+
         final_aaSelections.append(newdict)
         newdict = {}
+    
     
     return final_aaSelections
 

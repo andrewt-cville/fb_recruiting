@@ -114,33 +114,6 @@
         {
           "a": {
             "name": "College",
-            "value": "kansasstate",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "kansasstate",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "AllAmerican",
-          "record": "arthurbrown_kansasstate"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "joshuabrown_kansasstate_2017"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "College",
             "value": "boisestate",
             "type": "String"
           },
@@ -195,60 +168,6 @@
         {
           "a": {
             "name": "College",
-            "value": "floridastate",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "floridastate",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "AllAmerican",
-          "record": "brettwilliams_floridastate"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "arthurwilliams_floridastate_2014"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "College",
-            "value": "ballstate",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "ballstate",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "AllAmerican",
-          "record": "chrismiller_ballstate"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "chrisblair_ballstate_2013"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "College",
             "value": "tcu",
             "type": "String"
           },
@@ -268,33 +187,6 @@
         "b": {
           "dataset": "Master",
           "record": "dacorrodgers_tcu_2002"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "College",
-            "value": "california",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "california",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "AllAmerican",
-          "record": "dantehughes_california"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "daymeionhughes_california_2003"
         }
       }
     },
@@ -411,33 +303,6 @@
         {
           "a": {
             "name": "College",
-            "value": "tennessee",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "tennessee",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "AllAmerican",
-          "record": "dustincolquitt_tennessee"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "brittoncolquitt_tennessee_2003"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "College",
             "value": "maryland",
             "type": "String"
           },
@@ -457,33 +322,6 @@
         "b": {
           "dataset": "Master",
           "record": "erinhenderson_maryland_2004"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "College",
-            "value": "virginia",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "virginia",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "AllAmerican",
-          "record": "eltonbrown_virginia"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "elliottbrown_virginia_2017"
         }
       }
     },
@@ -708,33 +546,6 @@
         {
           "a": {
             "name": "College",
-            "value": "florida",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "florida",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "AllAmerican",
-          "record": "jonathangreenard_florida"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "jonathanbullard_florida_2012"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "College",
             "value": "kansasstate",
             "type": "String"
           },
@@ -897,33 +708,6 @@
         {
           "a": {
             "name": "College",
-            "value": "cincinnati",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "cincinnati",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "AllAmerican",
-          "record": "mardygilyard_cincinnati"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "marshawngilyard_cincinnati_2005"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "College",
             "value": "byu",
             "type": "String"
           },
@@ -943,33 +727,6 @@
         "b": {
           "dataset": "Master",
           "record": "mitchpayne_byu_2003"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "College",
-            "value": "ucla",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "ucla",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "AllAmerican",
-          "record": "mauricedrew_ucla"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "mauricejonesdrew_ucla_2003"
         }
       }
     },
@@ -1194,33 +951,6 @@
         {
           "a": {
             "name": "College",
-            "value": "iowastate",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "iowastate",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "AllAmerican",
-          "record": "mikerose_iowastate"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "mikewest_iowastate_2003"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "College",
             "value": "northcarolinastate",
             "type": "String"
           },
@@ -1240,33 +970,6 @@
         "b": {
           "dataset": "Master",
           "record": "nathanielirving_northcarolinastate_2006"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "College",
-            "value": "kansasstate",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "kansasstate",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "AllAmerican",
-          "record": "nickleckey_kansasstate"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "nicklenners_kansasstate_2016"
         }
       }
     },
@@ -1348,33 +1051,6 @@
         "b": {
           "dataset": "Master",
           "record": "djaunwoods_oklahomastate_2002"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "College",
-            "value": "washington",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "washington",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "AllAmerican",
-          "record": "reggiewilliams_washington"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "brentwilliams_washington_2010"
         }
       }
     },
@@ -1518,33 +1194,6 @@
         {
           "a": {
             "name": "College",
-            "value": "georgiatech",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "georgiatech",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "AllAmerican",
-          "record": "shaquillemason_georgiatech"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "shaqmason_georgiatech_2011"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "College",
             "value": "oregonstate",
             "type": "String"
           },
@@ -1572,33 +1221,6 @@
         {
           "a": {
             "name": "College",
-            "value": "iowastate",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "iowastate",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "AllAmerican",
-          "record": "stevewirtel_iowastate"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "stevenwirtel_iowastate_2016"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "College",
             "value": "arizonastate",
             "type": "String"
           },
@@ -1618,6 +1240,33 @@
         "b": {
           "dataset": "Master",
           "record": "terrelldavis_arizonastate_2012"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "AllAmerican",
+          "record": "terroneprescod_northcarolinastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "terronneprescod_northcarolinastate_2014"
         }
       }
     },
