@@ -599,15 +599,6 @@ def toDB_247Sports():
     
     writeToSourcedPlayers(sports247Data, columns, query, 1)
 
-def sports247_SourcedPlayers():
-    SQL = '''SELECT * from Sports247'''
-    df = connDBAndReturnDF(SQL)
-    df['KeyDataSet'] = 1
-
-    connAndWriteDB(df, 'SourcedPlayers')
-
-    return 'DB Write is done'
-
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Rivals Specific Functions
 # ---------------------------------------------------------------------------------------------------------------------------------------
