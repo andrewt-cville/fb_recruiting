@@ -172,3 +172,49 @@ def get_query_UnlinkedAllAmerican():
     '''
 
     return apply_sql_template(template, params)
+
+def get_query_KevinRating(ranking):
+    columns = ['a.ID', 'a.PlayerName',  'min(a.Year) as Year', 'a.College']
+
+    params = {
+        'Ranking': ranking
+    }
+
+    template  = '''
+        SELECT
+            *,
+            {{ Ranking }} as "KevinRating"
+        FROM
+            X_LinkedPLayers as a
+                left join Positions as b
+	                on a."Position" = b."Position"
+        WHERE
+            {% if Ranking == 5 %}
+                (b.StandardizedPosition not in ('P', 'K')
+                and a.AllAmerican_Best in (0,1)) 
+                OR (NFLDraftRound = 1)
+            {% elif Ranking == 4 %}
+                (b.StandardizedPosition not in ('P', 'K')
+                and a.AllConferenceTeam_Best in (1,2)
+                and a.conference in ('acc', 'bigten', 'bigtwelve', 'sec', 'pactwelve'))
+                OR
+                (b.StandardizedPosition not in ('P', 'K')
+                and NFLDraftRound > 1)
+                OR
+                (b.StandardizedPosition in ('P', 'K')
+                and (AllConferenceTeam_Best in (1) OR AllAmerican_Best in (0,1)))
+            {% elif Ranking == 3 %}
+                a.NCAAGamesPlayed >= 25
+            {% elif Ranking == 2 %}
+                a.NCAAGamesPlayed >= 6 
+                and a.NCAAGamesPlayed <= 24 
+                and a.NCAAGamesStarted < 10
+            {% elif Ranking == 1 %}
+                (a.NCAAGamesPlayed <= 5 
+                OR a.NCAAGamesPlayed is null)
+            {% endif %}
+        ORDER BY 
+            a.Year;
+    '''
+
+    return apply_sql_template(template, params)
