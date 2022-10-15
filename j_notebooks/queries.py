@@ -97,8 +97,8 @@ def get_query_UnlinkedNFL(year):
     return apply_sql_template(template, params)
 
 def get_query_UnlinkedAllConference(limit, year):
-    columns = ['a.ID', 'a.PlayerName', 'a.AllConferenceTeam', 'a.Year', 'a.College', 'b.KeyPositionGroup', 'b.StandardizedPosition']
-
+    #columns = ['a.ID', 'a.PlayerName', 'a.AllConferenceTeam', 'a.Year', 'a.College', 'b.KeyPositionGroup', 'b.StandardizedPosition']
+    columns = ['a.ID', 'a.PlayerName', 'a.Year', 'a.College', 'b.KeyPositionGroup', 'b.StandardizedPosition']
     params = {
         'Select': '\n  , '.join(columns),
         'Limit': limit,

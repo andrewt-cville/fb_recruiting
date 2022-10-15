@@ -16,6 +16,7 @@ import sqlite3 as sql
 import traceback
 import recordlinkage
 from recordlinkage.base import BaseCompareFeature
+import queries
 
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -202,15 +203,15 @@ def queryBuilderFM(KeyDataSet, DataSet):
            query = query + field + ', '
         i = i + 1
     if (KeyDataSet == 2):
-        query = query + ''' FROM UnlinkedRivals '''
+        query = queries.get_query_UnlinkedRivals()
     elif (KeyDataSet == 3):
-        query = query + ''' FROM UnlinkedNFL '''
+        query = queries.get_query_UnlinkedNFL(2004)
     elif (KeyDataSet == 4):
-        query = query + ''' FROM UnlinkedAllConference '''
+        query = queries.get_query_UnlinkedAllConference(False, 2004)
     elif (KeyDataSet == 5):
-        query = query + ''' FROM UnlinkedNCAA '''
+        query = queries.get_query_UnlinkedNCAA(False)
     elif (KeyDataSet == 6):
-        query = query + ''' FROM UnlinkedAllAmerican '''
+        query = queries.get_query_UnlinkedAllAmerican()
     else:
         query = query + ''' FROM SourcedPlayers where KeyDataSet = ''' + str(KeyDataSet)
     return query
@@ -1100,6 +1101,8 @@ def handle_allAmerican(years, headers, sleepyTime=5):
                     player.append(playerLocationAwards[0].strip().replace(',',''))
                     #Awards String
                     awardString = playerLocationAwards[1]
+                    #No one cares about which All American team they made - and new categories are randomly added
+                    
                     #coaches (AFCA)
                     if ("AFCA" in awardString):
                         player.append(1)
@@ -1131,7 +1134,7 @@ def handle_allAmerican(years, headers, sleepyTime=5):
     time.sleep(sleepyTime)
 
     final_aaSelections = []
-    aa_keys = ['Year', 'PlayerName', 'College', 'AllAmericanAFCA', 'AllAmericanAP', 'AllAmericanFWAA', 'AllAmericanTSN', 'AllAmericanWCFF']
+    aa_keys = ['Year', 'PlayerName', 'College', 'AllAmericanBest']
 
     for list in all_players:
         newdict = {aa_keys[i]: list[i] for i in range(len(aa_keys))}
