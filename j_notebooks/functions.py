@@ -170,7 +170,7 @@ def literalLinking(dataset):
     if(keyDataset == 2):
         fetchIds = c.execute('SELECT a.IDYR, b.IDYR from SourcedPlayers a inner join SourcedPlayers b on (a.IDYR = b.IDYR and b.KeyDataSet = 1) where a.KeyDataSet = ?', dataset_tuple)
     elif(keyDataset == 5):
-        fetchIds = c.execute('SELECT DISTINCT a.ID, b.IDYR from SummarizedNCAAData a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1)')
+        fetchIds = c.execute('SELECT DISTINCT a.ID, b.IDYR from "SummarizedNCAAData-v2" a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1)')
     else:
         fetchIds = c.execute('SELECT a.ID, b.IDYR from SourcedPlayers a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1) where a.KeyDataSet = ?', dataset_tuple)
 
@@ -308,7 +308,7 @@ def doFuzzyMatching (source, target):
         #NCAA was set to .41864
         #AllConf was set to .8347 and .75 for annotations
         #AllAmerican was set to .831 and .72 for annotations
-        elif (data['ID'] != 1 and data['sum'] > .77):
+        elif (data['ID'] != 1 and data['sum'] > .7):
         #elif (data['ID'] != 1):
             filteredList.append(data)
         else:
@@ -1065,7 +1065,6 @@ def normalizeAACollege(recruitSchool, schoolsJSON):
             if (recruitSchool == school['wikipedia']):
                 college = school['id']
                 break
-    print(college)
     if college != '':
         return college
     else:
@@ -1101,10 +1100,12 @@ def handle_allAmerican(years, headers, sleepyTime=5):
                     player.append(playerLocationAwards[0].strip().replace(',',''))
                     #Awards String
                     awardString = playerLocationAwards[1]
-                    #No one cares about which All American team they made - and new categories are randomly added
-                    
+                    # This sets AllAmericanBest = 1
+                    player.append(1)
+                    # No one cares about which All American team they made - and new categories are randomly added
+                    # Commenting out the below in case you ever want to bring it back.
                     #coaches (AFCA)
-                    if ("AFCA" in awardString):
+                    '''if ("AFCA" in awardString):
                         player.append(1)
                     else:
                         player.append(0)
@@ -1128,7 +1129,7 @@ def handle_allAmerican(years, headers, sleepyTime=5):
                         player.append(1)
                     else:
                         player.append(0)
-                    all_players.append(player)
+                    all_players.append(player)'''
             except:
                 print('Error: ' + x)
     time.sleep(sleepyTime)
@@ -1146,6 +1147,52 @@ def handle_allAmerican(years, headers, sleepyTime=5):
     
     return final_aaSelections
 
+def get_csvAllAmerican(filename):
+    csvFile = csv.DictReader(open(filename))
+    finalList = []
+    for record in csvFile:
+        finalList.append(record)
+    
+    return finalList
+
+def process_csvAllAmerican(records, year):
+    for record in records:
+        try:
+            record['PlayerName'] = record['Player']
+            record['College'] = normalizeAACollege(record['Team'], cc.get_schoolsList())
+            record['Position'] = record['Position']
+            record['Year'] = year
+            record['AllAmericanBest'] = 1
+
+        except Exception as e:
+            print ('ERROR: ' + e)
+            print ('ERROR RECORD: ' + record)
+
+    for record in records:
+        del record['Player']
+        del record['Team']
+    
+    return records
+
+def toDB_csvAllAmerican(records):
+    inputDirectory = '..//scrapedData//'
+    dataset = 'allAmerican'
+
+    ## Load the id config
+    idConfig = json.loads(open('..//config//idConfig.json', "r").read())
+
+    createNewID(idConfig[dataset], records, '_')
+
+    columns = ['ID', 'KeyDataSet', 'PlayerName', 'College', 'Year', 'Position', 'AllAmericanBest']
+
+    query = ''' INSERT INTO SourcedPlayers (ID, KeyDataSet, PlayerName, College,
+        Year, Position, AllAmericanBest)
+        VALUES (?,?,?,?,?,?,?)'''
+    
+    writeToSourcedPlayers(records, columns, query, 6)
+
+    return 'DB Write is done'
+
 def toDB_AllAmerican():
     inputDirectory = '..//scrapedData//'
     dataset = 'allAmerican'
@@ -1161,7 +1208,7 @@ def toDB_AllAmerican():
 
     columns = ['ID', 'KeyDataSet', 'PlayerName', 'College',
         'Year',
-        'AllAmericanAFCA', 'AllAmericanAP', 'AllAmericanFWAA', 'AllAmericanTSN', 'AllAmericanWCFF']
+        'AllAmericanBest']
 
     query = ''' INSERT INTO SourcedPlayers(ID, KeyDataSet, PlayerName, College,
         Year,

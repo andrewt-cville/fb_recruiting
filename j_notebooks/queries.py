@@ -191,7 +191,7 @@ def get_query_KevinRating(ranking):
         WHERE
             {% if Ranking == 5 %}
                 (b.StandardizedPosition not in ('P', 'K')
-                and a.AllAmerican_Best in (0,1)) 
+                and a.AllAmericanBest = 1) 
                 OR (NFLDraftRound = 1)
             {% elif Ranking == 4 %}
                 (b.StandardizedPosition not in ('P', 'K')
@@ -202,7 +202,7 @@ def get_query_KevinRating(ranking):
                 and NFLDraftRound > 1)
                 OR
                 (b.StandardizedPosition in ('P', 'K')
-                and (AllConferenceTeam_Best in (1) OR AllAmerican_Best in (0,1)))
+                and (AllConferenceTeam_Best in (1) OR AllAmericanBest=1))
             {% elif Ranking == 3 %}
                 a.NCAAGamesPlayed >= 25
             {% elif Ranking == 2 %}
