@@ -182,8 +182,8 @@ def get_query_KevinRating(ranking):
 
     template  = '''
         SELECT
-            *,
-            {{ Ranking }} as "KevinRating"
+            a.*,
+            {{ Ranking }} as "HornbeakRating"
         FROM
             X_LinkedPLayers as a
                 left join Positions as b
