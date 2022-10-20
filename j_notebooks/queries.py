@@ -91,7 +91,7 @@ def get_query_UnlinkedNFL(year):
             a.KeyDataSet = 3
             and a.ID not in (select MasterID from RecordLinks where KeyDataSet = 3)
             and a.ID not in (select TargetID from RecordLinks where TargetKeyDataSet = 3)
-            and a.Year > {{ Year | sqlsafe }}
+            and a.Year >= {{ Year | sqlsafe }}
     '''
 
     return apply_sql_template(template, params)
@@ -117,7 +117,7 @@ def get_query_UnlinkedAllConference(limit, year):
             and a.ID not in (select MasterID from RecordLinks where KeyDataSet = 4)
             and a.ID not in (select TargetID from RecordLinks where TargetKeyDataSet = 4)
             {% if Limit %}
-                and a.Year > {{ Year }}
+                and a.Year >= {{ Year }}
             {% endif %}
     '''
 

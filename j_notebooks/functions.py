@@ -172,7 +172,7 @@ def literalLinking(dataset):
     elif(keyDataset == 5):
         fetchIds = c.execute('SELECT DISTINCT a.ID, b.IDYR from "SummarizedNCAAData-v2" a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1)')
     else:
-        fetchIds = c.execute('SELECT a.ID, b.IDYR from SourcedPlayers a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1) where a.KeyDataSet = ?', dataset_tuple)
+        fetchIds = c.execute('SELECT a.ID, b.IDYR from SourcedPlayers a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1) where a.KeyDataSet = ? and a.Year = 2021', dataset_tuple)
 
     records = c.fetchall()
     
@@ -205,7 +205,7 @@ def queryBuilderFM(KeyDataSet, DataSet):
     if (KeyDataSet == 2):
         query = queries.get_query_UnlinkedRivals()
     elif (KeyDataSet == 3):
-        query = queries.get_query_UnlinkedNFL(2004)
+        query = queries.get_query_UnlinkedNFL(2021)
     elif (KeyDataSet == 4):
         query = queries.get_query_UnlinkedAllConference(False, 2004)
     elif (KeyDataSet == 5):
@@ -213,7 +213,7 @@ def queryBuilderFM(KeyDataSet, DataSet):
     elif (KeyDataSet == 6):
         query = queries.get_query_UnlinkedAllAmerican()
     else:
-        query = query + ''' FROM SourcedPlayers where KeyDataSet = ''' + str(KeyDataSet)
+        query = query + ''' FROM SourcedPlayers as a inner join Positions as b on a.Position = b.Position where KeyDataSet = ''' + str(KeyDataSet)
     return query
     
 
@@ -278,6 +278,12 @@ def doFuzzyMatching (source, target):
     if 'Position' in targetFuzzy:
         c.exact('Position', 'Position', label='Position', agree_value=.25)
         sumFields.append('Position')
+    if 'StandardizedPosition' in targetFuzzy:
+        c.exact('StandardizedPosition', 'StandardizedPosition', label='StandardizedPosition', agree_value=.5)
+        sumFields.append('StandardizedPosition')
+    if 'KeyPositionGroup' in targetFuzzy:
+        c.exact('KeyPositionGroup', 'KeyPositionGroup', label='KeyPositionGroup', agree_value=.5)
+        sumFields.append('KeyPositionGroup')
     if 'Year' in targetFuzzy:
         c.exact('Year', 'Year', label='Year', agree_value=.25)
         sumFields.append('Year')
@@ -308,7 +314,7 @@ def doFuzzyMatching (source, target):
         #NCAA was set to .41864
         #AllConf was set to .8347 and .75 for annotations
         #AllAmerican was set to .831 and .72 for annotations
-        elif (data['ID'] != 1 and data['sum'] > .7):
+        elif (data['ID'] != 1 and data['sum'] > .45):
         #elif (data['ID'] != 1):
             filteredList.append(data)
         else:

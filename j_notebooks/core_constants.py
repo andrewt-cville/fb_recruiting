@@ -37,9 +37,9 @@ def save_records(folder, filename, listPersist):
 
 databaseName = 'fb_recruiting.db'
 
-sports247FuzzyFields = ['ID', 'IDYR', 'College', 'Year', 'PlayerName', 'HighSchool', 'City', 'State', 'Position']
+sports247FuzzyFields = ['ID', 'IDYR', 'College', 'Year', 'PlayerName', 'HighSchool', 'City', 'State', 'StandardizedPosition', 'KeyPositionGroup']
 rivalsFuzzyFields = ['IDYR', 'College', 'Year', 'PlayerName', 'HighSchool', 'City', 'State', 'Position']
-nflFuzzyFields = ['ID', 'College', 'Year', 'PlayerName', 'StandardizedPosition']
+nflFuzzyFields = ['ID', 'College', 'Year', 'PlayerName', 'StandardizedPosition', 'KeyPositionGroup']
 allconfFuzzyFields = ['ID', 'College', 'PlayerName']
 ncaaFuzzyFields = ['ID', 'College', 'Year', 'PlayerName', 'Position']
 allamericanFuzzyFields = ['ID', 'College', 'PlayerName']
