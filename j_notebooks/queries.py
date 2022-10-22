@@ -117,7 +117,7 @@ def get_query_UnlinkedAllConference(limit, year):
             and a.ID not in (select MasterID from RecordLinks where KeyDataSet = 4)
             and a.ID not in (select TargetID from RecordLinks where TargetKeyDataSet = 4)
             {% if Limit %}
-                and a.Year >= {{ Year }}
+                and a.Year >= {{ Year | sqlsafe}}
             {% endif %}
     '''
 

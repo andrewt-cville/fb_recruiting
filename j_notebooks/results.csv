@@ -1,16 +1,7 @@
 ,sourceID,targetID,ID,PlayerName,StandardizedPosition,KeyPositionGroup,Year,sum
-"('aaronrobinson_centralflorida', 'jasonvenson_centralflorida_2004')",aaronrobinson_centralflorida,jasonvenson_centralflorida_2004,0.7857142857142857,0.5384615384615384,0.5,0.5,0,0.4648351648351648
-"('averywilliams_boisestate', 'averywillliams_boisestate_2016')",averywilliams_boisestate,averywillliams_boisestate_2016,0.96,0.9285714285714286,0.5,0.5,0,0.5777142857142857
-"('benjaminstjuste_minnesota', 'benjaminsappiii_minnesota_2018')",benjaminstjuste_minnesota,benjaminsappiii_minnesota_2018,0.76,0.6,0.5,0.5,0,0.472
-"('earnestbrowniv_northwestern', 'earnestbrown_northwestern_2017')",earnestbrowniv_northwestern,earnestbrown_northwestern_2017,0.9259259259259259,0.8571428571428572,0.5,0.5,0,0.5566137566137567
-"('gregnewsomeii_northwestern', 'gregnewsome_northwestern_2018')",gregnewsomeii_northwestern,gregnewsome_northwestern_2018,0.9230769230769231,0.8461538461538461,0.5,0.5,0,0.5538461538461539
-"('karyvincentjr_lsu', 'karyvincent_lsu_2017')",karyvincentjr_lsu,karyvincent_lsu_2017,0.8823529411764706,0.8461538461538461,0.5,0.5,0,0.5457013574660634
-"('larryrountree_missouri', 'larryrountreeiii_missouri_2017')",larryrountree_missouri,larryrountreeiii_missouri_2017,0.88,0.8125,0.5,0.5,0,0.5385
-"('michaelcarter_duke', 'michaelcarterii_duke_2017')",michaelcarter_duke,michaelcarterii_duke_2017,0.9,0.8666666666666667,0.5,0.5,0,0.5533333333333333
-"('nickbolton_missouri', 'nicholasbolton_missouri_2018')",nickbolton_missouri,nicholasbolton_missouri_2018,0.782608695652174,0.6428571428571428,0.5,0.5,0,0.48509316770186334
-"('rachadwildgoose_wisconsin', 'rachadwildgoosejr_wisconsin_2018')",rachadwildgoose_wisconsin,rachadwildgoosejr_wisconsin_2018,0.9259259259259259,0.8823529411764706,0.5,0.5,0,0.5616557734204793
-"('richardlecounte_georgia', 'richardlecounteiii_georgia_2017')",richardlecounte_georgia,richardlecounteiii_georgia_2017,0.8846153846153846,0.8333333333333334,0.5,0.5,0,0.5435897435897437
-"('terracemarshalljr_lsu', 'terracemarshall_lsu_2018')",terracemarshalljr_lsu,terracemarshall_lsu_2018,0.9047619047619048,0.8823529411764706,0.5,0.5,0,0.5574229691876751
-"('trenixon_centralflorida', 'derrenwilson_centralflorida_2015')",trenixon_centralflorida,derrenwilson_centralflorida_2015,0.7777777777777778,0.5,0.5,0.5,0,0.45555555555555555
-"('trevonmoehrig_tcu', 'trevonmoehrigwoodard_tcu_2018')",trevonmoehrig_tcu,trevonmoehrigwoodard_tcu_2018,0.7083333333333333,0.65,0.5,0.5,0,0.4716666666666667
-"('williamsherman_colorado', 'willsherman_colorado_2017')",williamsherman_colorado,willsherman_colorado_2017,0.8695652173913043,0.7857142857142857,0.5,0.5,0,0.5310559006211181
+"('aidanoconnell_purdue', 'aidenoconnell_purdue_2017')",aidanoconnell_purdue,aidenoconnell_purdue_2017,0.95,0.9230769230769231,0.5,0.5,0.0,0.5746153846153846
+"('alexjohnson_sandiegostate', 'alecjohnson_sandiegostate_2008')",alexjohnson_sandiegostate,alecjohnson_sandiegostate_2008,0.96,0.9090909090909091,0.5,0.5,0.0,0.5738181818181818
+"('brandonore_virginiatech', 'brandenore_virginiatech_2004')",brandonore_virginiatech,brandenore_virginiatech_2004,0.9565217391304348,0.9,0.5,0.5,0.0,0.571304347826087
+"('brennanpressley_oklahomastate', 'brennanpresley_oklahomastate_2020')",brennanpressley_oklahomastate,brennanpresley_oklahomastate_2020,0.9655172413793104,0.9333333333333333,0.5,0.5,0.0,0.5797701149425287
+"('collinnewell_iowastate', 'colinnewell_iowastate_2017')",collinnewell_iowastate,colinnewell_iowastate_2017,0.9545454545454546,0.9166666666666666,0.5,0.5,0.0,0.5742424242424242
+"('jamarioomas_northtexas', 'jamariothomas_northtexas_2004')",jamarioomas_northtexas,jamariothomas_northtexas_2004,0.9166666666666666,0.8461538461538461,0.5,0.5,0.25,0.6025641025641025

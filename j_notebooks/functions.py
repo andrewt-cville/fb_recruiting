@@ -181,9 +181,9 @@ def literalLinking(dataset):
         #below you are hardcoding the KeyLinkType - this should probably be a lookup so it doesn't break in the future
         #if i'm working with All American data, as an example, then the MasterID is going to be the data source's unique ID and target will be 247
         sqlite_insert_query = """INSERT INTO RecordLinks
-                            (MasterID, TargetID, KeyDataSet, KeyLinkType, LinkConfidence) 
+                            (MasterID, TargetID, KeyDataSet, KeyLinkType, LinkConfidence, Transfer) 
                             VALUES 
-                            (?,?,?,2,1);"""
+                            (?,?,?,2,1,0);"""
         data_tuple = [record[0],record[1],keyDataset]
         count = c.execute(sqlite_insert_query, data_tuple)
         conn.commit()
@@ -207,7 +207,7 @@ def queryBuilderFM(KeyDataSet, DataSet):
     elif (KeyDataSet == 3):
         query = queries.get_query_UnlinkedNFL(2021)
     elif (KeyDataSet == 4):
-        query = queries.get_query_UnlinkedAllConference(False, 2004)
+        query = queries.get_query_UnlinkedAllConference(True, 2004)
     elif (KeyDataSet == 5):
         query = queries.get_query_UnlinkedNCAA(False)
     elif (KeyDataSet == 6):
@@ -314,7 +314,7 @@ def doFuzzyMatching (source, target):
         #NCAA was set to .41864
         #AllConf was set to .8347 and .75 for annotations
         #AllAmerican was set to .831 and .72 for annotations
-        elif (data['ID'] != 1 and data['sum'] > .45):
+        elif (data['ID'] != 1 and data['sum'] > .56):
         #elif (data['ID'] != 1):
             filteredList.append(data)
         else:
