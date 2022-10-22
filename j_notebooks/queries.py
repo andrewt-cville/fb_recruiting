@@ -3,12 +3,13 @@ from sql_templates_base import *
 
 # Returns either ranked or unranked 247 rows
 # Implemented to limit what was fuzzy matching
-def get_query_Transfers247(ranked):
+def get_query_all247(limit, ranked):
     columns = ['a.IDYR', 'a.ID', 'a.PlayerName', 'a.Year', 'a.College', 'a.HighSchool', 'a.City', 'a.State', 'b.KeyPositionGroup', 'b.StandardizedPosition', 'a.Height', 'a.Weight']
 
     params = {
         'Select': '\n  , '.join(columns),
-        'Ranked': ranked
+        'Ranked': ranked,
+        'Limit': limit
     }
 
     template  = '''
@@ -20,10 +21,12 @@ def get_query_Transfers247(ranked):
                 ON a.Position = b.Position
         WHERE
             a.KeyDataSet = 1
-            {% if Ranked %}
-                and a.Rating247 <> 0
-            {% else %}
-                and a.Rating247 is null
+            {% if Limit %}
+                {% if Ranked %}
+                    and a.Rating247 <> 0
+                {% else %}
+                    and a.Rating247 is null
+                {% endif %}
             {% endif %}
     '''
 
@@ -218,3 +221,14 @@ def get_query_KevinRating(ranking):
     '''
 
     return apply_sql_template(template, params)
+
+def insert_query_RecordLinks():
+    
+    params = {}
+
+    template = '''
+        INSERT INTO RecordLinks_DevB(MasterID, TargetID, KeyDataSet, TargetKeyDataSet, KeyLinkType, LinkConfidence, Transfer)
+            VALUES (?,?,?,?,?,?,?)
+            '''  
+    
+    return(apply_sql_template(template, params))

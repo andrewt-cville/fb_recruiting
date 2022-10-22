@@ -6,12 +6,12 @@
         {
           "a": {
             "name": "PlayerName",
-            "value": "alexjohnson",
+            "value": "cademays",
             "type": "String"
           },
           "b": {
             "name": "PlayerName",
-            "value": "kalebjohnson",
+            "value": "cademays",
             "type": "String"
           },
           "similarity": null
@@ -19,12 +19,12 @@
         {
           "a": {
             "name": "Year",
-            "value": 2012,
+            "value": 2021,
             "type": "String"
           },
           "b": {
             "name": "Year",
-            "value": 2011,
+            "value": 2018,
             "type": "String"
           },
           "similarity": null
@@ -32,7 +32,639 @@
         {
           "a": {
             "name": "College",
-            "value": "sandiegostate",
+            "value": "tennessee",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "georgia",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "OL",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "OL",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "cademays_tennessee"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "cademays_georgia_2018"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "chrismurray",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "chrismurray",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2018,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "oklahoma",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "ucla",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "OL",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "OL",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "chrismurray_oklahoma"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "chrismurray_ucla_2018"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "christianholmes",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "christianholmes",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2016,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "oklahomastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "missouri",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 2,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 2,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "DB",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "DB",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "christianholmes_oklahomastate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "christianholmes_missouri_2016"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "colinschooler",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "colinschooler",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2017,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "texastech",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "arizona",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 2,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 2,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "LB",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "LB",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "colinschooler_texastech"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "colinschooler_arizona_2017"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "jacobgall",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "jacobgall",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2017,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "baylor",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "buffalo",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "OL",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "OL",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "jacobgall_baylor"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jacobgall_buffalo_2017"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "jamesonwilliams",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "jamesonwilliams",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "alabama",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "ohiostate",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "WR",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "WR",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "jamesonwilliams_alabama"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jamesonwilliams_ohiostate_2019"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "jaydenreed",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "jaydenreed",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2018,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "michiganstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "westernmichigan",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "WR",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "WR",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "jaydenreed_michiganstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "jaydenreed_westernmichigan_2018"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "kennethwalker",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "kennethwalker",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "michiganstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "wakeforest",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "b": {
+            "name": "KeyPositionGroup",
+            "value": 1,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "StandardizedPosition",
+            "value": "RB",
+            "type": "String"
+          },
+          "b": {
+            "name": "StandardizedPosition",
+            "value": "RB",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "All Conference",
+          "record": "kennethwalker_michiganstate"
+        },
+        "b": {
+          "dataset": "Master",
+          "record": "kennethwalker_wakeforest_2019"
+        }
+      }
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "michaelmaietti",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "michaelmaietti",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2016,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "missouri",
             "type": "String"
           },
           "b": {
@@ -72,11 +704,11 @@
       "identifiers": {
         "a": {
           "dataset": "All Conference",
-          "record": "alexjohnson_sandiegostate"
+          "record": "michaelmaietti_missouri"
         },
         "b": {
           "dataset": "Master",
-          "record": "kalebjohnson_rutgers_2011"
+          "record": "michaelmaietti_rutgers_2016"
         }
       }
     },
@@ -85,38 +717,38 @@
         {
           "a": {
             "name": "PlayerName",
-            "value": "andraezwilliams",
+            "value": "russyeast",
             "type": "String"
           },
           "b": {
             "name": "PlayerName",
-            "value": "andrewwilliams",
+            "value": "russyeast",
             "type": "String"
           },
           "similarity": null
         },
         {
           "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
             "name": "Year",
             "value": 2017,
             "type": "String"
           },
-          "b": {
-            "name": "Year",
-            "value": 2014,
-            "type": "String"
-          },
           "similarity": null
         },
         {
           "a": {
             "name": "College",
-            "value": "lsu",
+            "value": "kansasstate",
             "type": "String"
           },
           "b": {
             "name": "College",
-            "value": "auburn",
+            "value": "louisville",
             "type": "String"
           },
           "similarity": null
@@ -142,322 +774,6 @@
           },
           "b": {
             "name": "StandardizedPosition",
-            "value": "DE",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "andraezwilliams_lsu"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "andrewwilliams_auburn_2014"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "anthonyamos",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "anthonyalosi",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2012,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2011,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "middletennesseestate",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "pennstate",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "WR",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "OL",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "anthonyamos_middletennesseestate"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "anthonyalosi_pennstate_2011"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "anthonykent",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "anthonywint",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2015,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2014,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "kentstate",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "floridainternational",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 3,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "P",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "LB",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "anthonykent_kentstate"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "anthonywint_floridainternational_2014"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "benardrickmckinney",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "benardrickmckinney",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2014,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2011,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "missst",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "mississippistate",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 4,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "LB",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "ATH",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "benardrickmckinney_missst"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "benardrickmckinney_mississippistate_2011"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "calvinturner",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "collinturner",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2020,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2017,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "hawaii",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "louisianamonroe",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "WR",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
             "value": "DB",
             "type": "String"
           },
@@ -467,11 +783,11 @@
       "identifiers": {
         "a": {
           "dataset": "All Conference",
-          "record": "calvinturner_hawaii"
+          "record": "russyeast_kansasstate"
         },
         "b": {
           "dataset": "Master",
-          "record": "collinturner_louisianamonroe_2017"
+          "record": "russyeast_louisville_2017"
         }
       }
     },
@@ -480,12 +796,12 @@
         {
           "a": {
             "name": "PlayerName",
-            "value": "camerondantzler",
+            "value": "siakiika",
             "type": "String"
           },
           "b": {
             "name": "PlayerName",
-            "value": "camerondantzler",
+            "value": "siakiika",
             "type": "String"
           },
           "similarity": null
@@ -493,1513 +809,12 @@
         {
           "a": {
             "name": "Year",
-            "value": 2018,
+            "value": 2021,
             "type": "String"
           },
           "b": {
-            "name": "Year",
-            "value": 2016,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "missst",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "mississippistate",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 4,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "DB",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "ATH",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "camerondantzler_missst"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "camerondantzler_mississippistate_2016"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "charliejones",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "charliejones",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2020,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2017,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "iowa",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "buffalo",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 4,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "ATH",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "WR",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "charliejones_iowa"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "charliejones_buffalo_2017"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "cjsanders",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "cjsanders",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
             "name": "Year",
             "value": 2019,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2015,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "smu",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "notredame",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 4,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "ATH",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "WR",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "cjsanders_smu"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "cjsanders_notredame_2015"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "connorculp",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "connorculp",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2020,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2016,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "nebraska",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "lsu",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 3,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 3,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "PK",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "K",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "connorculp_nebraska"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "connorculp_lsu_2016"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "coryjohnson",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "tobyjohnson",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2015,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2013,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "kentucky",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "georgia",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "DE",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "DL",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "coryjohnson_kentucky"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "tobyjohnson_georgia_2013"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "ddariusjefferson",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "ladariusjefferson",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2020,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2018,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "westernmichigan",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "michiganstate",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 4,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "RB",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "ATH",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "ddariusjefferson_westernmichigan"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "ladariusjefferson_michiganstate_2018"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "hunterstover",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "hunterstover",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2014,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2010,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "louisianalafayette",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "louisiana",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 3,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 3,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "PK",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "K",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "hunterstover_louisianalafayette"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "hunterstover_louisiana_2010"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "jakebowling",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "jakebrowning",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2017,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2015,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "bowlinggreen",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "washington",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 3,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "K",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "QB",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "jakebowling_bowlinggreen"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "jakebrowning_washington_2015"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "jamaldavis",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "jamaldavis",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2018,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2014,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "akron",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "pittsburgh",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "DL",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "LB",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "jamaldavis_akron"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "jamaldavis_pittsburgh_2014"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "jamesgardner",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "jagergardner",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2017,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2015,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "miamiofohio",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "temple",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 4,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "WR",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "ATH",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "jamesgardner_miamiofohio"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "jagergardner_temple_2015"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "jefferysimmons",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "jefferysimmons",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2017,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2016,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "missst",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "mississippistate",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "DL",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "DE",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "jefferysimmons_missst"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "jefferysimmons_mississippistate_2016"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "jojonatson",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "jojonatson",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2016,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2012,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "akron",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "utahstate",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 4,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "ATH",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "WR",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "jojonatson_akron"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "jojonatson_utahstate_2012"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "jtjones",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "tjjones",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2016,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2012,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "miamiofohio",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "kentucky",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "DL",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "OL",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "jtjones_miamiofohio"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "tjjones_kentucky_2012"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "kameronbutler",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "cameronbutler",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2019,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2017,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "miamiofohio",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "coloradostate",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "DL",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "TE",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "kameronbutler_miamiofohio"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "cameronbutler_coloradostate_2017"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "keiwonemalone",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "keiwonemalone",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2014,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2010,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "memphis",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "alabama",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 4,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "ATH",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "WR",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "keiwonemalone_memphis"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "keiwonemalone_alabama_2010"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "mikehughes",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "mikehughes",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2017,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2015,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "unlv",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "northcarolina",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "DL",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "DB",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "mikehughes_unlv"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "mikehughes_northcarolina_2015"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "montezsweat",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "montezsweat",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2017,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2014,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "missst",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "michiganstate",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "DE",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "TE",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "montezsweat_missst"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "montezsweat_michiganstate_2014"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "noahjohnson",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "joshjohnson",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2017,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2016,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "idaho",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "louisianamonroe",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "OL",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "RB",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "noahjohnson_idaho"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "joshjohnson_louisianamonroe_2016"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "patricknelson",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "patricknelson",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2019,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2015,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "smu",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "illinois",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 2,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "LB",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "DB",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "patricknelson_smu"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "patricknelson_illinois_2015"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "shawnoakman",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "shawnoakman",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2015,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2011,
             "type": "String"
           },
           "similarity": null
@@ -2012,7 +827,7 @@
           },
           "b": {
             "name": "College",
-            "value": "pennstate",
+            "value": "lsu",
             "type": "String"
           },
           "similarity": null
@@ -2038,7 +853,7 @@
           },
           "b": {
             "name": "StandardizedPosition",
-            "value": "DE",
+            "value": "DL",
             "type": "String"
           },
           "similarity": null
@@ -2047,90 +862,11 @@
       "identifiers": {
         "a": {
           "dataset": "All Conference",
-          "record": "shawnoakman_baylor"
+          "record": "siakiika_baylor"
         },
         "b": {
           "dataset": "Master",
-          "record": "shawnoakman_pennstate_2011"
-        }
-      }
-    },
-    {
-      "fields": [
-        {
-          "a": {
-            "name": "PlayerName",
-            "value": "williebeavers",
-            "type": "String"
-          },
-          "b": {
-            "name": "PlayerName",
-            "value": "williebeavers",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "Year",
-            "value": 2015,
-            "type": "String"
-          },
-          "b": {
-            "name": "Year",
-            "value": 2011,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "College",
-            "value": "westernmichigan",
-            "type": "String"
-          },
-          "b": {
-            "name": "College",
-            "value": "illinois",
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "b": {
-            "name": "KeyPositionGroup",
-            "value": 1,
-            "type": "String"
-          },
-          "similarity": null
-        },
-        {
-          "a": {
-            "name": "StandardizedPosition",
-            "value": "QB",
-            "type": "String"
-          },
-          "b": {
-            "name": "StandardizedPosition",
-            "value": "OL",
-            "type": "String"
-          },
-          "similarity": null
-        }
-      ],
-      "identifiers": {
-        "a": {
-          "dataset": "All Conference",
-          "record": "williebeavers_westernmichigan"
-        },
-        "b": {
-          "dataset": "Master",
-          "record": "williebeavers_illinois_2011"
+          "record": "siakiika_lsu_2019"
         }
       }
     }

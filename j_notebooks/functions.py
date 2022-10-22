@@ -154,6 +154,32 @@ def clearDB(dataset):
     return 'Success'
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
+# Transfer Functions
+# ---------------------------------------------------------------------------------------------------------------------------------------
+
+class YearNFL(BaseCompareFeature):
+
+    def _compute_vectorized(self, s1, s2):
+        """Compare years
+
+        College players can only get drafted after 3 years but usually within 5
+        """
+        sim = ((s1 == s2 + 2) | (s1 == s2 + 3) | (s1 == s2 + 4) | (s1 == s2 + 5) | (s1 == s2 + 6)).astype(float)
+
+        return sim
+
+class YearOther(BaseCompareFeature):
+
+    def _compute_vectorized(self, s1, s2):
+        """Compare years
+
+        College players can only get drafted after 3 years but usually within 5
+        """
+        sim = ((s1 == s2 + 1) | (s1 == s2 + 2) | (s1 == s2 + 3) | (s1 == s2 + 4) | (s1 == s2 + 5)).astype(float)
+
+        return sim
+
+# ---------------------------------------------------------------------------------------------------------------------------------------
 # Literal Linking Functions - used ONLY for linking back to 247
 # ---------------------------------------------------------------------------------------------------------------------------------------
 def literalLinking(dataset):
@@ -217,14 +243,9 @@ def queryBuilderFM(KeyDataSet, DataSet):
     return query
     
 
-def doFuzzyMatching (source, target):
-    
+def doFuzzyMatching (source, target, threshold):
 
     # Create Dataframes
-
-    ###### Source Dataframe
-    ######## I'm setting the key equal to the target dataset - that way we don't compare IDYR to ID
-    ######## HEY when you changed target vs source being 247, I think you broke the linked players view.  those joins need to be revisited!
     key = getKeyDataset(source)
     #tkey = getKeyDataset(target)
     SQL = queryBuilderFM(key, source)
@@ -287,6 +308,12 @@ def doFuzzyMatching (source, target):
     if 'Year' in targetFuzzy:
         c.exact('Year', 'Year', label='Year', agree_value=.25)
         sumFields.append('Year')
+    if 'YearNFL' in targetFuzzy:
+        c.add(YearNFL('Year', 'Year', label='YearNFL'))
+        sumFields.append('YearNFL')
+    if 'YearOther' in targetFuzzy:
+        c.add(YearOther('Year', 'Year', label='YearOther'))
+        sumFields.append('YearOther')
 
     try:
         features = c.compute(candidate_links, df_source, df_target)
@@ -314,7 +341,7 @@ def doFuzzyMatching (source, target):
         #NCAA was set to .41864
         #AllConf was set to .8347 and .75 for annotations
         #AllAmerican was set to .831 and .72 for annotations
-        elif (data['ID'] != 1 and data['sum'] > .56):
+        elif (data['ID'] != 1 and data['sum'] > threshold):
         #elif (data['ID'] != 1):
             filteredList.append(data)
         else:
@@ -322,36 +349,74 @@ def doFuzzyMatching (source, target):
 
     dfFinal = pd.DataFrame()
     dfFinal = dfFinal.append(filteredList)
-    dfFinal.to_csv("results.csv")
+    dfFinal.to_csv("fuzzy_results.csv")
 
     return dfFinal
 
-# ---------------------------------------------------------------------------------------------------------------------------------------
-# Transfer Functions
-# ---------------------------------------------------------------------------------------------------------------------------------------
+def create_AnnotationFile(fuzzyDF, sourceDF, targetDF):
+    """ 
+        Takes the fuzzy matching DataFrame along with the source and target dataframes to create the Annotation File
+        Limits the overal annotations to 1000 at a time - which is way more than you need
+    """
+    fuzzyMI = pd.MultiIndex.from_frame(fuzzyDF)
+    try:
+        recordlinkage.write_annotation_file(
+        "../Annotations/Annotations/annotations.json",
+        fuzzyMI[0:1000],
+        sourceDF,
+        targetDF,
+        dataset_a_name="Source Record",
+        dataset_b_name="Target Record"
+        )
 
-class YearNFL(BaseCompareFeature):
+        print('File successfully created.')
+    except Exception as e:
+        print('There was an error creating the Annotation File.')
+        print(e)
 
-    def _compute_vectorized(self, s1, s2):
-        """Compare years
-
-        College players can only get drafted after 3 years but usually within 5
-        """
-        sim = ((s1 == s2 + 2) | (s1 == s2 + 3) | (s1 == s2 + 4) | (s1 == s2 + 5) | (s1 == s2 + 6)).astype(float)
-
-        return sim
-
-class YearOther(BaseCompareFeature):
-
-    def _compute_vectorized(self, s1, s2):
-        """Compare years
-
-        College players can only get drafted after 3 years but usually within 5
-        """
-        sim = ((s1 == s2 + 1) | (s1 == s2 + 2) | (s1 == s2 + 3) | (s1 == s2 + 4) | (s1 == s2 + 5)).astype(float)
-
-        return sim
-
+def save_Annotations(filename, keydataset, targetkeydataset, transfer):
+    """
+        Takes Annotated Results and inserts them into RecordLinks
+    """
+    #Sqlite doesn't have boolean fields, so converting transfer to an int
+    if (transfer):
+        transfer = 1
+    else:
+        transfer = 0
+    # Read in the annotation file and convert to a dict
+    annotation = recordlinkage.read_annotation_file(filename)
+    try:
+        annotation_dict = (annotation.links).to_flat_index()
+    except Exception as e:
+        print('Failed to read/parse the Annotation Results')
+        print(e)
+    
+    # Iterate through the dict and insert into RecordLinks
+    try:
+        conn = sql.connect(cc.databaseName)
+    except Exception as e:
+        print('Error connecting to the database')
+        print(e)
+    
+    row_count = 0
+    for record in annotation_dict:
+        # Fuzzy matching will always have a KeyLinkType of 1 and Full Confidence 
+        values = [record[0], record[1], keydataset, targetkeydataset, 1, 1, transfer]
+        query = '''
+        INSERT INTO RecordLinks_DevB(MasterID, TargetID, KeyDataSet, TargetKeyDataSet, KeyLinkType, LinkConfidence, Transfer)
+            VALUES (?,?,?,?,?,?,?)
+            ''' 
+        try:
+            c = conn.cursor() 
+            c.execute(queries.insert_query_RecordLinks(), values)
+            #c.execute(query, values)
+            conn.commit()
+            row_count = row_count + 1
+        except Exception as e:
+            print('Error writing the following record to the database: ' + record[0])
+            print(e)
+    print('Completed. ' + str(row_count) + ' records written to the database.')    
+    conn.close()
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # 247Sports Specific Functions
