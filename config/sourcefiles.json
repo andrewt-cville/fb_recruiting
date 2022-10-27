@@ -34,7 +34,7 @@
         ],
     "allAmerican" :
         [
-            "aaSelections.json"
+            "aaSelections_2021.json"
         ],
     "nflData" :
         [
@@ -42,7 +42,7 @@
         ],
     "ncaa" :
         [
-            "ncaa.json"
+            "ncaa_2021.json"
         ]
     
 }

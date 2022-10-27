@@ -168,6 +168,17 @@ class YearNFL(BaseCompareFeature):
 
         return sim
 
+class YearNCAA(BaseCompareFeature):
+
+    def _compute_vectorized(self, s1, s2):
+        """Compare years
+
+        With Covid or an injury - players often have 6 years of eligibilty
+        """
+        sim = ((s1 == s2) | (s1 == s2 + 1) | (s1 == s2 + 2) | (s1 == s2 + 3) | (s1 == s2 + 4) | (s1 == s2 + 5)).astype(float)
+
+        return sim
+
 class YearOther(BaseCompareFeature):
 
     def _compute_vectorized(self, s1, s2):
@@ -196,12 +207,12 @@ def literalLinking(dataset):
     if(keyDataset == 2):
         fetchIds = c.execute('SELECT a.IDYR, b.IDYR from SourcedPlayers a inner join SourcedPlayers b on (a.IDYR = b.IDYR and b.KeyDataSet = 1) where a.KeyDataSet = ?', dataset_tuple)
     elif(keyDataset == 5):
-        fetchIds = c.execute('SELECT DISTINCT a.ID, b.IDYR from "SummarizedNCAAData-v2" a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1)')
+        fetchIds = c.execute('SELECT DISTINCT a.ID, b.IDYR from "SummarizedNCAAData-v2" a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1) where a.Year = 2021')
     else:
         fetchIds = c.execute('SELECT a.ID, b.IDYR from SourcedPlayers a inner join SourcedPlayers b on (a.ID = b.ID and b.KeyDataSet = 1) where a.KeyDataSet = ? and a.Year = 2021', dataset_tuple)
 
     records = c.fetchall()
-    
+    count = 0
     ## Insert records into the RecordLinks table
     for record in records:
         #below you are hardcoding the KeyLinkType - this should probably be a lookup so it doesn't break in the future
@@ -211,8 +222,14 @@ def literalLinking(dataset):
                             VALUES 
                             (?,?,?,2,1,0);"""
         data_tuple = [record[0],record[1],keyDataset]
-        count = c.execute(sqlite_insert_query, data_tuple)
-        conn.commit()
+        try:
+            c.execute(sqlite_insert_query, data_tuple)
+            conn.commit()
+            count = count + 1
+        except Exception as e:
+            print('Error writing to the database.')
+            print(e)
+    print(count + ' records were written to RecordLinks')
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Fuzzy Matching Functions
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -311,6 +328,9 @@ def doFuzzyMatching (source, target, threshold):
     if 'YearNFL' in targetFuzzy:
         c.add(YearNFL('Year', 'Year', label='YearNFL'))
         sumFields.append('YearNFL')
+    if 'YearNCAA' in targetFuzzy:
+        c.add(YearOther('Year', 'Year', label='YearNCAA'))
+        sumFields.append('YearNCAA')
     if 'YearOther' in targetFuzzy:
         c.add(YearOther('Year', 'Year', label='YearOther'))
         sumFields.append('YearOther')
@@ -813,7 +833,7 @@ def get_NCAA(schoolsList, ncaaDates, sleepyTime=6):
         if ('ncaa' in x.keys()):
             thisUrl = {}
             thisUrl['team'] = x['id']
-            thisUrl['conference'] = x['conference'][0]
+            thisUrl['conference'] = x['conference']
             thisUrl['ncaa'] = 'http://stats.ncaa.org/team/' + x['ncaa'] + '/roster/'
             urlDict.append(thisUrl)
 
@@ -1199,8 +1219,8 @@ def handle_allAmerican(years, headers, sleepyTime=5):
                     if ("WCFF" in awardString):
                         player.append(1)
                     else:
-                        player.append(0)
-                    all_players.append(player)'''
+                        player.append(0)'''
+                    all_players.append(player)
             except:
                 print('Error: ' + x)
     time.sleep(sleepyTime)
