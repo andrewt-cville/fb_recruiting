@@ -17,6 +17,7 @@ import traceback
 import recordlinkage
 from recordlinkage.base import BaseCompareFeature
 import queries
+from datetime import datetime
 
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -108,7 +109,7 @@ def connAndWriteDB(df, table):
 def writeToSourcedPlayers(dataset, columns, query, keydataset):
     conn = sql.connect(cc.databaseName)
     c = conn.cursor()
-    
+    recordCount = 0
     finalPlayers = []
     for player in dataset:
         finalPlayer = []
@@ -119,11 +120,15 @@ def writeToSourcedPlayers(dataset, columns, query, keydataset):
                 finalPlayer.append(player[column])
             else:
                 finalPlayer.append(None)
-        c.execute(query, finalPlayer)
-        conn.commit()
-    
+        try:
+            c.execute(query, finalPlayer)
+            conn.commit()
+            recordCount = recordCount + 1
+        except Exception as e:
+            print('There was an error with inserting a record')
+            print(e)
     conn.close()
-
+    print(str(recordCount) + ' records were committed to the database.')
     return 'DB Write is done'
 
 def getKeyDataset(value):
@@ -678,16 +683,19 @@ def toDB_247Sports():
     createNewID(idConfig[dataset], sports247Data, '_')
     createNewID(idConfig[dataset_yr], sports247Data, '_', False, 'IDYR')
 
+    for record in sports247Data:
+        record['UpdDate'] = datetime.now()
+
     columns = ['ID', 'IDYR', 'KeyDataSet', 'PlayerName', 'College', 
         'Year', 'HighSchool', 'City', 'State', 'Position', 'Height', 'Weight', 
         'CompositeRating', 'CompositeStars', 'CompositeNationalRank', 'CompositeStateRank', 
-        'CompositePositionRank', 'Rating247', 'Stars247', 'NationalRank247', 'StateRank247', 'PositionRank247']
+        'CompositePositionRank', 'Rating247', 'Stars247', 'NationalRank247', 'StateRank247', 'PositionRank247', 'UpdDate']
 
     query = ''' INSERT INTO SourcedPlayers(ID, IDYR, KeyDataSet, PlayerName, College, 
         Year, HighSchool, City, State, Position, Height, Weight, 
         CompositeRating, CompositeStars, CompositeNationalRank, CompositeStateRank, 
-        CompositePositionRank, Rating247, Stars247, NationalRank247, StateRank247, PositionRank247)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'''
+        CompositePositionRank, Rating247, Stars247, NationalRank247, StateRank247, PositionRank247, UpdDate)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'''
     
     writeToSourcedPlayers(sports247Data, columns, query, 1)
 
@@ -810,14 +818,17 @@ def toDB_Rivals():
     createNewID(idConfig[dataset], rivalsData, '_')
     createNewID(idConfig[dataset_yr], rivalsData, '_', False, 'IDYR')
 
+    for record in rivalsData:
+        record['UpdDate'] = datetime.now()
+
     columns = ['ID', 'IDYR', 'KeyDataSet', 'PlayerName', 'College', 'CollegeRaw',
         'Year', 'HighSchool', 'City', 'State', 'Position', 'Height', 'Weight', 
-        'StarsRivals', 'NationalRankRivals', 'StateRankRivals', 'PositionRankRivals']
+        'StarsRivals', 'NationalRankRivals', 'StateRankRivals', 'PositionRankRivals', 'UpdDate']
 
     query = ''' INSERT INTO SourcedPlayers(ID, IDYR, KeyDataSet, PlayerName, College, CollegeRaw,
         Year, HighSchool, City, State, Position, Height, Weight, 
-        StarsRivals, NationalRankRivals, StateRankRivals, PositionRankRivals)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'''
+        StarsRivals, NationalRankRivals, StateRankRivals, PositionRankRivals, UpdDate)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'''
     
     writeToSourcedPlayers(rivalsData, columns, query, 2)
 
@@ -898,14 +909,17 @@ def toDB_NCAA():
 
     createNewID(idConfig[dataset], ncaaData, '_', True)
 
+    for record in ncaaData:
+        record['UpdDate'] = datetime.now()
+
     columns = ['ID', 'KeyDataSet', 'PlayerName', 'College', 
         'Year', 'Position',
-        'NCAAGamesPlayed', 'NCAAGamesStarted']
+        'NCAAGamesPlayed', 'NCAAGamesStarted','UpdDate']
 
     query = ''' INSERT INTO SourcedPlayers(ID, KeyDataSet, PlayerName, College, 
         Year, Position, 
-        NCAAGamesPlayed, NCAAGamesStarted)
-        VALUES (?,?,?,?,?,?,?,?)'''
+        NCAAGamesPlayed, NCAAGamesStarted, UpdDate)
+        VALUES (?,?,?,?,?,?,?,?,?)'''
     
     writeToSourcedPlayers(ncaaData, columns, query, 5)
 
@@ -1046,16 +1060,15 @@ def toDB_AllConference():
                 print (x)
             
             allConf.append(finalPlayer)
-    #finalList = []
-    #for record in allConf:
-    #    finalList.append(record['ID'])
-    #print(len(list(set(finalList))))
-    columns = ['ID', 'KeyDataSet', 'AllConferenceTeam', 'PlayerName', 'College', 'Year', 'Position']
-
-    query = ''' INSERT INTO SourcedPlayers (ID, KeyDataSet, AllConferenceTeam, PlayerName, College, Year, Position)
-        VALUES (?,?,?,?,?,?,?)'''
     
-    # Changing temporarily from 4 to 10 so I can test the code
+    for record in allConf:
+        record['UpdDate'] = datetime.now()
+    
+    columns = ['ID', 'KeyDataSet', 'AllConferenceTeam', 'PlayerName', 'College', 'Year', 'Position', 'UpdDate']
+
+    query = ''' INSERT INTO SourcedPlayers (ID, KeyDataSet, AllConferenceTeam, PlayerName, College, Year, Position, UpdDate)
+        VALUES (?,?,?,?,?,?,?,?)'''
+    
     writeToSourcedPlayers(allConf, columns, query, 4)
 
     return 'DB Write is done'
@@ -1130,14 +1143,17 @@ def toDB_NFLDraft():
 
     createNewID(idConfig[dataset], nflData, '_')
 
+    for record in nflData:
+        record['UpdDate'] = datetime.now()
+
     columns = ['ID', 'KeyDataSet', 'PlayerName', 'College',
         'Year', 'Position',
-        'NFLDraftRound', 'NFLDraftPick', 'NFLDraftTeam', 'NFLAllProFirstTeam', 'NFLProBowl', 'NFLYearsAsStarter', 'NFLGamesPlayed' ]
+        'NFLDraftRound', 'NFLDraftPick', 'NFLDraftTeam', 'NFLAllProFirstTeam', 'NFLProBowl', 'NFLYearsAsStarter', 'NFLGamesPlayed','UpdDate' ]
 
     query = ''' INSERT INTO SourcedPlayers(ID, KeyDataSet, PlayerName, College,
         Year, Position,
-        NFLDraftRound, NFLDraftPick, NFLDraftTeam, NFLAllProFirstTeam, NFLProBowl, NFLYearsAsStarter, NFLGamesPlayed)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)'''
+        NFLDraftRound, NFLDraftPick, NFLDraftTeam, NFLAllProFirstTeam, NFLProBowl, NFLYearsAsStarter, NFLGamesPlayed, UpdDate)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)'''
     
     writeToSourcedPlayers(nflData, columns, query, 3)
 
@@ -1274,11 +1290,14 @@ def toDB_csvAllAmerican(records):
 
     createNewID(idConfig[dataset], records, '_')
 
-    columns = ['ID', 'KeyDataSet', 'PlayerName', 'College', 'Year', 'Position', 'AllAmericanBest']
+    for record in records:
+        record['UpdDate'] = datetime.now()
+
+    columns = ['ID', 'KeyDataSet', 'PlayerName', 'College', 'Year', 'Position', 'AllAmericanBest', 'UpdDate']
 
     query = ''' INSERT INTO SourcedPlayers (ID, KeyDataSet, PlayerName, College,
-        Year, Position, AllAmericanBest)
-        VALUES (?,?,?,?,?,?,?)'''
+        Year, Position, AllAmericanBest, UpdDate)
+        VALUES (?,?,?,?,?,?,?,?)'''
     
     writeToSourcedPlayers(records, columns, query, 6)
 
@@ -1297,14 +1316,17 @@ def toDB_AllAmerican():
 
     createNewID(idConfig[dataset], aaData, '_')
 
+    for record in aaData:
+        record['UpdDate'] = datetime.now()
+
     columns = ['ID', 'KeyDataSet', 'PlayerName', 'College',
         'Year',
-        'AllAmericanBest']
+        'AllAmericanBest', 'UpdDate']
 
     query = ''' INSERT INTO SourcedPlayers(ID, KeyDataSet, PlayerName, College,
         Year,
-        AllAmericanBest)
-        VALUES (?,?,?,?,?,?)'''
+        AllAmericanBest, UpdDate)
+        VALUES (?,?,?,?,?,?,?)'''
     
     writeToSourcedPlayers(aaData, columns, query, 6)
 
