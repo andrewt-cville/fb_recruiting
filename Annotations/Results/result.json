@@ -1,0 +1,1215 @@
+{
+  "version": 1,
+  "pairs": [
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "aidanschneider",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "landonscheer",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2015,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2014,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "oregon",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "floridaatlantic",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "aidanschneider_oregon"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "landonscheer_floridaatlantic_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "bender",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "boalexander",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2016,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2015,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "bill",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "appalachianstate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "bender_bill"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "boalexander_appalachianstate_2015"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "brockbowers",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "brockjones",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "georgia",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "stanford",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "brockbowers_georgia"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "brockjones_stanford_2019"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "caladomitis",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "damarrimathis",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2017,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "pittsburgh",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "pittsburgh",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "caladomitis_pittsburgh"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "damarrimathis_pittsburgh_2017"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "calebshudak",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "calebthomas",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "iowa",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "tulane",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "calebshudak_iowa"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "calebthomas_tulane_2019"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "cameronthomas",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "cameronthreatt",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2020,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "sandiegostate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "mississippistate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "cameronthomas_sandiegostate"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "cameronthreatt_mississippistate_2020"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "coletracy",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "coleturner",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2018,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2014,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "lsu",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "wyoming",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "coletracy_lsu"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "coleturner_wyoming_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "haydenhunt",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "haydenjones",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2015,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2014,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "coloradostate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "colorado",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "haydenhunt_coloradostate"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "haydenjones_colorado_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "ikemekwonu",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "ikemekwonu",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "ncstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "ikemekwonu_ncstate"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "ikemekwonu_northcarolinastate_2019"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "jamesonwilliams",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "jamesonwilliams",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "alabama",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "ohiostate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "jamesonwilliams_alabama"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "jamesonwilliams_ohiostate_2019"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "jaydenreed",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "jaydenreed",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2018,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "michiganstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "westernmichigan",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "jaydenreed_michiganstate"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "jaydenreed_westernmichigan_2018"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "jermainejohnsonii",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "jermainejohnson",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "floridastate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "georgia",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "jermainejohnsonii_floridastate"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "jermainejohnson_georgia_2019"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "keithduncan",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "zachduncan",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2014,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "iowa",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "charlotte",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "keithduncan_iowa"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "zachduncan_charlotte_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "kennethwalkeriii",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "kennethwalker",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "michiganstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "wakeforest",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "kennethwalkeriii_michiganstate"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "kennethwalker_wakeforest_2019"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "michaelcarrizosa",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "michaelrios",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2015,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2014,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "sanjosestate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "tulsa",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "michaelcarrizosa_sanjosestate"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "michaelrios_tulsa_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "nateneedham",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "nateneal",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2017,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "bowlinggreen",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "unlv",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "nateneedham_bowlinggreen"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "nateneal_unlv_2017"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "noahruggles",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "noahruggles",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2017,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "ohiostate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northcarolina",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "noahruggles_ohiostate"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "noahruggles_northcarolina_2017"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "rodrigoblankenship",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "grantblankenship",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2014,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "georgia",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "notredame",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "rodrigoblankenship_georgia"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "grantblankenship_notredame_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "shawunlurry",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "shaneroy",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2015,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2014,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "northernillinois",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "pittsburgh",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "shawunlurry_northernillinois"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "shaneroy_pittsburgh_2014"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "zachvonrosenberg",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "zachcarpenter",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2020,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "lsu",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "michigan",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "zachvonrosenberg_lsu"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "zachcarpenter_michigan_2019"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "zionjohnson",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "ronjohnson",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2016,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "bostoncollege",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "michigan",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "zionjohnson_bostoncollege"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "ronjohnson_michigan_2016"
+        }
+      },
+      "label": 0,
+      "label_str": "Distinct"
+    },
+    {
+      "fields": [
+        {
+          "a": {
+            "name": "PlayerName",
+            "value": "zonovanknight",
+            "type": "String"
+          },
+          "b": {
+            "name": "PlayerName",
+            "value": "zonovanknight",
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "Year",
+            "value": 2021,
+            "type": "String"
+          },
+          "b": {
+            "name": "Year",
+            "value": 2019,
+            "type": "String"
+          },
+          "similarity": null
+        },
+        {
+          "a": {
+            "name": "College",
+            "value": "ncstate",
+            "type": "String"
+          },
+          "b": {
+            "name": "College",
+            "value": "northcarolinastate",
+            "type": "String"
+          },
+          "similarity": null
+        }
+      ],
+      "identifiers": {
+        "a": {
+          "dataset": "Source Record",
+          "record": "zonovanknight_ncstate"
+        },
+        "b": {
+          "dataset": "Target Record",
+          "record": "zonovanknight_northcarolinastate_2019"
+        }
+      },
+      "label": 1,
+      "label_str": "Match"
+    }
+  ]
+}

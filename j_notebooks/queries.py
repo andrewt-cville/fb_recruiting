@@ -21,6 +21,7 @@ def get_query_all247(limit, ranked):
                 ON a.Position = b.Position
         WHERE
             a.KeyDataSet = 1
+            and a.Year > 2013
             {% if Limit %}
                 {% if Ranked %}
                     and a.Rating247 <> 0
@@ -149,6 +150,7 @@ def get_query_UnlinkedNCAA(fuzzy):
             {% if Fuzzy %}
                 and a.NCAAGamesPlayed <> 0
             {% endif %}
+            and a.Year = 2021
         GROUP BY 
             a.ID;
     '''

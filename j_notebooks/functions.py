@@ -229,7 +229,7 @@ def literalLinking(dataset):
         except Exception as e:
             print('Error writing to the database.')
             print(e)
-    print(count + ' records were written to RecordLinks')
+    print(str(count) + ' records were written to RecordLinks')
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Fuzzy Matching Functions
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -1303,8 +1303,8 @@ def toDB_AllAmerican():
 
     query = ''' INSERT INTO SourcedPlayers(ID, KeyDataSet, PlayerName, College,
         Year,
-        AllAmericanAFCA, AllAmericanAP, AllAmericanFWAA, AllAmericanTSN, AllAmericanWCFF)
-        VALUES (?,?,?,?,?,?,?,?,?,?)'''
+        AllAmericanBest)
+        VALUES (?,?,?,?,?,?)'''
     
     writeToSourcedPlayers(aaData, columns, query, 6)
 
