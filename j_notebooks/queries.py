@@ -229,8 +229,8 @@ def insert_query_RecordLinks():
     params = {}
 
     template = '''
-        INSERT INTO RecordLinks_DevB(MasterID, TargetID, KeyDataSet, TargetKeyDataSet, KeyLinkType, LinkConfidence, Transfer)
-            VALUES (?,?,?,?,?,?,?)
+        INSERT INTO RecordLinks_DevB(MasterID, TargetID, KeyDataSet, TargetKeyDataSet, KeyLinkType, LinkConfidence, Transfer,UpdDate)
+            VALUES (?,?,?,?,?,?,?,?)
             '''  
     
     return(apply_sql_template(template, params))

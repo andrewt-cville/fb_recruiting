@@ -223,10 +223,10 @@ def literalLinking(dataset):
         #below you are hardcoding the KeyLinkType - this should probably be a lookup so it doesn't break in the future
         #if i'm working with All American data, as an example, then the MasterID is going to be the data source's unique ID and target will be 247
         sqlite_insert_query = """INSERT INTO RecordLinks
-                            (MasterID, TargetID, KeyDataSet, KeyLinkType, LinkConfidence, Transfer) 
+                            (MasterID, TargetID, KeyDataSet, TargetKeyDataSet, KeyLinkType, LinkConfidence, Transfer, UpdDate) 
                             VALUES 
-                            (?,?,?,2,1,0);"""
-        data_tuple = [record[0],record[1],keyDataset]
+                            (?,?,?,1,2,1,0,?);"""
+        data_tuple = [record[0],record[1],keyDataset, datetime.now()]
         try:
             c.execute(sqlite_insert_query, data_tuple)
             conn.commit()
@@ -427,10 +427,10 @@ def save_Annotations(filename, keydataset, targetkeydataset, transfer):
     for record in annotation_dict:
         # Fuzzy matching will always have a KeyLinkType of 1 and Full Confidence 
         values = [record[0], record[1], keydataset, targetkeydataset, 1, 1, transfer]
-        query = '''
-        INSERT INTO RecordLinks_DevB(MasterID, TargetID, KeyDataSet, TargetKeyDataSet, KeyLinkType, LinkConfidence, Transfer)
-            VALUES (?,?,?,?,?,?,?)
-            ''' 
+
+    for record in values:
+        record.append(datetime.now())
+
         try:
             c = conn.cursor() 
             c.execute(queries.insert_query_RecordLinks(), values)
