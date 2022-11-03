@@ -224,6 +224,14 @@ def get_query_KevinRating(ranking):
 
     return apply_sql_template(template, params)
 
+def get_query_Schools():
+    params = {}
+
+    template = '''
+        select * from Schools
+    '''
+    return (apply_sql_template(template, params))
+
 def insert_query_RecordLinks():
     
     params = {}

@@ -144,6 +144,17 @@ def getKeyDataset(value):
 
     return result[0]
 
+def getSchools():
+    conn = sql.connect(cc.databaseName)
+    conn.row_factory = sql.Row
+    c = conn.cursor()
+    results = c.execute(queries.get_query_Schools()).fetchall()
+
+    list_accumulator = []
+    for result in results:
+        list_accumulator.append({k: result[k] for k in result.keys()})
+    return list_accumulator
+
 def clearDB(dataset):
     conn = sql.connect(cc.databaseName)
     c = conn.cursor()
@@ -447,10 +458,10 @@ def save_Annotations(filename, keydataset, targetkeydataset, transfer):
 # 247Sports Specific Functions
 # ---------------------------------------------------------------------------------------------------------------------------------------
 
-def get_247Teams (conference, schoolsJSON, years, headers, sleepyTime=4):
+def get_247Teams (conference, years, headers, sleepyTime=4, schools = getSchools()):
     for y in years:
-        for school in schoolsJSON:
-            if (school['conference'][0] == conference):
+        for school in schools:
+            if (school['conference'] == conference):
                 filenameString = cc.get_htmlDir('247', conference, 'teams') + school['247'] + "_" + y + ".html"
                 if (os.path.isfile(filenameString)):
                     print(filenameString + ' already exists.')
@@ -703,14 +714,14 @@ def toDB_247Sports():
 # Rivals Specific Functions
 # ---------------------------------------------------------------------------------------------------------------------------------------
 
-def get_Rivals(conference, schoolsJSON, years, headers, sleepyTime=4):
+def get_Rivals(conference, years, headers, sleepyTime=4, schools = getSchools()):
     for y in years:
-        for school in schoolsJSON:
+        for school in schools:
             if ('rivals' in school.keys()):
                 teamFile = "..//html//rivals//" + conference + "//teams//" + school['rivals'] + "_" + y + ".html"
                 # TO-DO - problem here is that if you have the team file, but not all of the player files - it won't fetch those.  so need to rethink this a bit. 
                 if not (os.path.isfile(teamFile)):
-                    if (school['conference'][0] == conference):
+                    if (school['conference'] == conference):
                         url = 'https://{}.rivals.com/commitments/football/{}'.format(school['rivals'],y)
                         r = requests.get(url, headers=headers)
                         gameSoup = BeautifulSoup(r.text, 'lxml')
@@ -730,12 +741,8 @@ def get_Rivals(conference, schoolsJSON, years, headers, sleepyTime=4):
                                 time.sleep(sleepyTime)
 
 #Rivals specific schools check due to their naming philosophy
-def checkSchools(recruitSchool, conference, schoolsJSON):
-    
-    #clean recruitSchool
-    #recruitSchoolCleaned = recruitSchool.lower().replace(" ", "").replace("&","")
-
-    for school in schoolsJSON:
+def checkSchools(recruitSchool, conference, schools = getSchools()):
+    for school in schools:
         if (conference in school['conference']):
             if ('rivalsDisplay' in school.keys() and recruitSchool == school['rivalsDisplay']):
                 return school['id']
@@ -758,7 +765,7 @@ for conf in conferences:
     else:
         cc.save_records('scrapedData', 'rivals_' + conference, fx.process_Rivals(playerDirectory, conference, schoolsList, 'windows-1252'))"""
 
-def process_Rivals(recruitDir, conference, schoolsJSON, encode):
+def process_Rivals(recruitDir, conference, encode, schools = getSchools()):
     all_recruits = []
     #error_files = [] 
     for file in os.listdir(recruitDir):
@@ -776,7 +783,7 @@ def process_Rivals(recruitDir, conference, schoolsJSON, encode):
             #player info
             #rawSchool is helpful for troubleshooting rivals school names
             player['CollegeRaw'] = recruitInfo['school_name']
-            player['College'] = checkSchools(recruitInfo['school_name'],conference, schoolsJSON)
+            player['College'] = checkSchools(recruitInfo['school_name'],conference, schools)
             player['Year'] = str(recruitInfo['recruit_year'])
             player['PlayerName'] = recruitInfo['full_name']
             player['City'] = recruitInfo['city']
