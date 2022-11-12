@@ -242,3 +242,16 @@ def insert_query_RecordLinks():
             '''  
     
     return(apply_sql_template(template, params))
+
+def update_query_Schools(id, wiki):
+    
+    params = {
+        'ID': id,
+        'Wikipedia': wiki
+    }
+
+    template = '''
+        UPDATE Schools SET wikipedia = {{ Wikipedia }} WHERE id = {{ ID }}
+            '''  
+    
+    return(apply_sql_template(template, params))

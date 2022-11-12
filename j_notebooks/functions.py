@@ -35,6 +35,11 @@ def mergeSourceFiles (source, outputDir, sourceFiles):
     return recordList
 
 ## Clean up dirty names
+## Shouldn't have ever cleaned up data like this
+## Definitely need to remove the st. state issue - but this is going to have a massive effect on 
+## the dataset.  Think through how to fix that and evaluate how many it effects
+## shouldn't be cleaning up player name or college here - just use what we are given and make it lower case you dummy
+## but id HAS TO include the standardized college name
 def mungeID(playerString):
     return ''.join(e for e in playerString if e.isalnum()).lower().replace("jr.", "").replace("st.", "state") 
 
@@ -525,6 +530,8 @@ def process_247Sports(prospectDirectory, teamDirectory):
             gameSoup = BeautifulSoup(open(teamDirectory + file, "r", encoding='windows-1252').read(), 'lxml')
         except:
             print(file)
+        #team is set to school['247'] - which i guess is what you want instead of the standardized value?  
+        #but createid should be looking at the standardized version!
         team = file.split('_')[0]
         y = (file.split('_')[1]).split('.')[0]
         for x in gameSoup.find_all("li", class_="ri-page__list-item"):
