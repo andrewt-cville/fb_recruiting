@@ -255,3 +255,48 @@ def update_query_Schools(id, wiki):
             '''  
     
     return(apply_sql_template(template, params))
+
+## Sankey Queries ##
+def getCountbyStars(college, maxYear, drafted):
+    params = {
+        'college' : college,
+        'maxYear' : maxYear,
+        'drafted' : drafted
+    }
+
+    template = '''
+        SELECT 
+            CompositeStars,
+            Count(*) as PlayerCount
+        FROM
+            SummaryReport_AllFields
+        WHERE
+            College = {{ college }}
+            and year <= {{ maxYear }}
+            and NFLDrafted = {{ drafted }}
+        GROUP BY
+            CompositeStars
+            '''
+    
+    return(apply_sql_template(template, params))
+
+def getNFLGamesbyDraftStatus(college, maxYear, drafted):
+    params = {
+        'college' : college,
+        'maxYear' : maxYear,
+        'drafted' : drafted
+    }
+
+    template = '''
+        SELECT 
+            Count(*) as PlayerCount
+        FROM
+            SummaryReport_AllFields
+        WHERE
+            College = {{ college }}
+            and year <= {{ maxYear }}
+            and NFLDrafted = {{ drafted }}
+            and NFLGamesPlayed > 0
+            '''
+    
+    return(apply_sql_template(template, params))
