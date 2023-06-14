@@ -1345,3 +1345,54 @@ def toDB_AllAmerican():
     writeToSourcedPlayers(aaData, columns, query, 6)
 
     return 'DB Write is done'
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------------
+# GameOutcomes Specific Functions
+# ---------------------------------------------------------------------------------------------------------------------------------------
+
+def toDB_gameOutcomes(values):
+    for dictionary in values:
+        dictionary['UpdDate'] = datetime.now()
+        dictlist = list(dictionary.values())
+        row_count = 0
+        if (int(dictionary['Year']) > 2000):
+            try:
+                conn = sql.connect(cc.databaseName)
+                c = conn.cursor() 
+                c.execute(queries.insert_query_GameOutcomes(), dictlist)
+                conn.commit()
+                row_count = row_count + 1
+            except Exception as e:
+                print('Error writing the following record to the database: ' + dictionary['ID'])
+                print(e)
+    print('Completed. ' + str(row_count) + ' records written to the database.')    
+    #conn.close()
+
+def toDB_recordsData(values):
+    row_count = 0
+    for dictionary in values:
+        dictionary['UpdDate'] = datetime.now()
+        dictlist = list(dictionary.values())  
+        if (int(dictionary['Year']) > 2000):
+            try:
+                conn = sql.connect(cc.databaseName)
+                c = conn.cursor() 
+                c.execute(queries.insert_query_Records(), dictlist)
+                conn.commit()
+                row_count = row_count + 1
+            except Exception as e:
+                print('Error writing the following record to the database: ' + dictionary['ID'])
+                print(e)
+    print('Completed. ' + str(row_count) + ' records written to the database.')    
+    #conn.close()
+
+def get_recordsHornbeak(college, year):
+    try:
+        conn = sql.connect(cc.databaseName)
+        c = conn.cursor()
+        c.execute(queries.getHornbeakByYearBySchool(college, year))
+    except Exception as e:
+        print ('Error executing the select statement.  Check your inputs:)
+        print ('College ' + college + ' Year: ' + year)
+    

@@ -300,3 +300,46 @@ def getNFLGamesbyDraftStatus(college, maxYear, drafted):
             '''
     
     return(apply_sql_template(template, params))
+
+def insert_query_GameOutcomes():
+    
+    params = {}
+
+    template = '''
+        INSERT INTO GameOutcomes(SeasonYear, GameDate, HomeScore, AwayScore, AlternateSite, BowlGame, ID, HomeSchool, AwaySchool, UpdDate)
+            VALUES (?,?,?,?,?,?,?,?,?,?)
+            '''  
+    
+    return(apply_sql_template(template, params))
+
+def insert_query_Records():
+    
+    params = {}
+
+    template = '''
+        INSERT INTO Records(ID, SeasonYear, School, Win, Loss, Tie, UpdDate)
+            VALUES (?,?,?,?,?,?,?)
+            '''  
+    
+    return(apply_sql_template(template, params))
+
+def getHornbeakByYearBySchool(college, year):
+    params = {
+        'college' : college,
+        'year' : year
+    }
+
+    template = '''
+                select 
+                    HornbeakRating, count(*), HornbeakRating * count(*) as Sum
+                from SourcedPlayers as sp
+                    JOIN HornbeakRatings as hr
+                        ON sp.ID = hr.ID
+                where 
+                    sp.KeyDataSet = 5 
+                    and sp.College = {{ college }} 
+                    and sp.Year = {{ year }} 
+                group by HornbeakRating
+            '''
+    
+    return(apply_sql_template(template, params))

@@ -34,6 +34,9 @@ from six import string_types
 
 from jinjasql import JinjaSql
 
+from jinja2.utils import markupsafe 
+
+
 __all__ = ['quote_sql_string', 'get_sql_from_template', 'apply_sql_template',
            'get_column_stats_sql']
 
