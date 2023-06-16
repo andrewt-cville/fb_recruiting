@@ -301,23 +301,23 @@ def getNFLGamesbyDraftStatus(college, maxYear, drafted):
     
     return(apply_sql_template(template, params))
 
-def insert_query_GameOutcomes():
+def insert_query_GameData():
     
     params = {}
 
     template = '''
-        INSERT INTO GameOutcomes(SeasonYear, GameDate, HomeScore, AwayScore, AlternateSite, BowlGame, ID, HomeSchool, AwaySchool, UpdDate)
+        INSERT INTO GameData(SeasonYear, GameDate, HomeScore, AwayScore, AlternateSite, BowlGame, ID, HomeSchool, AwaySchool, UpdDate)
             VALUES (?,?,?,?,?,?,?,?,?,?)
             '''  
     
     return(apply_sql_template(template, params))
 
-def insert_query_Records():
+def insert_query_SeasonData():
     
     params = {}
 
     template = '''
-        INSERT INTO Records(ID, SeasonYear, School, Win, Loss, Tie, UpdDate)
+        INSERT INTO SeasonData(ID, SeasonYear, School, Win, Loss, Tie, UpdDate)
             VALUES (?,?,?,?,?,?,?)
             '''  
     

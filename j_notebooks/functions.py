@@ -1351,7 +1351,7 @@ def toDB_AllAmerican():
 # GameOutcomes Specific Functions
 # ---------------------------------------------------------------------------------------------------------------------------------------
 
-def toDB_gameOutcomes(values):
+def toDB_gameData(values):
     for dictionary in values:
         dictionary['UpdDate'] = datetime.now()
         dictlist = list(dictionary.values())
@@ -1360,7 +1360,7 @@ def toDB_gameOutcomes(values):
             try:
                 conn = sql.connect(cc.databaseName)
                 c = conn.cursor() 
-                c.execute(queries.insert_query_GameOutcomes(), dictlist)
+                c.execute(queries.insert_query_GameData(), dictlist)
                 conn.commit()
                 row_count = row_count + 1
             except Exception as e:
@@ -1369,7 +1369,7 @@ def toDB_gameOutcomes(values):
     print('Completed. ' + str(row_count) + ' records written to the database.')    
     #conn.close()
 
-def toDB_recordsData(values):
+def toDB_seasonData(values):
     row_count = 0
     for dictionary in values:
         dictionary['UpdDate'] = datetime.now()
@@ -1378,7 +1378,7 @@ def toDB_recordsData(values):
             try:
                 conn = sql.connect(cc.databaseName)
                 c = conn.cursor() 
-                c.execute(queries.insert_query_Records(), dictlist)
+                c.execute(queries.insert_query_SeasonData(), dictlist)
                 conn.commit()
                 row_count = row_count + 1
             except Exception as e:
@@ -1393,6 +1393,6 @@ def get_recordsHornbeak(college, year):
         c = conn.cursor()
         c.execute(queries.getHornbeakByYearBySchool(college, year))
     except Exception as e:
-        print ('Error executing the select statement.  Check your inputs:)
+        print ('Error executing the select statement.  Check your inputs:')
         print ('College ' + college + ' Year: ' + year)
     
