@@ -1396,3 +1396,12 @@ def get_recordsHornbeak(college, year):
         print ('Error executing the select statement.  Check your inputs:')
         print ('College ' + college + ' Year: ' + year)
     
+def get_linked247(recruitMaxYear, nflMinYear, acMinYear, aaMinYear):
+    try:
+        conn = sql.connect(cc.databaseName)
+        c = conn.cursor()
+        c.execute(queries.getLinked247(recruitMaxYear, nflMinYear, acMinYear, aaMinYear))
+    except Exception as e:
+        print ('Error executing the select statement.  Check your inputs:')
+        #print ('College ' + college + ' Year: ' + year)
+    
