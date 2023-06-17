@@ -1396,11 +1396,56 @@ def get_recordsHornbeak(college, year):
         print ('Error executing the select statement.  Check your inputs:')
         print ('College ' + college + ' Year: ' + year)
     
-def get_linked247(recruitMaxYear, nflMinYear, acMinYear, aaMinYear):
+def get_links247(recruitMaxYear, nflMinYear, acMinYear, aaMinYear):
     try:
         conn = sql.connect(cc.databaseName)
         c = conn.cursor()
-        c.execute(queries.getLinked247(recruitMaxYear, nflMinYear, acMinYear, aaMinYear))
+        c.execute(queries.getLinks247(recruitMaxYear, nflMinYear, acMinYear, aaMinYear))
+    except Exception as e:
+        print ('Error executing the select statement.  Check your inputs:')
+        #print ('College ' + college + ' Year: ' + year)
+
+def get_linksRivals(recruitMaxYear, nflMinYear, acMinYear, aaMinYear):
+    try:
+        conn = sql.connect(cc.databaseName)
+        c = conn.cursor()
+        c.execute(queries.getLinks247(recruitMaxYear, nflMinYear, acMinYear, aaMinYear))
+    except Exception as e:
+        print ('Error executing the select statement.  Check your inputs:')
+        #print ('College ' + college + ' Year: ' + year)
+
+def get_linksNFL(nflMinYear, acMinYear, aaMinYear):
+    try:
+        conn = sql.connect(cc.databaseName)
+        c = conn.cursor()
+        c.execute(queries.getLinksNFL(nflMinYear, acMinYear, aaMinYear))
+    except Exception as e:
+        print ('Error executing the select statement.  Check your inputs:')
+        #print ('College ' + college + ' Year: ' + year)
+
+def get_linksAC(acMinYear, aaMinYear):
+    try:
+        conn = sql.connect(cc.databaseName)
+        c = conn.cursor()
+        c.execute(queries.getLinksAC(acMinYear, aaMinYear))
+    except Exception as e:
+        print ('Error executing the select statement.  Check your inputs:')
+        #print ('College ' + college + ' Year: ' + year)
+
+def get_linksNCAA(aaMinYear):
+    try:
+        conn = sql.connect(cc.databaseName)
+        c = conn.cursor()
+        c.execute(queries.getLinksAC(aaMinYear))
+    except Exception as e:
+        print ('Error executing the select statement.  Check your inputs:')
+        #print ('College ' + college + ' Year: ' + year)
+
+def get_linksAA(aaMinYear):
+    try:
+        conn = sql.connect(cc.databaseName)
+        c = conn.cursor()
+        c.execute(queries.getLinksAC(aaMinYear))
     except Exception as e:
         print ('Error executing the select statement.  Check your inputs:')
         #print ('College ' + college + ' Year: ' + year)
