@@ -822,3 +822,61 @@ def getLinksAA(aaMinYear):
 		a.ID;
     '''
     return(apply_sql_template(template, params))
+
+def getCompositeStarsByNCAA(stars):
+    params = {
+        'stars' : stars
+    }
+
+    template = '''
+        select 
+            a.college, 
+            a.year, 
+            count(*) as '{{ stars }} Stars'
+        from 
+            SourcedPlayers a
+            join RecordLinks b 
+                ON a.ID = b.MasterID and b.KeyDataSet = 5
+            join SourcedPlayers c 
+                ON b.TargetID = c.IDYR 
+                    and c.CompositeStars = {{ stars }}
+        where 
+            a.KeyDataSet = 5
+            and a.NCAAGamesPlayed > 0
+            and a.year > 2012
+        group by 
+            a.Year, 
+            a.College
+            '''
+    
+    return(apply_sql_template(template, params))
+
+def updateSeasonDataWithStars(college, year, fivestar, fourstar,threestar, twostar, onestar,upddate):
+    params = {
+        'college' : college,
+        'year' : year,
+        'fivestar' : fivestar,
+        'fourstar' : fourstar,
+        'threestar' : threestar,
+        'twostar' : twostar,
+        'onestar' : onestar,
+        'upddate' : upddate
+    }
+
+    template = '''
+        UPDATE
+            SeasonData
+        SET
+            FiveStar = {{ fivestar }},
+            FourStar = {{ fourstar }},
+            ThreeStar = {{ threestar }},
+            TwoStar = {{ twostar }},
+            OneStar = {{ onestar }},
+            UpdDate = {{ upddate }}
+        WHERE
+            School = {{ college }}
+            and SeasonYear = {{ year }}
+
+    '''
+    
+    return(apply_sql_template(template, params))

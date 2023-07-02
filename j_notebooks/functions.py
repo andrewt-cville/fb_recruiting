@@ -1450,3 +1450,23 @@ def get_linksAA(aaMinYear):
         print ('Error executing the select statement.  Check your inputs:')
         #print ('College ' + college + ' Year: ' + year)
     
+def get_CompositeStarsByNCAA(stars):
+    try:
+        conn = sql.connect(cc.databaseName)
+        c = conn.cursor()
+        c.execute(queries.getCompositeStarsByNCAA(stars))
+    except Exception as e:
+        print ('Error executing the select statement.  Check your inputs:')
+        #print ('College ' + college + ' Year: ' + year)
+
+def update_SeasonDataWithStars(college, year, fivestar, fourstar,threestar, twostar, onestar):
+    upddate = "'" + str(datetime.now()) + "'"
+    try:
+        conn = sql.connect(cc.databaseName)
+        c = conn.cursor()
+        c.execute(queries.updateSeasonDataWithStars(college, year, fivestar, fourstar, threestar, twostar, onestar, upddate))
+        conn.commit()
+        print(c.rowcount)
+    except Exception as e:
+        print('Function Error')
+        print (e)
